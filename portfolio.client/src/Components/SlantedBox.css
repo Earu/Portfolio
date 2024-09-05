@@ -1,0 +1,68 @@
+.slanted-box {
+	position: relative;
+	overflow-y: hidden;
+	background-color: rgb(36, 36, 36);
+	text-decoration: none;
+	padding-right: 20px;
+	padding-left: 10px;
+	border: 100px solid rgb(36, 36, 36);
+	border-right: 5px solid rgb(36, 36, 36);
+	transform: translateX(-100px) skew(-35deg);
+	margin-right: -100px;
+}
+
+.slanted-box>a {
+	color: white;
+	display: block;
+	transform: skew(35deg);
+	text-decoration: none;
+}
+
+.slanted-box>a::before {
+	content: "[";
+	color: rgb(36, 36, 36);
+}
+
+.slanted-box>a::after {
+	content: "]";
+	color: rgb(36, 36, 36);
+}
+
+.slanted-box>a:hover::after {
+	color: white;
+}
+
+.slanted-box>a:hover::before {
+	color: white;
+}
+
+@media only screen and (max-width: 600px) {
+	.slanted-box {
+		background-color: transparent;
+		padding-right: 0;
+		padding-left: 0;
+		border: none;
+		transform: none;
+		margin-right: 0;
+
+		display: flex;
+		align-items: center;
+		border-top: 1px solid rgb(36, 36, 36);
+		width: 100%;
+		height: 50px;
+		margin-bottom: -10px;
+		padding-left: 20px;
+	}
+
+	.slanted-box>a {
+		transform: none;
+	}
+
+	.slanted-box>a::before {
+		display: none;
+	}
+
+	.slanted-box>a::after {
+		display: none;
+	}
+}

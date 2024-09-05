@@ -1,0 +1,163 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import { GITHUB_URL, MEETING_URL, MEETING_URL_FR } from "./constants";
+
+function getUserLanguage(): string {
+	return navigator.language.split("-")[0];
+}
+
+i18n
+	.use(initReactI18next)
+	.init({
+		lng: getUserLanguage(),
+		fallbackLng: "en",
+		supportedLngs: [ "fr", "en" ],
+		interpolation: {
+			escapeValue: false,
+		},
+		resources: {
+			en: {
+				translation: {
+					CONSOLE_FUN_HEADER: "Hold up!",
+					CONSOLE_FUN_TEXT: "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
+					CONSOLE_FUN_INFO: `By the way, you can find the code for this website here: ${GITHUB_URL}/Portfolio`,
+
+					NAV_SERVICES_LABEL: "Services",
+					NAV_ABOUT_ME_LABEL: "Who am I?",
+					NAV_PROJECTS_LABEL: "Projects",
+					NAV_SCHEDULE_LABEL: "Schedule a Meeting",
+
+					HEADER_HERO_TEXT: "Hi, I'm <0>{{NAME}}</0>, a French <1>Software Engineer</1> & <2>Software Architect</2> and I can help your business <3>reach new frontiers!</3>",
+					HEADER_HERO_CTA: "GET IN TOUCH",
+
+					SERVICES_TITLE: "My Services",
+
+					SERVICES_1_TAGLINE: "Seamless Azure Cloud Migrations & Optimization",
+					SERVICES_1_DESCRIPTION: "Transform your business with tailored Azure cloud solutions. From smooth migrations to comprehensive audits and ongoing technical support, I ensure your Azure environment is optimized for performance and cost-efficiency.",
+
+					SERVICES_2_TAGLINE: "Peak Performance & Scaling with Expert Audits",
+					SERVICES_2_DESCRIPTION: "Enhance your application's performance and scalability with detailed audits and analysis. I identify bottlenecks, optimize systems, and provide actionable insights to ensure your software runs at its best, no matter the load.",
+
+					SERVICES_3_TAGLINE: "Complete Fullstack Development for Robust, Scalable Solutions",
+					SERVICES_3_DESCRIPTION: "From concept to deployment, I deliver comprehensive fullstack development services. Whether you need a powerful backend, dynamic frontend, or a complete end-to-end solution, I build scalable applications tailored to your needs.",
+
+					ABOUT_ME_TITLE: "Who am I?",
+
+					ABOUT_ME_PART_1_TITLE: "Software Engineer & Architect",
+					ABOUT_ME_PART_1_CONTENT: "I specialize in cloud solutions, performance optimization, and full-stack development. My professional journey has taken me from building small-scale projects for friends and online communities to architecting systems for large enterprises.",
+
+					ABOUT_ME_PART_2_TITLE: "Technical Foundations",
+					ABOUT_ME_PART_2_CONTENT: `I began learning programming at 15 through games and modding, particularly in <0>Lua</0>, <1> C++</1> & <2> C</2>. This early experience laid the groundwork for my expertise in <3>.NET </3>(<4>C#</4>), which I later developed while creating software for <5>VINCI</5>'s 90,000 employees in the <6>Energies</6> division.`,
+
+					ABOUT_ME_PART_3_TITLE: "Startup Experience & Corporate Success",
+					ABOUT_ME_PART_3_CONTENT: `After earning a technical degree and a bachelor's in computer science, I launched my own <0>SaaS</0> startup — a marketplace of sorts. Though life led me to new challenges, I eventually joined VINCI, where I tackled everything from scaling and infrastructure to security and cloud platforms. These experiences honed my ability to deliver robust, scalable solutions.`,
+
+					ABOUT_ME_PART_4_TITLE: "Ready to Help You Succeed",
+					ABOUT_ME_PART_4_CONTENT: `With years of experience across various technical domains, I'm now focused on leveraging my skills to help others achieve their goals. Whether it's cloud migration, performance optimization, or full-stack development, I bring a wealth of knowledge and a passion for solving complex problems.`,
+
+					PROJECTS_TITLE: "Projects",
+
+					PROJECTS_1_TITLE: "Document Cloud",
+					PROJECTS_1_DESCRIPTION: "Automating, storing & managing the thousands of legal, contractual & work documents for each of the many business units of VINCI Energies.",
+
+					PROJECTS_2_TITLE: "Active Directory Integration",
+					PROJECTS_2_DESCRIPTION: "Providing a software to integrate every new computer into an Active Directory.",
+
+					PROJECTS_3_TITLE: "Machine Detection",
+					PROJECTS_3_DESCRIPTION: "Software to detect, store and catalog the details of a user based on various matching techniques.",
+
+					PROJECTS_4_TITLE: "Document Suggestion AI",
+					PROJECTS_4_DESCRIPTION: "Machine Learning model training to make suggestions on where a document should be stored.",
+
+					PROJECTS_5_TITLE: "Mail Plugin",
+					PROJECTS_5_DESCRIPTION: "Outlook plugin to integrate Sharepoint and business rules into mails for project managers.",
+
+					PROJECTS_6_TITLE: "Mobile App for Technicians",
+					PROJECTS_6_DESCRIPTION: "Guiding the technicians through their days with schedules, equipment inventories, meetings managed via a mobile app.",
+
+					SCHEDULE_TITLE: "Schedule a Meeting",
+					SCHEDULE_HERO_TEXT: "Ready to take off?",
+					SCHEDULE_HERO_CTA: "SCHEDULE A MEETING",
+					SCHEDULE_URL: MEETING_URL,
+					SCHEDULE_WINDOW_TITLE: "Schedule a Meeting",
+
+					FOOTER_COLUMN_1_TITLE: "Links",
+					FOOTER_COLUMN_2_TITLE: "Contact",
+					FOOTER_COLUMN_2_MEETING_LABEL: "Meeting",
+				}
+			},
+			fr: {
+			  translation: {
+				CONSOLE_FUN_HEADER: "Attendez!",
+				CONSOLE_FUN_TEXT: "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
+				CONSOLE_FUN_INFO: `Au fait, vous pouvez trouver le code de ce site web ici : ${GITHUB_URL}/Portfolio`,
+
+				NAV_SERVICES_LABEL: "Services",
+				NAV_ABOUT_ME_LABEL: "Expertise",
+				NAV_PROJECTS_LABEL: "Projets",
+				NAV_SCHEDULE_LABEL: "Prendre rendez-vous",
+
+				HEADER_HERO_TEXT: "Bonjour, je suis <0>{{NAME}}</0>, un <1>ingénieur logiciel</1> et <2>architecte</2>, et je peux aider votre entreprise à <3>atteindre de nouveaux horizons!</3>",
+				HEADER_HERO_CTA: "CONTACTEZ-MOI",
+
+				SERVICES_TITLE: "Mes Services",
+
+				SERVICES_1_TAGLINE: "Migration et optimisation cloud Azure",
+				SERVICES_1_DESCRIPTION: "Transformez votre entreprise avec des solutions cloud Azure sur mesure. Des migrations fluides aux audits complets en passant par le support technique continu, j'assure que votre environnement Azure est optimisé pour la performance et l'efficacité des coûts.",
+
+				SERVICES_2_TAGLINE: "Performance et mise à l'échelle avec des analyses d'expert",
+				SERVICES_2_DESCRIPTION: "Améliorez la performance et la scalabilité de votre application avec des analyses détaillés. J'identifie les goulots d'étranglement, optimise les systèmes et fournit des informations exploitables pour garantir que votre logiciel fonctionne de manière optimale, quelle que soit la charge.",
+
+				SERVICES_3_TAGLINE: "Développement Fullstack pour des solutions robustes et innovantes",
+				SERVICES_3_DESCRIPTION: "Du concept au déploiement, je propose des services de développement fullstack complets. Que vous ayez besoin d'un backend sophistiqué, d'un frontend dynamique ou d'une solution de bout en bout, je construis des applications innovantes adaptées à vos besoins.",
+
+				ABOUT_ME_TITLE: "Expertise",
+
+				ABOUT_ME_PART_1_TITLE: "Ingénieur logiciel & Architecte",
+				ABOUT_ME_PART_1_CONTENT: "Je me spécialise dans les solutions cloud, l'optimisation des performances et le développement full-stack. Mon parcours professionnel m'a conduit de la création de petits projets pour des amis et des communautés en ligne à l'architecture de systèmes pour de grandes entreprises.",
+
+				ABOUT_ME_PART_2_TITLE: "Fondations techniques",
+				ABOUT_ME_PART_2_CONTENT: "J'ai commencé à apprendre la programmation à 15 ans à travers les jeux et le modding, notamment en <0>Lua</0>, <1> C++</1> et <2> C</2>. Cette expérience précoce a jeté les bases de mon expertise en <3>.NET </3>(<4>C#</4>), que j'ai ensuite développée en créant des logiciels pour les 90 000 employés de <5>VINCI</5> dans la division <6>Energies</6>.",
+
+				ABOUT_ME_PART_3_TITLE: "Expérience en startup & Succès en entreprise",
+				ABOUT_ME_PART_3_CONTENT: "Après avoir obtenu un BTS et une licence en informatique, j'ai lancé ma propre startup <0>SaaS</0> — une sorte de marketplace. Bien que la vie m'ait conduit à de nouveaux défis, j'ai finalement rejoint VINCI, où j'ai relevé des défis allant de la mise à l'échelle et l'infrastructure à la sécurité et aux plateformes cloud. Ces expériences ont affiné ma capacité à fournir des solutions robustes et innovantes.",
+
+				ABOUT_ME_PART_4_TITLE: "Prêt à vous aider à réussir",
+				ABOUT_ME_PART_4_CONTENT: "Avec des années d'expérience dans divers domaines techniques, je me concentre désormais sur l'utilisation de mes compétences pour aider les autres à atteindre leurs objectifs. Qu'il s'agisse de migration cloud, d'optimisation des performances ou de développement full-stack, j'apporte une richesse de connaissances et une passion pour résoudre des problèmes complexes.",
+
+				PROJECTS_TITLE: "Projets",
+
+				PROJECTS_1_TITLE: "Document Cloud",
+				PROJECTS_1_DESCRIPTION: "Automatisation, stockage et gestion des milliers de documents juridiques, contractuels et de travail pour chacune des nombreuses business units de VINCI Energies.",
+
+				PROJECTS_2_TITLE: "Intégration Active Directory",
+				PROJECTS_2_DESCRIPTION: "Fournir un logiciel pour intégrer chaque nouvel ordinateur dans un Active Directory.",
+
+				PROJECTS_3_TITLE: "Détection de Machines",
+				PROJECTS_3_DESCRIPTION: "Logiciel pour détecter, stocker et cataloguer les détails d'un utilisateur en fonction de diverses techniques de matching.",
+
+				PROJECTS_4_TITLE: "IA de suggestion de documents",
+				PROJECTS_4_DESCRIPTION: "Entraînement de modèles d'IA pour faire des suggestions sur l'endroit où un document devrait être stocké.",
+
+				PROJECTS_5_TITLE: "Plugin Mail",
+				PROJECTS_5_DESCRIPTION: "Plugin Outlook pour intégrer Sharepoint et règles métiers dans les mails pour les chefs de projet.",
+
+				PROJECTS_6_TITLE: "Application mobile pour techniciens",
+				PROJECTS_6_DESCRIPTION: "Guider les techniciens tout au long de leurs journées avec des horaires, des inventaires d'équipements et des réunions gérées via une application mobile.",
+
+				SCHEDULE_TITLE: "Planification",
+				SCHEDULE_HERO_TEXT: "Prêt à décoller?",
+				SCHEDULE_HERO_CTA: "PRENDRE RENDEZ-VOUS",
+				SCHEDULE_URL: MEETING_URL_FR,
+				SCHEDULE_WINDOW_TITLE: "Prendre rendez-vous",
+
+				FOOTER_COLUMN_1_TITLE: "Liens",
+				FOOTER_COLUMN_2_TITLE: "Contact",
+				FOOTER_COLUMN_2_MEETING_LABEL: "Rendez-vous",
+			  }
+			}
+		},
+	}).then(() => document.dispatchEvent(new Event("TranslationsLoaded")))
+	.catch(console.error);
+
+export default i18n;

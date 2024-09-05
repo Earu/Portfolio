@@ -1,0 +1,22 @@
+section {
+	margin: 0 auto;
+	margin-top: 5vh;
+	color: white;
+	max-width: 90%;
+}
+
+section:first-of-type {
+	margin-top: 0;
+}
+
+section>h2 {
+	color: white;
+	text-align: center;
+	background: black;
+	margin: 0;
+	border: 1px solid rgb(36, 36, 36);
+	font-family: "HomeVideo";
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+

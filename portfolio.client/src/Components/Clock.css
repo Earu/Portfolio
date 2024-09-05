@@ -1,0 +1,25 @@
+.clock {
+	padding: 10px;
+	background: black;
+	color: white;
+	font-family: "HomeVideo";
+	display: block;
+	text-align: center;
+	width: 100%;
+	font-weight: 800;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-top: 1px solid rgb(36, 36, 36);
+}
+
+.clock>img {
+	height: 0.8em;
+}
+
+@media only screen and (max-width: 600px) {
+	.clock {
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+}

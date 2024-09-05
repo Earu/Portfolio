@@ -1,0 +1,37 @@
+.mobile-scroll-down {
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 6em;
+	transform: rotateZ(90deg);
+	position: absolute;
+	left: calc(50%);
+	top: 85vh;
+	z-index: 10;
+	text-align: center;
+	animation: jumpInfinite 6s infinite;
+}
+
+.mobile-scroll-down>a {
+	text-decoration: none;
+	color: white;
+}
+
+@keyframes jumpInfinite {
+	0% {
+		margin-top: 0;
+	}
+
+	50% {
+		margin-top: 20px;
+	}
+
+	100% {
+		margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.mobile-scroll-down {
+		display: block;
+	}
+}
