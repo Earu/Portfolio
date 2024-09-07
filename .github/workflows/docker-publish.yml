@@ -33,20 +33,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: Restore dependencies
-        run: dotnet restore
+        run: npm install
+        working-directory: ./project
       - name: Build
-        run: dotnet build --no-restore
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: npm run build --prefix public
+        working-directory: ./project
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
