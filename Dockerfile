@@ -7,5 +7,4 @@ COPY ./project/dist ./dist
 COPY ./project/package.json ./package.json
 
 RUN npm install
-RUN npx cross-env NODE_ENV=production
-ENTRYPOINT ["node", "./dist/server"]
+ENTRYPOINT ["npx", "cross-env", "NODE_ENV=production", "node", "./dist/server"]
