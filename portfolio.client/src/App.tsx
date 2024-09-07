@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar';
 import Section from './Components/Section';
 import ShootingStars from './Components/ShootingStars';
 import Clock from './Components/Clock';
-import { GITHUB_URL, LINKEDIN_URL, MAIL, NAME } from './constants';
+import { getPrivacyVariable } from './privacy';
 import { Trans, useTranslation } from 'react-i18next';
 import MobileScrollDown from './Components/MobileScrollDown';
 import FooterColumn from './Components/FooterColumn';
@@ -29,15 +29,15 @@ export default function App() {
 					<h1>
 						<Trans
 							i18nKey="HEADER_HERO_TEXT"
-							values={{ NAME: NAME }}
+							values={{ NAME: getPrivacyVariable("NAME") }}
 							components={[
 								<span/>, <span/>, <span/>, <span/>
 							]}
 						/>
 					</h1>
 					<div className="cta-btns">
-						<a href={`mailto:${MAIL}`}>{t("HEADER_HERO_CTA")}</a>
-						<a id="linkedin" href={`${LINKEDIN_URL}?locale=en_US`}>LINKEDIN</a>
+						<a href={`mailto:${getPrivacyVariable("MAIL")}`}>{t("HEADER_HERO_CTA")}</a>
+						<a id="linkedin" href={`${getPrivacyVariable("LINKEDIN_URL")}?locale=en_US`}>LINKEDIN</a>
 					</div>
 				</div>
 				<ShootingStars />
@@ -65,7 +65,7 @@ export default function App() {
 			<Section id='about-me' title={t("ABOUT_ME_TITLE")}>
 				<div className="about-me-content">
 					<div className='professional-me'>
-						<img src="/img/at_work.webp" alt={`${NAME} at work`} />
+						<img src="/img/at_work.webp" alt={`${getPrivacyVariable("NAME")} at work`} />
 						<div>
 							<span>{t("ABOUT_ME_PART_1_TITLE")}</span>
 							<p>{t("ABOUT_ME_PART_1_CONTENT")}</p>
@@ -176,11 +176,11 @@ export default function App() {
 			</Section>
 			<footer>
 				<FooterColumn title={t("FOOTER_COLUMN_1_TITLE")} list={[
-					["GitHub", GITHUB_URL],
-					["Linkedin", LINKEDIN_URL]
+					["GitHub", getPrivacyVariable("GITHUB_URL")],
+					["Linkedin", getPrivacyVariable("LINKEDIN_URL")]
 				]} />
 				<FooterColumn title={t("FOOTER_COLUMN_2_TITLE")} list={[
-					["Mail", `mailto:${MAIL}`],
+					["Mail", `mailto:${getPrivacyVariable("MAIL")}`],
 					[t("FOOTER_COLUMN_2_MEETING_LABEL"), t("SCHEDULE_URL")]
 				]} />
 			</footer>

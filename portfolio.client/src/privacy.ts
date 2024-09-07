@@ -12,7 +12,7 @@ type PortfolioVariables = {
 
 declare var PORTFOLIO: PortfolioVariables;
 
-if (!window.hasOwnProperty('PORTFOLIO')) {
+if (!globalThis.hasOwnProperty('PORTFOLIO')) {
     (globalThis as any).PORTFOLIO = {
         NAME: "John",
         FAMILY_NAME: "Doe",
@@ -24,12 +24,6 @@ if (!window.hasOwnProperty('PORTFOLIO')) {
     };
 }
 
-const NAME = PORTFOLIO.NAME;
-const FAMILY_NAME = PORTFOLIO.FAMILY_NAME;
-const LINKEDIN_URL = PORTFOLIO.LINKEDIN_URL;
-const GITHUB_URL = PORTFOLIO.GITHUB_URL;
-const MAIL = PORTFOLIO.MAIL;
-const MEETING_URL = PORTFOLIO.MEETING_URL;
-const MEETING_URL_FR = PORTFOLIO.MEETING_URL_FR;
-
-export { NAME, FAMILY_NAME, LINKEDIN_URL, GITHUB_URL, MAIL, MEETING_URL, MEETING_URL_FR };
+export function getPrivacyVariable(key: keyof PortfolioVariables): string {
+    return PORTFOLIO[key];
+}

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./ConsoleLoading.css";
 import { getCookie, setCookie } from "../cookieUtils";
-import { NAME } from "../constants";
+import { getPrivacyVariable } from "../privacy";
 
 let hasLoaded = false;
 let doneShowing = false;
@@ -39,7 +39,7 @@ export default function ConsoleLoading(): JSX.Element {
 		}
 
 		const textarea = document.getElementsByClassName("term")[0];
-		const text = `sh ${NAME}_website.sh`;
+		const text = `sh ${getPrivacyVariable("NAME")}_website.sh`;
 
 		let i = 0;
 		let time = 1;
@@ -73,6 +73,6 @@ export default function ConsoleLoading(): JSX.Element {
 	});
 
 	return <div className="load">
-		<pre className="term">{NAME.toLowerCase()}@server:~$ </pre>
+		<pre className="term">{getPrivacyVariable("NAME").toLowerCase()}@server:~$ </pre>
 	</div>
 }
