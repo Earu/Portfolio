@@ -7,4 +7,5 @@ COPY ./project/dist ./dist
 COPY ./project/package.json ./package.json
 
 RUN npm install
-ENTRYPOINT ["npx", "cross-env", "NODE_ENV=production", "node", "./dist/server"]
+ENV NODE_ENV production
+ENTRYPOINT ["node", "./dist/server"]
