@@ -41,7 +41,7 @@ jobs:
         run: npm install
         working-directory: ./project
       - name: Build
-        run: npm run build --prefix public
+        run: npm run build
         working-directory: ./project
 
       # Install the cosign tool except on PR
