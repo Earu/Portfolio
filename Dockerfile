@@ -6,5 +6,6 @@ EXPOSE 8080
 COPY ./project/dist ./dist
 COPY package*.json ./
 
+RUN npm install
 RUN npx cross-env NODE_ENV production
 ENTRYPOINT ["node", "./dist/server"]
