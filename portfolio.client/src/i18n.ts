@@ -97,7 +97,7 @@ i18n
 				NAV_PROJECTS_LABEL: "Projets",
 				NAV_SCHEDULE_LABEL: "Prendre rendez-vous",
 
-				HEADER_HERO_TEXT: "Bonjour, je suis <0>{{NAME}}</0>, un <1>ingénieur logiciel</1> et <2>architecte</2>, et je peux aider votre entreprise à <3>atteindre de nouveaux horizons!</3>",
+				HEADER_HERO_TEXT: "Bonjour, moi c'est <0>{{NAME}}</0>, un <1>ingénieur logiciel</1> et <2>architecte</2>, et je peux aider votre entreprise à <3>atteindre de nouveaux horizons!</3>",
 				HEADER_HERO_CTA: "CONTACTEZ-MOI",
 
 				SERVICES_TITLE: "Mes Services",
