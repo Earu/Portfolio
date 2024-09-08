@@ -63,7 +63,7 @@ function injectPrivacyVariables(html: string): string {
 async function createServer(isProd = process.env.NODE_ENV === "production") {
 	const app = express();
 	const vite = await createViteServer({
-		server: { middlewareMode: true },
+		server: { middlewareMode: true, hmr: false },
 		appType: "custom",
 		logLevel: isTest ? "error" : "info",
 		root: isProd ? "dist" : "",
