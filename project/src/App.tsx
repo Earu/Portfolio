@@ -17,8 +17,8 @@ import i18n from './i18n';
 export default function App() {
 	const { t } = useTranslation();
 
+	const meetingUrl = i18n.language == "fr" ? getPrivacyVariable("MEETING_URL_FR") : getPrivacyVariable("MEETING_URL");
 	function onSchedule(ev: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>): void {
-		const meetingUrl = i18n.language == "fr" ? getPrivacyVariable("MEETING_URL_FR") : getPrivacyVariable("MEETING_URL");
 		window.open(meetingUrl, t("SCHEDULE_WINDOW_TITLE"), "width=800,height=600");
 		ev.preventDefault();
 	}
@@ -183,7 +183,7 @@ export default function App() {
 				]} />
 				<FooterColumn title={t("FOOTER_COLUMN_2_TITLE")} list={[
 					["Mail", `mailto:${getPrivacyVariable("MAIL")}`],
-					[t("FOOTER_COLUMN_2_MEETING_LABEL"), t("SCHEDULE_URL")]
+					[t("FOOTER_COLUMN_2_MEETING_LABEL"), meetingUrl]
 				]} />
 			</footer>
 		</div>
