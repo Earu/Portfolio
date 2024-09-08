@@ -1,9 +1,9 @@
 import "./ServiceCard.css";
 
-export default function ServiceCard(props: { tagline: string, description: string, image: string }): JSX.Element {
+export default function ServiceCard(props: { tagline: string, description: string, image: string, alt: string }): JSX.Element {
 	return <div className="service-card">
-		<div style={{ backgroundImage: `` }}>
-			<img src={props.image} alt=""/>
+		<div>
+			<img src={props.image} alt={props.alt}/>
 			<h3>{props.tagline}</h3>
 		</div>
 

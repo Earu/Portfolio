@@ -48,17 +48,17 @@ export default function App() {
 					<ServiceCard
 						tagline={t("SERVICES_1_TAGLINE")}
 						description={t("SERVICES_1_DESCRIPTION")}
-						image="/img/azure.webp"
+						image="/img/azure.webp" alt="Azure logo"
 					/>
 					<ServiceCard
 						tagline={t("SERVICES_2_TAGLINE")}
 						description={t("SERVICES_2_DESCRIPTION")}
-						image="/img/soft_performances.webp"
+						image="/img/soft_performances.webp" alt="Performance"
 					/>
 					<ServiceCard
 						tagline={t("SERVICES_3_TAGLINE")}
 						description={t("SERVICES_3_DESCRIPTION")}
-						image="/img/vsc.webp"
+						image="/img/vsc.webp" alt='Visual Studio Code logo'
 					/>
 				</ServiceCardRow>
 			</Section>
