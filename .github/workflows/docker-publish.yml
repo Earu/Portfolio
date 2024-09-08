@@ -42,8 +42,6 @@ jobs:
         working-directory: ./project
       - name: Build
         run: npm run build
-        env:
-          NODE_ENV: production
         working-directory: ./project
 
       # Install the cosign tool except on PR
