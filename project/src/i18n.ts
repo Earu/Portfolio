@@ -8,7 +8,6 @@ function getUserLanguage(): string {
 	} catch {
 		return "en";
 	}
-
 }
 
 const resources = {
