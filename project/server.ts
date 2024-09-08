@@ -49,7 +49,7 @@ function injectPrivacyVariables(html: string): string {
 	return html
 		.replaceAll("[[PRIVACY_NAME]]", privacyName)
 		.replace("[[PRIVACY_VARIABLES]]",
-			`<script>const PORTFOLIO = {{
+			`<script>var PORTFOLIO = {
 				NAME: '${privacyName}',
 				FAMILY_NAME: '${privacyFamilyName}',
 				LINKEDIN_URL: '${privacyLinkedinUrl}',
@@ -57,7 +57,7 @@ function injectPrivacyVariables(html: string): string {
 				MAIL: '${privacyMail}',
 				MEETING_URL: '${meetingUrl}',
 				MEETING_URL_FR: '${meetingUrlFr}',
-			}}</script>`);
+			}</script>`);
 }
 
 async function createServer(isProd = process.env.NODE_ENV === "production") {
@@ -111,6 +111,7 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 			next(e);
 		}
 	});
+
 	const port = 8080;
 	app.listen(Number(port), "0.0.0.0", () => {
 		console.info(`App is listening on http://localhost:${port}`);

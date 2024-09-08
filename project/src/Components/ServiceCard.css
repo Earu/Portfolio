@@ -7,18 +7,6 @@
 	background-color: rgb(18, 18, 18);
 }
 
-.service-card>h3 {
-	font-family: "HomeVideo";
-	font-size: 1.25em;
-	text-align: center;
-	border-bottom: 1px solid rgb(36, 36, 36);
-	color: black;
-	display: block;
-	padding: 10px;
-	margin: 0;
-	background-color: white;
-}
-
 .service-card>p {
 	padding: 20px;
 	margin: 0;
@@ -38,11 +26,14 @@
 	background-color: black;
 }
 
-.service-card>div>span {
+.service-card>div>h3 {
 	font-family: "HomeVideo";
 	color: white;
 	display: inline-block;
-	font-size: 1.5em;
+	font-size: 1.25em;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
 }
 
 .service-card>div>img {
@@ -55,7 +46,7 @@
 }
 
 @media only screen and (max-width: 1650px) {
-	.service-card>div>span  {
-		font-size: 115%;
+	.service-card>div>h3  {
+		font-size: 100%;
 	}
 }

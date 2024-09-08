@@ -13,6 +13,9 @@ type Project = {
 };
 
 export default function ProjectTimeline(props: { projects: Array<Project> }): JSX.Element {
+	const isClient = typeof window !== "undefined";
+	if (!isClient) return <div />;
+
 	const items = props.projects.map(p => ({
 		cardTitle: p.company,
 		url: p.relevantUrl,

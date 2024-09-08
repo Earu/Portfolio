@@ -4,7 +4,7 @@ export default function ServiceCard(props: { tagline: string, description: strin
 	return <div className="service-card">
 		<div style={{ backgroundImage: `` }}>
 			<img src={props.image} alt=""/>
-			<span>{props.tagline}</span>
+			<h3>{props.tagline}</h3>
 		</div>
 
 		<p>{props.description}</p>

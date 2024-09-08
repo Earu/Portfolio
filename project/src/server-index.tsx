@@ -1,3 +1,4 @@
+import "./i18n";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "./App";
@@ -9,6 +10,6 @@ export function render() {
 		<React.StrictMode>
 			<App />
 			<ConsoleLoading />
-		</React.StrictMode>,
+		</React.StrictMode>
 	);
 }

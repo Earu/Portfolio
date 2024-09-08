@@ -10,20 +10,36 @@ type PortfolioVariables = {
     MEETING_URL_FR: string;
 };
 
-declare var PORTFOLIO: PortfolioVariables;
+function tryGetEnvVar(name: string, fallback: string): string {
+    if (globalThis.hasOwnProperty("process")) {
+        return process.env[name] ?? fallback;
+    }
 
-if (!globalThis.hasOwnProperty('PORTFOLIO')) {
-    (globalThis as any).PORTFOLIO = {
-        NAME: "John",
-        FAMILY_NAME: "Doe",
-        LINKEDIN_URL: "https://www.linkedin.com/in/johndoe",
-        GITHUB_URL: "https://github.com/John/Doe",
-        MAIL: "john.doe@gmail.com",
-        MEETING_URL: "",
-        MEETING_URL_FR: "",
+    return fallback;
+}
+
+const globalContext = (globalThis as any);
+if (!globalThis.hasOwnProperty("PORTFOLIO")) {
+    // these are necessary for SSR
+    const privacyName = tryGetEnvVar("PORTFOLIO_PRIVACY_NAME", "John");
+	const privacyFamilyName = tryGetEnvVar("PORTFOLIO_PRIVACY_FAMILY_NAME", "DOE");
+	const privacyLinkedinUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_LINKEDIN_URL", "https://www.linkedin.com/in/johndoe");
+	const privacyGhUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_GITHUB_URL", "https://github.com/John/Doe");
+	const privacyMail = tryGetEnvVar("PORTFOLIO_PRIVACY_MAIL", "john.doe@gmail.com");
+	const meetingUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL", "");
+	const meetingUrlFr = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL_FR", "");
+
+    globalContext.PORTFOLIO = {
+        NAME: privacyName,
+        FAMILY_NAME: privacyFamilyName,
+        LINKEDIN_URL: privacyLinkedinUrl,
+        GITHUB_URL: privacyGhUrl,
+        MAIL: privacyMail,
+        MEETING_URL: meetingUrl,
+        MEETING_URL_FR: meetingUrlFr,
     };
 }
 
 export function getPrivacyVariable(key: keyof PortfolioVariables): string {
-    return PORTFOLIO[key];
+    return globalContext.PORTFOLIO[key];
 }
