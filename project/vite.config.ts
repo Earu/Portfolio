@@ -12,7 +12,6 @@ export default defineConfig({
         }
     },
     server: {
-        port: 5173,
-        hmr: process.env.NODE_ENV === "production" && false,
+        port: 8080,
     }
 });

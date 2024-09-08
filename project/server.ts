@@ -96,7 +96,7 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 		const url = req.originalUrl;
 
 		try {
-			const template = await vite.transformIndexHtml(url, injectPrivacyVariables(baseTemplate));
+			const template = injectPrivacyVariables(baseTemplate);
 			const appHtml = render(url);
 			const cssAssets = await stylesheets;
 			const html = template.replace("[[APP]]", appHtml).replace("[[STYLES]]", cssAssets);
