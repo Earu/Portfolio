@@ -20,8 +20,6 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  # build client in production mode
-  NODE_ENV: production
 
 jobs:
   build:
@@ -44,6 +42,8 @@ jobs:
         working-directory: ./project
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
         working-directory: ./project
 
       # Install the cosign tool except on PR
