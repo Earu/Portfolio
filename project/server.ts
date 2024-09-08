@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from "express";
 import fs from "fs/promises";
+import { readFileSync } from "fs";
 import path, { dirname } from "path";
 import express from "express";
 import compression from "compression";
@@ -19,11 +20,11 @@ import crypto from "crypto";
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 const resolve = (p: string) => path.resolve(__dirname, p);
+const assetpath = resolve("public");
+const resources = JSON.parse(readFileSync(path.join(assetpath, "resources.json")).toString());
 const getStyleSheets = async () => {
 	try {
-		const assetpath = resolve("public");
 		const files = await fs.readdir(assetpath);
 		const cssAssets = files.filter(l => l.endsWith(".css"));
 		const allContent = [];
@@ -37,7 +38,7 @@ const getStyleSheets = async () => {
 	}
 };
 
-function injectPrivacyVariables(html: string): string {
+function injectPrivacyVariables(lang: string, html: string): string {
 	const privacyName = process.env.PORTFOLIO_PRIVACY_NAME ?? "John";
 	const privacyFamilyName = process.env.PORTFOLIO_PRIVACY_FAMILY_NAME ?? "DOE";
 	const privacyLinkedinUrl = process.env.PORTFOLIO_PRIVACY_LINKEDIN_URL ?? "https://www.linkedin.com/in/johndoe";
@@ -45,8 +46,12 @@ function injectPrivacyVariables(html: string): string {
 	const privacyMail = process.env.PORTFOLIO_PRIVACY_MAIL ?? "john.doe@gmail.com";
 	const meetingUrl = process.env.PORTFOLIO_PRIVACY_MEETING_URL ?? "";
 	const meetingUrlFr = process.env.PORTFOLIO_PRIVACY_MEETING_URL_FR ?? "";
+	const langResources = lang === "fr" ? resources.fr.translation : resources.en.translation;
 
 	return html
+		.replace("[[LANG]]", lang)
+		.replace("[[TITLE]]", langResources.HTML_TITLE)
+		.replace("[[META]]", langResources.HTML_META)
 		.replaceAll("[[PRIVACY_NAME]]", privacyName)
 		.replace("[[PRIVACY_VARIABLES]]",
 			`<script>var PORTFOLIO = {
@@ -92,11 +97,11 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 	const devBuildPath = path.join(__dirname, "./src/server-index.tsx");
 	const buildModule = isProd ? productionBuildPath : devBuildPath;
 	const { render } = await vite.ssrLoadModule(buildModule);
-	app.use("*", async (req: Request, res: Response, next: NextFunction) => {
+	async function processRequest(lang: string, req: Request, res: Response, next: NextFunction) {
 		const url = req.originalUrl;
 
 		try {
-			const template = injectPrivacyVariables(baseTemplate);
+			const template = injectPrivacyVariables(lang, baseTemplate);
 			const appHtml = render(url);
 			const cssAssets = await stylesheets;
 			const html = template.replace("[[APP]]", appHtml).replace("[[STYLES]]", cssAssets);
@@ -110,7 +115,11 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 			console.error(e.stack);
 			next(e);
 		}
-	});
+	}
+
+	app.get("/", async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
+	app.get("/fr", async (req: Request, res: Response, next: NextFunction) => processRequest("fr", req, res, next));
+	app.use(async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
 
 	const port = 8080;
 	app.listen(Number(port), "0.0.0.0", () => {

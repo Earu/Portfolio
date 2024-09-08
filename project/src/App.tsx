@@ -12,12 +12,14 @@ import { Trans, useTranslation } from 'react-i18next';
 import MobileScrollDown from './Components/MobileScrollDown';
 import FooterColumn from './Components/FooterColumn';
 import ProjectTimeline from './Components/ProjectTimeline';
+import i18n from './i18n';
 
 export default function App() {
 	const { t } = useTranslation();
 
 	function onSchedule(ev: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>): void {
-		window.open(t("SCHEDULE_URL"), t("SCHEDULE_WINDOW_TITLE"), "width=800,height=600");
+		const meetingUrl = i18n.language == "fr" ? getPrivacyVariable("MEETING_URL_FR") : getPrivacyVariable("MEETING_URL");
+		window.open(meetingUrl, t("SCHEDULE_WINDOW_TITLE"), "width=800,height=600");
 		ev.preventDefault();
 	}
 
@@ -158,7 +160,7 @@ export default function App() {
 						title: t("PROJECTS_6_TITLE"),
 						company: "AGILITIC",
 						relevantUrl: "https://www.societe.com/societe/agilitic-811184001.html",
-						description: t("PROJECTS_4_DESCRIPTION"),
+						description: t("PROJECTS_6_DESCRIPTION"),
 						image: '/img/logo_agilitic.webp',
 						alt: 'AGILITIC',
 						startDate: new Date(2018, 8, 1),
