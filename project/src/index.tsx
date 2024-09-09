@@ -4,12 +4,7 @@ import React from 'react';
 import './index.css';
 import App from './App';
 import ConsoleLoading from './Components/ConsoleLoading';
-import { hydrateRoot, createRoot } from 'react-dom/client';
-
-function renderRoot(container: HTMLElement, content: JSX.Element) {
-	const root = createRoot(container);
-	root.render(content);
-}
+import { createRoot } from 'react-dom/client';
 
 const pathChunks = window.location.pathname.substring(1).split('/');
 if (pathChunks[0] && pathChunks[0].toLowerCase() === "fr") {
@@ -23,13 +18,8 @@ if (pathChunks[0] && pathChunks[0].toLowerCase() === "fr") {
 }
 
 const container = document.getElementById('root') as HTMLElement;
-const tsx = <React.StrictMode>
+const root = createRoot(container);
+root.render(<React.StrictMode>
 	<App />
 	<ConsoleLoading />
-</React.StrictMode>;
-
-if (container.hasChildNodes()) {
-	hydrateRoot(container, tsx);
-} else {
-	renderRoot(container, tsx);
-}
+</React.StrictMode>);
