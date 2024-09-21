@@ -150,7 +150,6 @@ body {
 }
 
 .about-me-content>div>div>p {
-    text-align: justify;
     display: inline-block;
     margin: 0;
     margin-bottom: 40px;

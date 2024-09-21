@@ -18,6 +18,7 @@
 		"tsx": "^4.19.0"
 	},
 	"scripts": {
+		"start": "npm run dev:client",
 		"dev:server": "tsx server.ts",
 		"dev:client": "npm run build:client && vite --config vite.config.ts dev",
 		"build": "rimraf dist && tsc -p tsconfig.json && npm run build:client && npm run build:server && npm run copy-files",
