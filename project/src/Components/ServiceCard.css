@@ -30,7 +30,6 @@
 	font-family: "HomeVideo";
 	color: white;
 	display: inline-block;
-	font-size: 1.25em;
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
@@ -48,5 +47,11 @@
 @media only screen and (max-width: 1650px) {
 	.service-card>div>h3  {
 		font-size: 100%;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.service-card>div>img {
+		filter: invert(1);
 	}
 }

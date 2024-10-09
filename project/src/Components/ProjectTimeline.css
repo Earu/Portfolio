@@ -62,3 +62,9 @@
 	font-size: 1em;
 	color: white !important;
 }
+
+@media (prefers-color-scheme: light) {
+	.timeline-card>.rc-card-media {
+		filter: invert(1);
+	}
+}

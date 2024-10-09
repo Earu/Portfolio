@@ -36,11 +36,30 @@ body {
 
 .App-header {
     background-color: transparent;
-    background-image: linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 1) 100%), url(/img/veil_nebula.webp);
     color: white;
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
+    position: relative;
+}
+
+.App-header>canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+}
+
+#gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none; /* Make sure the gradient doesn't block any interaction */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
 
 .slogan {
@@ -51,11 +70,13 @@ body {
     padding-bottom: 10%;
     font-size: 100%;
     width: 100%;
+    position: relative;
+    z-index: 100;
 }
 
 .slogan>h1 {
     font-family: "HomeVideo";
-    max-width: min(90%, 800px);
+    max-width: min(90%, 1000px);
     text-shadow: 3px 3px 4px black;
 }
 
@@ -77,7 +98,6 @@ body {
     font-weight: 600;
     text-decoration: none;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.25);
     border: 1px solid white;
     color: white;
     width: 25%;
@@ -115,9 +135,9 @@ body {
 
 #linkedin:hover {
     background-color: white;
-    filter: none;
     transform: scale(1.5);
     border-radius: 6px;
+    filter: none;
 }
 
 .about-me-content {
@@ -174,7 +194,7 @@ body {
 }
 
 .schedule {
-    background: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 30%), url(/img/medusa_nebula.webp);
+    background: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 30%), url(/img/code.jpg);
     background-size: cover;
     background-position: center;
     max-width: 100%;
@@ -193,6 +213,7 @@ body {
     text-align: center;
     position: relative;
     border-top: 1px solid rgb(36, 36, 36);
+    backdrop-filter: blur(2px) grayscale(0.5);
 }
 
 .schedule>div>.tagline {
@@ -277,5 +298,26 @@ footer {
         flex-direction: column;
         text-align: center;
         justify-content: start;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body,
+    .about-me-content>div>img,
+    .about-me-content>div>div>p>a,
+    .about-me-content>div>div>p>i>a,
+    #linkedin:hover {
+        filter: invert(1);
+    }
+
+    .schedule {
+        filter: invert(1);
+        background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 30%), url(/img/code_day.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .schedule>div {
+        border-top: 1px solid rgb(219, 219, 219);
     }
 }

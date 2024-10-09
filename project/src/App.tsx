@@ -5,7 +5,6 @@ import ServiceCard from './Components/ServiceCard';
 import ServiceCardRow from './Components/ServiceCardRow';
 import Navbar from './Components/Navbar';
 import Section from './Components/Section';
-import ShootingStars from './Components/ShootingStars';
 import Clock from './Components/Clock';
 import { getPrivacyVariable } from './privacy';
 import { Trans, useTranslation } from 'react-i18next';
@@ -13,6 +12,55 @@ import MobileScrollDown from './Components/MobileScrollDown';
 import FooterColumn from './Components/FooterColumn';
 import ProjectTimeline from './Components/ProjectTimeline';
 import i18n from './i18n';
+import Shader from './Components/Shader';
+
+// GLSL Shaders
+const fragmentShaderSource = `
+precision mediump float;
+
+uniform vec2 iResolution;
+uniform float iTime;
+
+const int MAXITER = 10;
+
+vec3 field(vec3 p) {
+	p *= .1;
+	float f = .1;
+	for (int i = 0; i < 3; i++) {
+		p = p.yzx; //*mat3(.8,.6,0,-.6,.8,0,0,0,1);
+//		p += vec3(.123,.456,.789)*float(i);
+		p = abs(fract(p)-.5);
+		p *= 3.0;
+		f *= 3.0;
+	}
+	p *= p;
+	return sqrt(p+p.yzx)/f-.05;
+}
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+	vec3 dir = normalize(vec3((fragCoord-iResolution*.5)/iResolution.x,1.));
+	float a = iTime * 0.1;
+	vec3 pos = vec3(0.0,iTime*0.1,0.0);
+	dir *= mat3(1,0,0,0,cos(a),-sin(a),0,sin(a),cos(a));
+	dir *= mat3(cos(a),0,-sin(a),0,1,0,sin(a),0,cos(a));
+	vec3 color = vec3(0);
+	for (int i = 0; i < MAXITER; i++) {
+		vec3 f2 = field(pos);
+		float f = min(min(f2.x,f2.y),f2.z);
+
+		pos += dir*f;
+		color += float(MAXITER-i)/(f2+.01);
+	}
+	vec3 color3 = vec3(1.-1./(1.+color*(.09/float(MAXITER*MAXITER))));
+	color3 *= color3;
+	fragColor = vec4(vec3(color3.r+color3.g+color3.b),1.);
+}
+
+void main() {
+	mainImage(gl_FragColor, gl_FragCoord.xy);
+}
+`;
 
 export default function App() {
 	const { t } = useTranslation();
@@ -26,6 +74,8 @@ export default function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<Shader fragmentShader={fragmentShaderSource} />
+				<div id="gradient-overlay"></div>
 				<Navbar />
 				<div className="slogan">
 					<h1>
@@ -42,7 +92,6 @@ export default function App() {
 						<a id="linkedin" href={`${getPrivacyVariable("LINKEDIN_URL")}?locale=en_US`}>LINKEDIN</a>
 					</div>
 				</div>
-				<ShootingStars />
 			</header>
 			<MobileScrollDown />
 			<Section id='services' title={t("SERVICES_TITLE")}>

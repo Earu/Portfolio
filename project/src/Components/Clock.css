@@ -10,7 +10,6 @@
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	border-top: 1px solid rgb(36, 36, 36);
 }
 
 .clock>img {
@@ -21,5 +20,12 @@
 	.clock {
 		margin: 0 auto;
 		margin-top: 10px;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.clock {
+		background: white;
+		color: black;
 	}
 }
