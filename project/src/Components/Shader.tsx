@@ -75,14 +75,10 @@ function initCanvas(canvas: HTMLCanvasElement, gl: WebGLRenderingContext, fragme
 		function resizeCanvas() {
 			const devicePixelRatio = window.devicePixelRatio || 1;
 
-			// Set the canvas width and height to match display size
 			canvas.width = window.innerWidth * devicePixelRatio;
 			canvas.height = window.innerHeight * devicePixelRatio;
 
-			// Set the WebGL viewport to match the canvas size
 			gl.viewport(0, 0, canvas.width, canvas.height);
-
-			// Pass the resolution to the shader (in device pixels)
 			gl.uniform2f(iResolutionLocation, canvas.width, canvas.height);
 		}
 
