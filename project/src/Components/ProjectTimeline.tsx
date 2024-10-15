@@ -22,8 +22,8 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 		cardTitle: `${p.title} (${p.company})`,
 		url: p.relevantUrl,
 		timelineContent: <div>
-			{p.description}
-			<div style={{ padding: "20px" }}>
+			<div style={{ marginBottom: 20, pointerEvents: "none" }}>{p.description}</div>
+			<div style={{ zIndex: 100, position: "relative" }}>
 				<Techs techs={p.techs ?? []} size={25} showTitle={false} />
 			</div>
 		</div>,
