@@ -5,6 +5,7 @@
 	display: inline-block;
 	min-height: 300px;
 	background-color: rgb(18, 18, 18);
+	width: 100%;
 }
 
 .service-card>p {

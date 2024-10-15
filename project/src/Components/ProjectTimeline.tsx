@@ -1,5 +1,6 @@
 import { Chrono } from "react-chrono";
 import "./ProjectTimeline.css";
+import Techs, { Tech } from "./Techs";
 
 type Project = {
 	title: string;
@@ -10,6 +11,7 @@ type Project = {
 	relevantUrl: string;
 	startDate: Date;
 	endDate: Date;
+	techs?: Array<Tech>;
 };
 
 export default function ProjectTimeline(props: { projects: Array<Project> }): JSX.Element {
@@ -19,13 +21,18 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 	const items = props.projects.map(p => ({
 		cardTitle: `${p.title} (${p.company})`,
 		url: p.relevantUrl,
-		cardDetailedText: p.description,
+		timelineContent: <div>
+			{p.description}
+			<div style={{ padding: "20px" }}>
+				<Techs techs={p.techs ?? []} size={25} showTitle={false} />
+			</div>
+		</div>,
 		media: {
-		  type: "IMAGE",
-		  source: {
-			url: p.image,
-			alt: p.alt,
-		  }
+			type: "IMAGE",
+			source: {
+				url: p.image,
+				alt: p.alt,
+			}
 		},
 		date: p.startDate,
 	}));

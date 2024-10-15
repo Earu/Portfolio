@@ -1,0 +1,36 @@
+.techs {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.techs>div {
+	display: inline-flex;
+	width: 100%;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.techs>div:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.techs>div>img {
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.techs>div>a {
+	text-align: center;
+	text-decoration: none;
+	font-family: "HomeVideo";
+	font-size: 1em;
+	margin-top: 20px;
+	color: white;
+}
+
+@media (prefers-color-scheme: light) {
+	.techs>div {
+		filter: invert(1);
+	}
+}

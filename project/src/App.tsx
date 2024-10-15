@@ -13,6 +13,7 @@ import FooterColumn from './Components/FooterColumn';
 import ProjectTimeline from './Components/ProjectTimeline';
 import i18n from './i18n';
 import Shader from './Components/Shader';
+import Techs from './Components/Techs';
 
 // GLSL Shaders
 const fragmentShaderSource = `
@@ -104,7 +105,7 @@ export default function App() {
 					<ServiceCard
 						tagline={t("SERVICES_2_TAGLINE")}
 						description={t("SERVICES_2_DESCRIPTION")}
-						image="/img/soft_performances.webp" alt="Performance"
+						image="/img/logo_microsoft.svg" alt="Performance"
 					/>
 					<ServiceCard
 						tagline={t("SERVICES_3_TAGLINE")}
@@ -114,8 +115,20 @@ export default function App() {
 				</ServiceCardRow>
 			</Section>
 			<Section id='about-me' title={t("ABOUT_ME_TITLE")}>
+				<div className="tech-stack">
+					<h3>{t("ABOUT_ME_PART_5_TITLE")}</h3>
+					<Techs techs={[
+						{ name: ".NET", image: "/img/dotnet_logo.svg", url: "https://dotnet.microsoft.com/en-us/" },
+						{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+						{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+						{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+						{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
+						{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+						{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
+					]} size={Math.min(100, window.innerWidth / 7 / 2)} showTitle={window.innerWidth > 600} />
+				</div>
 				<div className="about-me-content">
-					<div className='professional-me'>
+					<div>
 						<img src="/img/at_work.webp" alt={`${getPrivacyVariable("NAME")} at work`} />
 						<div>
 							<span>{t("ABOUT_ME_PART_1_TITLE")}</span>
@@ -164,6 +177,13 @@ export default function App() {
 						alt: 'VINCI Energies',
 						startDate: new Date(2020, 8, 1),
 						endDate: new Date(2023, 1, 1),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "SharePoint", image: "/img/sharepoint_logo.svg", url: "https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration" },
+							{ name: "SAP", image: "/img/sap_logo.svg", url: "https://www.sap.com/france/index.html" },
+							{ name: "Matomo", image: "/img/matomo_logo.svg", url: "https://fr.matomo.org/" },
+						]
 					},
 					{
 						title: t("PROJECTS_2_TITLE"),
@@ -174,6 +194,13 @@ export default function App() {
 						alt: 'VINCI Energies',
 						startDate: new Date(2022, 5, 1),
 						endDate: new Date(2023, 1, 1),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
+							{ name: "SAP", image: "/img/sap_logo.svg", url: "https://www.sap.com/france/index.html" },
+						]
 					},
 					{
 						title: t("PROJECTS_3_TITLE"),
@@ -184,6 +211,13 @@ export default function App() {
 						alt: 'VINCI Energies',
 						startDate: new Date(2020, 8, 1),
 						endDate: new Date(2022, 7, 1),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "C++", image: "/img/cpp_logo.svg", url: "https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "SAP", image: "/img/sap_logo.svg", url: "https://www.sap.com/france/index.html" },
+							{ name: "Windows", image: "/img/windows_logo.svg", url: "https://www.microsoft.com/en-us/windows" },
+						]
 					},
 					{
 						title: t("PROJECTS_4_TITLE"),
@@ -194,6 +228,14 @@ export default function App() {
 						alt: 'VINCI Energies',
 						startDate: new Date(2023, 1, 1),
 						endDate: new Date(2024, 4, 20),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
+							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+							{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
+						]
 					},
 					{
 						title: t("PROJECTS_5_TITLE"),
@@ -204,6 +246,14 @@ export default function App() {
 						alt: 'VINCI Energies',
 						startDate: new Date(2023, 1, 1),
 						endDate: new Date(2024, 4, 20),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
+							{ name: "Matomo", image: "/img/matomo_logo.svg", url: "https://fr.matomo.org/" },
+							{ name: "SAP", image: "/img/sap_logo.svg", url: "https://www.sap.com/france/index.html" },
+						]
 					},
 					{
 						title: t("PROJECTS_6_TITLE"),
@@ -214,6 +264,13 @@ export default function App() {
 						alt: 'AGILITIC',
 						startDate: new Date(2018, 8, 1),
 						endDate: new Date(2019, 2, 30),
+						techs: [
+							{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+							{ name: "F#", image: "/img/fsharp_logo.png", url: "https://learn.microsoft.com/en-us/dotnet/fsharp/" },
+							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+							{ name: "Elixir", image: "/img/elixir_logo.svg", url: "https://elixir-lang.org/" },
+							{ name: "Xamarin", image: "/img/xamarin_logo.svg", url: "https://learn.microsoft.com/en-us/previous-versions/xamarin/get-started/what-is-xamarin" },
+						]
 					},
 				]} />
 			</Section>
