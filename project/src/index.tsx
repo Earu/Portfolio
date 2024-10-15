@@ -5,6 +5,9 @@ import './index.css';
 import App from './App';
 import ConsoleLoading from './Components/ConsoleLoading';
 import { createRoot } from 'react-dom/client';
+import Hotjar from '@hotjar/browser';
+import ReactGA from 'react-ga';
+import { getPrivacyVariable } from "./privacy";
 
 const pathChunks = window.location.pathname.substring(1).split('/');
 if (pathChunks[0] && pathChunks[0].toLowerCase() === "fr") {
@@ -23,3 +26,13 @@ root.render(<React.StrictMode>
 	<App />
 	<ConsoleLoading />
 </React.StrictMode>);
+
+const hotjarSiteId = parseInt(getPrivacyVariable("HOTJAR_SITE_ID"));
+if (hotjarSiteId != null && !isNaN(hotjarSiteId)) {
+	const hotjarVersion = 6;
+	Hotjar.init(hotjarSiteId, hotjarVersion);
+}
+
+const gaSiteId = getPrivacyVariable("GA_SITE_ID");
+ReactGA.initialize(gaSiteId);
+ReactGA.pageview(window.location.pathname + window.location.search);

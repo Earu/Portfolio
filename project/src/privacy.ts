@@ -8,11 +8,14 @@ type PortfolioVariables = {
     MAIL: string;
     MEETING_URL: string;
     MEETING_URL_FR: string;
+    HOTJAR_SITE_ID: string;
+    GA_SITE_ID: string;
 };
 
 function tryGetEnvVar(name: string, fallback: string): string {
     if (globalThis.hasOwnProperty("process")) {
-        return process.env[name] ?? fallback;
+        const value = process.env[name] ?? fallback;
+        return value.toString();
     }
 
     return fallback;
@@ -28,6 +31,8 @@ if (!globalThis.hasOwnProperty("PORTFOLIO")) {
 	const privacyMail = tryGetEnvVar("PORTFOLIO_PRIVACY_MAIL", "john.doe@gmail.com");
 	const meetingUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL", "");
 	const meetingUrlFr = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL_FR", "");
+    const hotjarSiteId = tryGetEnvVar("HOTJAR_SITE_ID", "");
+    const gaSiteId = tryGetEnvVar("GA_SITE_ID", "");
 
     globalContext.PORTFOLIO = {
         NAME: privacyName,
@@ -37,6 +42,8 @@ if (!globalThis.hasOwnProperty("PORTFOLIO")) {
         MAIL: privacyMail,
         MEETING_URL: meetingUrl,
         MEETING_URL_FR: meetingUrlFr,
+        HOTJAR_SITE_ID: hotjarSiteId,
+        GA_SITE_ID: gaSiteId,
     };
 }
 
