@@ -30,22 +30,14 @@
 	margin: 0;
 }
 
-.timeline-card-subtitle {
-	font-family: "HomeVideo";
-	color: white !important;
-	font-weight: 500 !important;
-	font-size: 1.25em !important;
-	padding-left: 15px !important;
-}
-
 .timeline-card-title {
-	font-family: "HomeVideoReverted";
-	color: white !important;
-	font-weight: 500 !important;
+	width: 96% !important;
 }
 
 .timeline-card-title>a {
+	font-family: "HomeVideo";
 	text-decoration: none;
+	font-weight: 800 !important;
 }
 
 .timeline-card-text {
@@ -64,7 +56,8 @@
 }
 
 @media (prefers-color-scheme: light) {
-	.timeline-card>.rc-card-media {
+	.timeline-card>.rc-card-media,
+	.timeline-card-title>a {
 		filter: invert(1);
 	}
 }

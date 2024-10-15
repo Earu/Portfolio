@@ -17,9 +17,8 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 	if (!isClient) return <div />;
 
 	const items = props.projects.map(p => ({
-		cardTitle: p.company,
+		cardTitle: `${p.title} (${p.company})`,
 		url: p.relevantUrl,
-		cardSubtitle: p.title,
 		cardDetailedText: p.description,
 		media: {
 		  type: "IMAGE",
@@ -47,7 +46,6 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 		classNames={{
 			card: "timeline-card",
 			cardTitle: "timeline-card-title",
-			cardSubTitle: "timeline-card-subtitle",
 			cardText: "timeline-card-text",
 		}}
 	/>
