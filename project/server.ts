@@ -46,6 +46,8 @@ function injectPrivacyVariables(lang: string, html: string): string {
 	const privacyMail = process.env.PORTFOLIO_PRIVACY_MAIL ?? "john.doe@gmail.com";
 	const meetingUrl = process.env.PORTFOLIO_PRIVACY_MEETING_URL ?? "";
 	const meetingUrlFr = process.env.PORTFOLIO_PRIVACY_MEETING_URL_FR ?? "";
+	const hotjarSiteId = process.env.HOTJAR_SITE_ID ?? "";
+	const gaSiteId = process.env.GA_SITE_ID ?? "";
 	const langResources = lang === "fr" ? resources.fr.translation : resources.en.translation;
 
 	return html
@@ -62,6 +64,8 @@ function injectPrivacyVariables(lang: string, html: string): string {
 				MAIL: '${privacyMail}',
 				MEETING_URL: '${meetingUrl}',
 				MEETING_URL_FR: '${meetingUrlFr}',
+				HOTJAR_SITE_ID: '${hotjarSiteId}',
+				GA_SITE_ID: '${gaSiteId}'
 			}</script>`);
 }
 
