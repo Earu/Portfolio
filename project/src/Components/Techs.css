@@ -33,4 +33,12 @@
 	.techs>div {
 		filter: invert(1);
 	}
+
+	.techs>div>a {
+		color: black;
+	}
+
+	.techs>div:hover {
+		background: rgb(233, 233, 233);
+	}
 }

@@ -22,7 +22,9 @@ function createShader(gl: WebGLRenderingContext, type: GLenum, source: string): 
 	return shader;
 }
 
-function initCanvas(canvas: HTMLCanvasElement, gl: WebGLRenderingContext, fragmentShaderSource: string, vertexShaderSource?: string) {
+function initCanvas(canvas: HTMLCanvasElement, gl: WebGLRenderingContext, fragmentShaderSource?: string, vertexShaderSource?: string) {
+	if (!fragmentShaderSource) return;
+
 	if (!vertexShaderSource) {
 		vertexShaderSource = `
 		attribute vec4 a_position;
@@ -88,12 +90,12 @@ function initCanvas(canvas: HTMLCanvasElement, gl: WebGLRenderingContext, fragme
 	}
 }
 
-interface ShaderProps extends HTMLAttributes<HTMLCanvasElement> {
-	fragmentShader: string;
+interface ShaderProps {
+	fragmentShader?: string;
 	vertextShader?: string;
 }
 
-export default function Shader(props: ShaderProps): JSX.Element {
+export default function Shader({ fragmentShader, vertextShader, ...props }: ShaderProps & HTMLAttributes<HTMLCanvasElement>): JSX.Element {
 	const ref = createRef<HTMLCanvasElement>();
 	let [loaded, setLoaded] = useState(false);
 
@@ -105,7 +107,7 @@ export default function Shader(props: ShaderProps): JSX.Element {
 		const canvas = ref.current;
 		const gl = canvas?.getContext("webgl");
 		if (canvas && gl) {
-			initCanvas(canvas, gl, props.fragmentShader, props.vertextShader);
+			initCanvas(canvas, gl, fragmentShader, vertextShader);
 		}
 	});
 
