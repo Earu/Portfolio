@@ -1,23 +1,73 @@
 .techs {
-	display: flex;
-	flex-direction: row;
-	gap: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 25px;
+	padding: 30px;
+	background: linear-gradient(145deg, rgba(18, 18, 18, 0.95) 0%, rgba(28, 28, 28, 0.95) 100%);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .techs>div {
-	display: inline-flex;
-	width: 100%;
+	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
 	cursor: pointer;
+	padding: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.techs>div::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.05),
+		transparent
+	);
+	transition: left 0.7s ease;
 }
 
 .techs>div:hover {
-	background: rgba(255, 255, 255, 0.1);
+	transform: translateY(-5px);
+	border-color: rgba(76, 175, 80, 0.3);
+	box-shadow: 
+		0 10px 20px rgba(0, 0, 0, 0.3),
+		0 0 0 1px rgba(76, 175, 80, 0.1);
+}
+
+.techs>div:hover::before {
+	left: 100%;
 }
 
 .techs>div>img {
+	width: 60%;
+	height: auto;
+	max-width: 80px;
+	object-fit: contain;
 	margin: 0 auto;
 	cursor: pointer;
+	filter: grayscale(0.3);
+	transition: all 0.3s ease;
+	padding: 10px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 12px;
+}
+
+.techs>div:hover>img {
+	filter: grayscale(0);
+	transform: scale(1.05);
 }
 
 .techs>div>a {
@@ -26,19 +76,129 @@
 	font-family: "HomeVideo";
 	font-size: 1em;
 	margin-top: 20px;
-	color: white;
+	background: linear-gradient(45deg, #fff, #4CAF50);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
 }
 
-@media (prefers-color-scheme: light) {
+.techs>div>a::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 25%;
+	width: 50%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.techs>div:hover>a::after {
+	opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+	.techs {
+		grid-template-columns: repeat(3, 1fr);
+		padding: 15px;
+		gap: 12px;
+	}
+
 	.techs>div {
-		filter: invert(1);
+		padding: 12px;
+		aspect-ratio: 1;
+	}
+
+	.techs>div>img {
+		width: 70%;
+		padding: 8px;
 	}
 
 	.techs>div>a {
-		color: black;
+		font-size: 0.8em;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.techs {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		padding: 10px;
 	}
 
-	.techs>div:hover {
-		background: rgb(233, 233, 233);
+	.techs>div {
+		padding: 10px;
 	}
+
+	.techs>div>img {
+		width: 60%;
+		padding: 6px;
+	}
+}
+
+/* Special styling for timeline cards */
+.timeline-card .techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-card .techs > div {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    min-width: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeline-card .techs > div:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+.timeline-card .techs > div > img {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+    filter: brightness(1);
+}
+
+.timeline-card .techs > div > a {
+    display: inline;
+    font-family: "HomeVideo";
+    font-size: 0.9em;
+    color: #4CAF50;
+    margin: 0;
+}
+
+@media only screen and (max-width: 480px) {
+    .timeline-card .techs {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .timeline-card .techs > div {
+        padding: 4px 10px;
+    }
+
+    .timeline-card .techs > div > img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-card .techs > div > a {
+        font-size: 0.8em;
+    }
 }

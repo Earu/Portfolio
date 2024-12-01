@@ -12,56 +12,7 @@ import MobileScrollDown from './Components/MobileScrollDown';
 import FooterColumn from './Components/FooterColumn';
 import ProjectTimeline from './Components/ProjectTimeline';
 import i18n from './i18n';
-import Shader from './Components/Shader';
 import Techs from './Components/Techs';
-
-// GLSL Shaders
-const fragmentShaderSource = `
-precision mediump float;
-
-uniform vec2 iResolution;
-uniform float iTime;
-
-const int MAXITER = 10;
-
-vec3 field(vec3 p) {
-	p *= .1;
-	float f = .1;
-	for (int i = 0; i < 3; i++) {
-		p = p.yzx; //*mat3(.8,.6,0,-.6,.8,0,0,0,1);
-//		p += vec3(.123,.456,.789)*float(i);
-		p = abs(fract(p)-.5);
-		p *= 3.0;
-		f *= 3.0;
-	}
-	p *= p;
-	return sqrt(p+p.yzx)/f-.05;
-}
-
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
-{
-	vec3 dir = normalize(vec3((fragCoord-iResolution*.5)/iResolution.x,1.));
-	float a = iTime * 0.1;
-	vec3 pos = vec3(0.0,iTime*0.1,0.0);
-	dir *= mat3(1,0,0,0,cos(a),-sin(a),0,sin(a),cos(a));
-	dir *= mat3(cos(a),0,-sin(a),0,1,0,sin(a),0,cos(a));
-	vec3 color = vec3(0);
-	for (int i = 0; i < MAXITER; i++) {
-		vec3 f2 = field(pos);
-		float f = min(min(f2.x,f2.y),f2.z);
-
-		pos += dir*f;
-		color += float(MAXITER-i)/(f2+.01);
-	}
-	vec3 color3 = vec3(1.-1./(1.+color*(.09/float(MAXITER*MAXITER))));
-	color3 *= color3;
-	fragColor = vec4(vec3(color3.r+color3.g+color3.b),1.);
-}
-
-void main() {
-	mainImage(gl_FragColor, gl_FragCoord.xy);
-}
-`;
 
 export default function App() {
 	const { t } = useTranslation();
@@ -74,23 +25,26 @@ export default function App() {
 
 	return (
 		<div className="App">
+			<Navbar />
 			<header className="App-header">
-				<Shader fragmentShader={fragmentShaderSource} />
 				<div id="gradient-overlay"></div>
-				<Navbar />
-				<div className="slogan">
-					<h1>
-						<Trans
-							i18nKey="HEADER_HERO_TEXT"
-							values={{ NAME: getPrivacyVariable("NAME") }}
-							components={[
-								<span/>, <span/>, <span/>, <span/>
-							]}
-						/>
-					</h1>
+				<div className="hero-content">
+					<div className="hero-main">
+						<h1>{t("HEADER_HERO_TITLE")}</h1>
+						<h2>{t("HEADER_HERO_SUBTITLE")}</h2>
+						<div className="social-proof">
+							{(t("HEADER_HERO_PROOFS", { returnObjects: true }) as string[]).map((proof, index) => (
+								<span key={index}>{proof}</span>
+							))}
+						</div>
+					</div>
 					<div className="cta-btns">
-						<a href={`mailto:${getPrivacyVariable("MAIL")}`}>{t("HEADER_HERO_CTA")}</a>
-						<a id="linkedin" href={`${getPrivacyVariable("LINKEDIN_URL")}?locale=en_US`}>LINKEDIN</a>
+						<a href={`mailto:${getPrivacyVariable("MAIL")}`} className="primary-cta">
+							{t("HEADER_HERO_CTA")}
+						</a>
+						<a href="#projects" className="secondary-cta">
+							{t("HEADER_HERO_SECONDARY_CTA")}
+						</a>
 					</div>
 				</div>
 			</header>
@@ -98,38 +52,43 @@ export default function App() {
 			<Section id='services' title={t("SERVICES_TITLE")}>
 				<ServiceCardRow>
 					<ServiceCard
-						tagline={t("SERVICES_1_TAGLINE")}
-						description={t("SERVICES_1_DESCRIPTION")}
-						image="/img/azure.webp" alt="Azure logo"
+							tagline={t("SERVICES_1_TAGLINE")}
+							description={t("SERVICES_1_DESCRIPTION")}
+							image="/img/azure.webp"
+							alt="Azure & AI Solutions"
+							technologies={t("SERVICES_1_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
-						tagline={t("SERVICES_2_TAGLINE")}
-						description={t("SERVICES_2_DESCRIPTION")}
-						image="/img/logo_microsoft.svg" alt="Performance"
+							tagline={t("SERVICES_2_TAGLINE")}
+							description={t("SERVICES_2_DESCRIPTION")}
+							image="/img/logo_microsoft.svg"
+							alt="Microsoft Integration"
+							technologies={t("SERVICES_2_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
-						tagline={t("SERVICES_3_TAGLINE")}
-						description={t("SERVICES_3_DESCRIPTION")}
-						image="/img/vsc.webp" alt='Visual Studio Code logo'
+							tagline={t("SERVICES_3_TAGLINE")}
+							description={t("SERVICES_3_DESCRIPTION")}
+							image="/img/vsc.webp"
+							alt="Full-Stack Development"
+							technologies={t("SERVICES_3_TECH", { returnObjects: true })}
 					/>
 				</ServiceCardRow>
 			</Section>
+			<Section id='tech-stack' title={t("TECH_STACK_TITLE")}>
+				<Techs techs={[
+					{ name: ".NET", image: "/img/dotnet_logo.svg", url: "https://dotnet.microsoft.com/en-us/" },
+					{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+					{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+					{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+					{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
+					{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+					{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
+				]} size={Math.min(100, window.innerWidth / 7 / 2)} showTitle={window.innerWidth > 600} />
+			</Section>
 			<Section id='about-me' title={t("ABOUT_ME_TITLE")}>
-				<div className="tech-stack">
-					<h3>{t("ABOUT_ME_PART_5_TITLE")}</h3>
-					<Techs techs={[
-						{ name: ".NET", image: "/img/dotnet_logo.svg", url: "https://dotnet.microsoft.com/en-us/" },
-						{ name: "C#", image: "/img/csharp_logo.svg", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
-						{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
-						{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
-						{ name: "Typescript", image: "/img/typescript_logo.svg", url: "https://www.typescriptlang.org/" },
-						{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
-						{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
-					]} size={Math.min(100, window.innerWidth / 7 / 2)} showTitle={window.innerWidth > 600} />
-				</div>
 				<div className="about-me-content">
 					<div>
-						<img src="/img/at_work.webp" alt={`${getPrivacyVariable("NAME")} at work`} />
+						<img src="/img/at_work.jpg" alt={`${getPrivacyVariable("NAME")} at work`} />
 						<div>
 							<span>{t("ABOUT_ME_PART_1_TITLE")}</span>
 							<p>{t("ABOUT_ME_PART_1_CONTENT")}</p>

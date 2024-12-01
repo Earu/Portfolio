@@ -3,10 +3,24 @@
 	background-color: rgb(18, 18, 18) !important;
 	border: 1px solid rgb(36, 36, 36) !important;
 	color: white !important;
+	height: auto !important;
+	min-height: fit-content !important;
+}
+
+.cWmrDV {
+	--rc-gradient-color: transparent !important;
 }
 
 .timeline-card>header {
 	display: none;
+}
+
+.timeline-card>div:nth-child(3) {
+	width: 100% !important;
+}
+
+.timeline-card>div:nth-child(3) > div:nth-child(1) {
+	padding: 0 !important;
 }
 
 .timeline-card>span {
@@ -20,10 +34,23 @@
 .timeline-card>.rc-card-media {
 	border-radius: 0px;
 	background-color: white;
+	height: 200px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.timeline-card>.rc-card-media>div {
+	height: 100% !important;
+	width: 100% !important;
 }
 
 .timeline-card>.rc-card-media>div>img {
 	object-fit: contain !important;
+	height: 100% !important;
+	width: 100% !important;
+	padding: 0 !important;
 }
 
 .timeline-card-content {
@@ -31,18 +58,106 @@
 }
 
 .timeline-card-title {
-	width: 96% !important;
+	width: 100% !important;
+	padding: 25px !important;
+	margin: 0 !important;
+	background: linear-gradient( to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100% ) !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	display: block !important;
+	box-sizing: border-box !important;
 }
 
-.timeline-card-title>a {
+.timeline-card-title > a {
 	font-family: "HomeVideo";
 	text-decoration: none;
-	font-weight: 800 !important;
+	font-weight: normal !important;
+	font-size: 1.4em;
+	background: linear-gradient(45deg, #fff, #4CAF50);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: block !important;
+	width: 100% !important;
+}
+
+.timeline-card-title > a:hover {
+	transform: translateY(-2px);
+	background: linear-gradient(45deg, #fff, #45a049);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 480px) {
+	.timeline-card-title {
+		padding: 15px !important;
+	}
+
+	.timeline-card-title > a {
+		font-size: 1.2em;
+	}
 }
 
 .timeline-card-text {
-	max-height: fit-content !important;
-	--rc-gradient-color: rgba(0, 0, 0, 0) !important;
+	max-height: none !important;
+	background: transparent !important;
+	height: auto !important;
+	overflow: visible !important;
+}
+
+.timeline-card-text::before,
+.timeline-card-text::after {
+    display: none !important;
+}
+
+/* Ensure our content is above any potential gradients */
+.timeline-card .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 20px;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    height: auto;
+	background: transparent !important;
+	border-top: none !important;
+}
+
+.timeline-card .technologies::before,
+.timeline-card .technologies::after {
+    display: none;
+}
+
+.timeline-card .technologies span {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-family: "HomeVideo";
+    letter-spacing: 0.5px;
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.timeline-card .technologies span:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 480px) {
+    .timeline-card .technologies {
+        padding: 10px 15px;
+        gap: 6px;
+    }
+
+    .timeline-card .technologies span {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
 }
 
 .timeline-card-text>p {
@@ -55,9 +170,147 @@
 	color: white !important;
 }
 
-@media (prefers-color-scheme: light) {
-	.timeline-card>.rc-card-media,
-	.timeline-card-title>a {
-		filter: invert(1);
-	}
+@media only screen and (max-width: 768px) {
+    .timeline-card-text .techs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-card-text .techs > div {
+        background: rgba(76, 175, 80, 0.1);
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(76, 175, 80, 0.2);
+        min-width: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .timeline-card-text .techs > div > img {
+        width: 14px;
+        height: 14px;
+        padding: 0;
+        margin: 0;
+        filter: brightness(1);
+    }
+
+    .timeline-card-text .techs > div > a {
+        display: inline;
+        font-family: "HomeVideo";
+        font-size: 0.8em;
+        color: #4CAF50;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .timeline-card-text .techs {
+        padding: 10px;
+        gap: 4px;
+    }
+
+    .timeline-card-text .techs > div {
+        padding: 2px 6px;
+    }
+
+    .timeline-card-text .techs > div > img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-card-text .techs > div > a {
+        font-size: 0.7em;
+    }
+}
+
+/* Special styling for timeline cards */
+.timeline-card .techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-card .techs > div {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    min-width: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeline-card .techs > div:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+.timeline-card .techs > div > img {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    filter: brightness(1);
+}
+
+.timeline-card .techs > div > a {
+    display: inline;
+    font-family: "HomeVideo";
+    font-size: 0.9em;
+    color: #4CAF50;
+    margin: 0;
+}
+
+.rc-card-content {
+    background: transparent !important;
+}
+
+.rc-card-content::before,
+.rc-card-content::after {
+    display: none !important;
+}
+
+/* Target all potential parent containers */
+.timeline-card,
+.timeline-card-text,
+.rc-card-text,
+.rc-card-content,
+.rc-card {
+    height: auto !important;
+    min-height: fit-content !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Target the content wrapper */
+.timeline-card > div,
+.rc-card > div {
+    height: auto !important;
+    min-height: fit-content !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.timeline-card .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 0px;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    height: auto;
 }

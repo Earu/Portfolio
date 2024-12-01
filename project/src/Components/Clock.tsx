@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Clock.css";
 
-const formatter =  new Intl.DateTimeFormat([], {
+const formatter = new Intl.DateTimeFormat([], {
 	timeZone: "Europe/Paris",
 	hour: 'numeric',
 	minute: 'numeric',
-	second: 'numeric',
+	second: 'numeric'
 });
 
 function getCurrentTime(date: Date) {
@@ -13,9 +13,9 @@ function getCurrentTime(date: Date) {
 }
 
 function checkTime(date: Date) {
-	var hours = date.getHours();
-	var mins = date.getMinutes();
-	var day = date.getDay();
+	const hours = date.getHours();
+	const mins = date.getMinutes();
+	const day = date.getDay();
 
 	return day >= 1 // at least monday
 		&& day <= 5 // not after friday
@@ -23,17 +23,25 @@ function checkTime(date: Date) {
 		&& (hours < 18 || (hours === 18 && mins <= 30)); // ends at 6:30 PM
 }
 
-let startedClock = false;
 export default function Clock(): JSX.Element {
-	let [time, setTime] = useState(new Date());
+	const [time, setTime] = useState(new Date());
+	const isOnline = checkTime(time);
+	
 	useEffect(() => {
-		if (startedClock) return;
-
-		startedClock = true;
-		setInterval(() => {
+		const interval = setInterval(() => {
 			setTime(new Date());
 		}, 1000);
-	});
 
-	return <div className="clock"><img src="/img/french_flag.svg" alt="French flag"/> {getCurrentTime(time)} ({checkTime(time) ? "Online" : "Offline"})</div>;
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<div className="clock">
+			<img src="/img/french_flag.svg" alt="French flag" />
+			<span className="time">{getCurrentTime(time)}</span>
+			<span className={`status ${isOnline ? 'online' : 'offline'}`}>
+				{isOnline ? "Online" : "Offline"}
+			</span>
+		</div>
+	);
 }

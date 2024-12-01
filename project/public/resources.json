@@ -13,16 +13,43 @@
 			"NAV_PROJECTS_LABEL": "Projects",
 			"NAV_SCHEDULE_LABEL": "Schedule a Meeting",
 
-			"HEADER_HERO_TEXT": "Hi, I'm <0>{{NAME}}</0>, a French <1>Software Engineer</1> & <2>Software Architect</2> and I can help your business <3>reach new frontiers!</3>",
-			"HEADER_HERO_CTA": "GET IN TOUCH",
+			"HEADER_HERO_TITLE": "Enterprise Cloud & AI Solutions",
+			"HEADER_HERO_SUBTITLE": "Helping companies scale with Microsoft technologies",
+			"HEADER_HERO_PROOFS": [
+				"Solutions Cloud pour 2000+ Business Units",
+				"Traitement Automatisé pour 90 000+ Utilisateurs",
+				"Expert Azure, .NET & Intégration IA",
+				"15+ Projets d'Entreprise Livrés"
+			],
+			"HEADER_HERO_CTA": "START A PROJECT",
+			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
 
 			"SERVICES_TITLE": "My Services",
-			"SERVICES_1_TAGLINE": "Seamless Azure Cloud Migrations & Optimization",
-			"SERVICES_1_DESCRIPTION": "Transform your business with tailored Azure cloud solutions. From smooth migrations to comprehensive audits and ongoing technical support, I ensure your Azure environment is optimized for performance and cost-efficiency.",
-			"SERVICES_2_TAGLINE": "Microsoft Integration",
-			"SERVICES_2_DESCRIPTION": "Elevate your business with expert Microsoft integrations. I connect SharePoint, Office 365, and Power Automate to create customized solutions that streamline processes and enhance collaboration.",
-			"SERVICES_3_TAGLINE": "Complete Fullstack Development for Robust, Scalable Solutions",
-			"SERVICES_3_DESCRIPTION": "From concept to deployment, I deliver comprehensive fullstack development services. Whether you need a powerful backend, dynamic frontend, or a complete end-to-end solution, I build scalable applications tailored to your needs.",
+			"SERVICES_1_TAGLINE": "Enterprise Azure & AI Solutions",
+			"SERVICES_1_DESCRIPTION": "Transform your business with enterprise-grade cloud architecture and AI integration. Leverage Azure's full potential with solutions that scale from startup to enterprise while maintaining peak performance.",
+			"SERVICES_1_TECH": [
+				"Azure Cloud",
+				"AI/ML",
+				".NET Core",
+				"Microservices"
+			],
+			"SERVICES_2_TAGLINE": "Microsoft Stack Integration",
+			"SERVICES_2_DESCRIPTION": "Seamlessly connect your Microsoft ecosystem. From SharePoint and Azure AD to Power Platform and Teams, create integrated workflows that boost productivity and streamline operations.",
+			"SERVICES_2_TECH": [
+				"SharePoint",
+				"Power Platform",
+				"Azure AD",
+				"Microsoft 365"
+			],
+			"SERVICES_3_TAGLINE": "Full-Stack Development at Scale",
+			"SERVICES_3_DESCRIPTION": "Build robust, scalable applications that grow with your business. Using modern .NET, React, and cloud-native architecture to deliver high-performance solutions that handle enterprise workloads.",
+			"SERVICES_3_TECH": [
+				".NET 8",
+				"React",
+				"Python",
+				"TypeScript",
+				"Azure DevOps"
+			],
 
 			"ABOUT_ME_TITLE": "Who am I?",
 			"ABOUT_ME_PART_1_TITLE": "Software Engineer & Architect",
@@ -56,7 +83,8 @@
 
 			"FOOTER_COLUMN_1_TITLE": "Links",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
-			"FOOTER_COLUMN_2_MEETING_LABEL": "Meeting"
+			"FOOTER_COLUMN_2_MEETING_LABEL": "Meeting",
+			"TECH_STACK_TITLE": "My Tech Stack"
 		}
 	},
 	"fr": {
@@ -73,16 +101,42 @@
 			"NAV_PROJECTS_LABEL": "Projets",
 			"NAV_SCHEDULE_LABEL": "Prendre rendez-vous",
 
-			"HEADER_HERO_TEXT": "Bonjour, moi c'est <0>{{NAME}}</0>, <1>Développeur Full-stack</1> et <2>Architecte</2>, et je peux aider votre entreprise à <3>atteindre de nouveaux horizons!</3>",
-			"HEADER_HERO_CTA": "CONTACTEZ-MOI",
+			"HEADER_HERO_TITLE": "Solutions Cloud & IA pour Entreprises",
+			"HEADER_HERO_SUBTITLE": "Aidez votre entreprise à évoluer avec les technologies Microsoft",
+			"HEADER_HERO_PROOFS": [
+				"Solutions Cloud pour 2000+ Business Units",
+				"Traitement Automatisé pour 90 000+ Utilisateurs",
+				"Expert Azure, .NET & Intégration IA",
+				"15+ Projets d'Entreprise Livrés"
+			],
+			"HEADER_HERO_CTA": "DÉMARRER UN PROJET",
+			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",
 
 			"SERVICES_TITLE": "Mes Services",
 			"SERVICES_1_TAGLINE": "Migration et optimisation cloud Azure",
 			"SERVICES_1_DESCRIPTION": "Transformez votre entreprise avec des solutions cloud Azure sur mesure. Des migrations fluides aux audits complets en passant par le support technique continu, j'assure que votre environnement Azure est optimisé pour la performance et l'efficacité des coûts.",
+			"SERVICES_1_TECH": [
+				"Azure Cloud",
+				"AI/ML",
+				".NET Core",
+				"Microservices"
+			],
 			"SERVICES_2_TAGLINE": "Intégration avec les technologies Microsoft",
 			"SERVICES_2_DESCRIPTION": "Élevez votre entreprise grâce à des intégrations Microsoft expertes. Je connecte SharePoint, Office 365 et Power Automate pour créer des solutions personnalisées qui rationalisent les processus et améliorent la collaboration.",
+			"SERVICES_2_TECH": [
+				"SharePoint",
+				"Power Platform",
+				"Azure AD",
+				"Microsoft 365"
+			],
 			"SERVICES_3_TAGLINE": "Développement Fullstack pour des solutions robustes et innovantes",
 			"SERVICES_3_DESCRIPTION": "Du concept au déploiement, je propose des services de développement fullstack complets. Que vous ayez besoin d'un backend sophistiqué, d'un frontend dynamique ou d'une solution de bout en bout, je construis des applications innovantes adaptées à vos besoins.",
+			"SERVICES_3_TECH": [
+				".NET 8",
+				"React",
+				"TypeScript",
+				"Azure DevOps"
+			],
 
 			"ABOUT_ME_TITLE": "Expertise",
 			"ABOUT_ME_PART_1_TITLE": "Ingénieur logiciel & Architecte",
@@ -116,7 +170,8 @@
 
 			"FOOTER_COLUMN_1_TITLE": "Liens",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
-			"FOOTER_COLUMN_2_MEETING_LABEL": "Rendez-vous"
+			"FOOTER_COLUMN_2_MEETING_LABEL": "Rendez-vous",
+			"TECH_STACK_TITLE": "Mon Tech Stack"
 		}
 	}
 }

@@ -1,31 +1,74 @@
 .clock {
-	padding: 10px;
-	background: black;
+	padding: 15px 25px;
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
 	color: white;
 	font-family: "HomeVideo";
-	display: block;
-	text-align: center;
-	width: 100%;
-	font-weight: 800;
-	position: absolute;
-	left: 0;
-	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: auto;
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin-top: 40px;
+	transition: all 0.3s ease;
 }
 
-.clock>img {
-	height: 0.8em;
+.clock:hover {
+	border-color: rgba(76, 175, 80, 0.3);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	transform: translateY(-2px);
 }
 
-@media only screen and (max-width: 600px) {
+.clock > img {
+	height: 1em;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.clock > .time {
+	font-size: 1.1em;
+	letter-spacing: 0.5px;
+}
+
+.clock > .status {
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 0.9em;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease;
+}
+
+.clock > .status.online {
+	background: rgba(76, 175, 80, 0.2);
+	color: #4CAF50;
+	border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.clock > .status.offline {
+	background: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
 	.clock {
-		margin: 0 auto;
-		margin-top: 10px;
+		padding: 12px 20px;
+		margin-top: 30px;
+		flex-direction: column;
+		gap: 8px;
 	}
-}
 
-@media (prefers-color-scheme: light) {
-	.clock {
-		background: white;
-		color: black;
+	.clock > img {
+		height: 0.9em;
+	}
+
+	.clock > .time {
+		font-size: 1em;
+	}
+
+	.clock > .status {
+		font-size: 0.8em;
+		padding: 3px 10px;
 	}
 }

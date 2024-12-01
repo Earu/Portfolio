@@ -1,0 +1,108 @@
+<svg id="js-grid" viewBox="0 0 1512 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter0_f_6_188" x="2" y="68" width="9" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+      <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_6_188"></feGaussianBlur>
+    </filter>
+    <filter id="filter1_f_6_188" x="0" y="89" width="13" height="13" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+      <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_6_188"></feGaussianBlur>
+    </filter>
+    <filter id="filter2_d_6_188" x="0" y="0" width="13" height="106" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+      <feOffset dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6_188"></feBlend>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6_188" result="shape"></feBlend>
+    </filter>
+    <radialGradient id="paint0_radial_6_188" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 95.5) rotate(90) scale(6)">
+      <stop stop-color="#FF9C00"></stop>
+      <stop offset="1" stop-color="#FD6A00"></stop>
+    </radialGradient>
+    <radialGradient id="paint1_radial_6_188" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 95.5) rotate(90) scale(6)">
+      <stop stop-color="#FF9C00"></stop>
+      <stop offset="1" stop-color="#FD6A00"></stop>
+    </radialGradient>
+    <linearGradient id="paint2_linear_6_188" x1="6.5" y1="70" x2="6.5" y2="94" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8C39" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#FF8C39"></stop>
+    </linearGradient>
+    <radialGradient id="paint3_radial_6_188" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 95.5) rotate(90) scale(6)">
+      <stop stop-color="#FF9C00"></stop>
+      <stop offset="1" stop-color="#FD6A00"></stop>
+    </radialGradient>
+    <linearGradient id="paint4_linear_6_188" x1="6.5" y1="0" x2="6.5" y2="94" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8C39" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#FF8C39"></stop>
+    </linearGradient>
+    <g id="star">
+      <g filter="url(#filter0_f_6_188)">
+        <g filter="url(#filter1_f_6_188)">
+          <circle cx="6.5" cy="95.5" r="2.5" fill="url(#paint0_radial_6_188)"></circle>
+        </g>
+        <circle cx="6.5" cy="95.5" r="2.5" fill="url(#paint1_radial_6_188)"></circle>
+        <rect x="6" y="70" width="1" height="24" fill="url(#paint2_linear_6_188)"></rect>
+      </g>
+      <g filter="url(#filter2_d_6_188)">
+        <circle cx="6.5" cy="95.5" r="2.5" fill="url(#paint3_radial_6_188)"></circle>
+        <rect x="6" width="1" height="94" fill="url(#paint4_linear_6_188)"></rect>
+      </g>
+
+      </g>
+
+  </defs>
+  <line y1="50.5" x2="1512" y2="50.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="95.5" x2="1512" y2="95.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="140.5" x2="1512" y2="140.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="185.5" x2="1512" y2="185.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="230.5" x2="1512" y2="230.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="275.5" x2="1512" y2="275.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="320.5" x2="1512" y2="320.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="365.5" x2="1512" y2="365.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="410.5" x2="1512" y2="410.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="455.5" x2="1512" y2="455.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="500.5" x2="1512" y2="500.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="545.5" x2="1512" y2="545.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="590.5" x2="1512" y2="590.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="635.5" x2="1512" y2="635.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line y1="680.5" x2="1512" y2="680.5" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="0.5" y1="2.17914e-08" x2="0.49997" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="45.5" y1="2.17914e-08" x2="45.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="90.5" y1="2.17914e-08" x2="90.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="135.5" y1="2.17914e-08" x2="135.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="180.5" y1="2.17914e-08" x2="180.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="225.5" y1="2.17914e-08" x2="225.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="270.5" y1="2.11891e-08" x2="270.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="315.5" y1="1.97263e-08" x2="315.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="360.5" y1="1.97263e-08" x2="360.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="405.5" y1="1.97263e-08" x2="405.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="450.5" y1="1.97263e-08" x2="450.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="495.5" y1="1.97263e-08" x2="495.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="540.5" y1="1.97263e-08" x2="540.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="585.5" y1="1.97263e-08" x2="585.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="630.501" y1="1.97263e-08" x2="630.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="675.501" y1="1.97263e-08" x2="675.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="720.501" y1="1.97263e-08" x2="720.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="765.501" y1="1.97263e-08" x2="765.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="810.501" y1="1.97263e-08" x2="810.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="855.501" y1="1.97263e-08" x2="855.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="900.501" y1="1.97263e-08" x2="900.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="945.501" y1="1.97263e-08" x2="945.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="990.501" y1="1.97263e-08" x2="990.501" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1035.5" y1="1.97263e-08" x2="1035.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1080.5" y1="1.97263e-08" x2="1080.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1125.5" y1="1.97263e-08" x2="1125.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1170.5" y1="1.97263e-08" x2="1170.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1215.5" y1="1.97263e-08" x2="1215.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1260.5" y1="1.97263e-08" x2="1260.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1305.5" y1="1.97263e-08" x2="1305.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1350.5" y1="1.97263e-08" x2="1350.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1395.5" y1="1.97263e-08" x2="1395.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1440.5" y1="1.97263e-08" x2="1440.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+  <line x1="1485.5" y1="1.97263e-08" x2="1485.5" y2="690" stroke="#F2F2F2" stroke-opacity="0.05"></line>
+</svg>

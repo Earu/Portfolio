@@ -23,8 +23,12 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 		url: p.relevantUrl,
 		timelineContent: <div>
 			<div style={{ marginBottom: 20, pointerEvents: "none" }}>{p.description}</div>
-			<div style={{ zIndex: 100, position: "relative" }}>
-				<Techs techs={p.techs ?? []} size={25} showTitle={false} />
+			<div className="technologies">
+				{(p.techs ?? []).map((tech, index) => (
+					<span key={index} onClick={() => window.open(tech.url, "_blank")}>
+						{tech.name}
+					</span>
+				))}
 			</div>
 		</div>,
 		media: {
@@ -53,7 +57,6 @@ export default function ProjectTimeline(props: { projects: Array<Project> }): JS
 		classNames={{
 			card: "timeline-card",
 			cardTitle: "timeline-card-title",
-			cardText: "timeline-card-text",
 		}}
 	/>
 }

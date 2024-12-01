@@ -1,6 +1,6 @@
 section {
 	margin: 0 auto;
-	margin-top: 5vh;
+	margin-top: 8vh;
 	color: white;
 	max-width: 90%;
 }
@@ -9,14 +9,27 @@ section:first-of-type {
 	margin-top: 0;
 }
 
-section>h2 {
+section > h2 {
 	color: white;
 	text-align: center;
-	background: black;
+	background: linear-gradient(145deg, rgba(18, 18, 18, 0.95) 0%, rgba(28, 28, 28, 0.95) 100%);
 	margin: 0;
-	border: 1px solid rgb(36, 36, 36);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	font-family: "HomeVideo";
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 20px;
+	font-size: 2em;
+	position: relative;
+	overflow: hidden;
+	backdrop-filter: blur(10px);
+}
+
+section > h2::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 25%;
+	width: 50%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #4CAF50, transparent);
 }
 
