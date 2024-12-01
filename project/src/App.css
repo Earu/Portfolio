@@ -139,6 +139,19 @@ body {
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
     letter-spacing: 0.5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.hero-main h2 .typing {
+    border-right: 2px solid #4CAF50;
+    animation: blinkCursor 0.8s step-end infinite;
+    color: #4CAF50;
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: #4CAF50 }
 }
 
 .social-proof {
@@ -270,6 +283,7 @@ body {
     .hero-main h2 {
         font-size: 1.2em;
         margin-bottom: 30px;
+        white-space: normal;
     }
 
     .social-proof {
@@ -602,5 +616,12 @@ footer::before {
         padding: 40px 20px;
         align-items: center;
         text-align: center;
+    }
+}
+
+/* Add this new media query */
+@media only screen and (max-height: 800px) {
+    .social-proof {
+        display: none;
     }
 }

@@ -9,7 +9,7 @@ export default function ServiceCard(props: {
 }): JSX.Element {
   return <div className="service-card">
     <div className="card-header">
-      <img src={props.image} alt={props.alt}/>
+      <img src={props.image} alt={props.alt} loading="lazy"/>
       <h3>{props.tagline}</h3>
     </div>
     

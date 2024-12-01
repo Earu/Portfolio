@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ServiceCard from './Components/ServiceCard';
 import ServiceCardRow from './Components/ServiceCardRow';
@@ -13,6 +13,78 @@ import FooterColumn from './Components/FooterColumn';
 import ProjectTimeline from './Components/ProjectTimeline';
 import i18n from './i18n';
 import Techs from './Components/Techs';
+import SocialProfiles from './Components/SocialProfiles';
+
+const AnimatedSubtitle: React.FC = () => {
+	const { t } = useTranslation();
+	const initText = t("HEADER_HERO_SUBTITLE");
+	const [displayText, setDisplayText] = useState(initText);
+	const [isDeleting, setIsDeleting] = useState(false);
+	const [loopNum, setLoopNum] = useState(0);
+	const [isAnimating, setIsAnimating] = useState(false);
+	
+	const technologies = [
+		"MICROSOFT TECHNOLOGIES",
+		"MICROSOFT AZURE",
+		"OFFICE 365",
+		"MACHINE LEARNING & AI",
+		"ARTIFICIAL INTELLIGENCE",
+		"CLOUD COMPUTING & SCALING",
+		"AZURE DEVOPS & CI/CD",
+	];
+	
+	const baseText = t("HEADER_HERO_SUBTITLE_BASE");
+	const period = 3000;
+	const deletingSpeed = 75;
+	const typingSpeed = 150;
+
+	// Set initial text immediately
+	useEffect(() => {
+		setDisplayText(baseText + " " + technologies[0]);
+	}, [baseText]);
+
+	// Start animation after page load
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsAnimating(true);
+			setIsDeleting(true);
+		}, 10000); // Wait 10 seconds after load before starting animation
+
+		return () => clearTimeout(timer);
+	}, []);
+
+	useEffect(() => {
+		if (!isAnimating) return;
+
+		let ticker = setInterval(() => {
+			const i = loopNum % technologies.length;
+			const fullText = baseText + " " + technologies[i];
+
+			if (isDeleting) {
+				if (displayText.length > baseText.length + 1) {
+					setDisplayText(fullText.substring(0, displayText.length - 1));
+				} else {
+					setIsDeleting(false);
+					setLoopNum(loopNum + 1);
+				}
+			} else {
+				setDisplayText(fullText.substring(0, displayText.length + 1));
+				if (displayText.length === fullText.length) {
+					setTimeout(() => setIsDeleting(true), period);
+				}
+			}
+		}, isDeleting ? deletingSpeed : typingSpeed);
+
+		return () => clearInterval(ticker);
+	}, [displayText, isDeleting, loopNum, baseText, isAnimating]);
+
+	return (
+		<h2>
+			{displayText}
+			<span className="typing"></span>
+		</h2>
+	);
+};
 
 export default function App() {
 	const { t } = useTranslation();
@@ -31,7 +103,7 @@ export default function App() {
 				<div className="hero-content">
 					<div className="hero-main">
 						<h1>{t("HEADER_HERO_TITLE")}</h1>
-						<h2>{t("HEADER_HERO_SUBTITLE")}</h2>
+						<AnimatedSubtitle />
 						<div className="social-proof">
 							{(t("HEADER_HERO_PROOFS", { returnObjects: true }) as string[]).map((proof, index) => (
 								<span key={index}>{proof}</span>
@@ -85,6 +157,9 @@ export default function App() {
 					{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
 				]} size={Math.min(100, window.innerWidth / 7 / 2)} showTitle={window.innerWidth > 600} />
 			</Section>
+			<section>
+				<SocialProfiles />
+			</section>
 			<Section id='about-me' title={t("ABOUT_ME_TITLE")}>
 				<div className="about-me-content">
 					<div>
@@ -231,6 +306,23 @@ export default function App() {
 							{ name: "Xamarin", image: "/img/xamarin_logo.svg", url: "https://learn.microsoft.com/en-us/previous-versions/xamarin/get-started/what-is-xamarin" },
 						]
 					},
+					{
+						title: t("PROJECTS_7_TITLE"),
+						company: "CHANEL",
+						relevantUrl: "https://chanel.com/",
+						description: t("PROJECTS_7_DESCRIPTION"),
+						image: '/img/logo_chanel.svg',
+						alt: 'CHANEL',
+						startDate: new Date(2024, 10, 27),
+						endDate: new Date(2025, 1, 31),
+						techs: [
+							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+							{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+						]
+					}
 				]} />
 			</Section>
 			<Section id='schedule' title={t("SCHEDULE_TITLE")}>

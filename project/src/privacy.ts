@@ -10,6 +10,9 @@ type PortfolioVariables = {
     MEETING_URL_FR: string;
     HOTJAR_SITE_ID: string;
     GA_SITE_ID: string;
+    UPWORK_URL: string;
+    MALT_URL: string;
+    WEBSITE_URL: string;
 };
 
 function tryGetEnvVar(name: string, fallback: string): string {
@@ -27,13 +30,15 @@ if (!globalThis.hasOwnProperty("PORTFOLIO")) {
     const privacyName = tryGetEnvVar("PORTFOLIO_PRIVACY_NAME", "John");
 	const privacyFamilyName = tryGetEnvVar("PORTFOLIO_PRIVACY_FAMILY_NAME", "DOE");
 	const privacyLinkedinUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_LINKEDIN_URL", "https://www.linkedin.com/in/johndoe");
+	const privacyUpworkUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_UPWORK_URL", "");
+	const privacyMaltUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_MALT_URL", "");
 	const privacyGhUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_GITHUB_URL", "https://github.com/John/Doe");
 	const privacyMail = tryGetEnvVar("PORTFOLIO_PRIVACY_MAIL", "john.doe@gmail.com");
 	const meetingUrl = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL", "");
 	const meetingUrlFr = tryGetEnvVar("PORTFOLIO_PRIVACY_MEETING_URL_FR", "");
     const hotjarSiteId = tryGetEnvVar("HOTJAR_SITE_ID", "");
     const gaSiteId = tryGetEnvVar("GA_SITE_ID", "");
-
+    const websiteUrl = tryGetEnvVar("WEBSITE_URL", "https://your-domain.com");
     globalContext.PORTFOLIO = {
         NAME: privacyName,
         FAMILY_NAME: privacyFamilyName,
@@ -44,6 +49,8 @@ if (!globalThis.hasOwnProperty("PORTFOLIO")) {
         MEETING_URL_FR: meetingUrlFr,
         HOTJAR_SITE_ID: hotjarSiteId,
         GA_SITE_ID: gaSiteId,
+        UPWORK_URL: privacyUpworkUrl,
+        MALT_URL: privacyMaltUrl,
     };
 }
 

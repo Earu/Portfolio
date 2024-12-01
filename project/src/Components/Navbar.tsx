@@ -18,7 +18,7 @@ export default function Navbar(): JSX.Element {
 	return <nav onClick={onBurger}>
 		<img src="/img/burger_menu.webp" alt="menu"/>
 		<SlantedBox href="/">
-			{getPrivacyVariable("NAME")} {getPrivacyVariable("FAMILY_NAME")}
+			{getPrivacyVariable("NAME")} {getPrivacyVariable("FAMILY_NAME")[0].toUpperCase()}.
 		</SlantedBox>
 
 		<a href="#services">{t("NAV_SERVICES_LABEL")}</a>

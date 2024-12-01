@@ -1,8 +1,8 @@
 {
 	"en": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]], Software Engineer",
-			"HTML_META": "Hi, I'm [[PRIVACY_NAME]], a French Software Engineer & Software Architect and I can help your business reach new frontiers! I specialize in Microsoft technologies (.NET, Typescript), cloud (Azure), performance optimization, and full-stack development. (React, Python, AI)",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Azure Cloud Architect & AI Integration Expert",
+			"HTML_META": "Expert Azure Cloud Architect and AI Integration Specialist with proven experience in enterprise-scale solutions. Specializing in .NET development, machine learning integration, and cloud optimization for businesses. Transform your company's digital infrastructure with scalable Microsoft Azure solutions and AI integration.",
 
 			"CONSOLE_FUN_HEADER": "Hold up!",
 			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
@@ -15,6 +15,7 @@
 
 			"HEADER_HERO_TITLE": "Enterprise Cloud & AI Solutions",
 			"HEADER_HERO_SUBTITLE": "Helping companies scale with Microsoft technologies",
+			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES SCALE WITH",
 			"HEADER_HERO_PROOFS": [
 				"Cloud Solutions for 2000+ Business Units",
 				"Automated Processing for 90,000+ Users",
@@ -76,6 +77,9 @@
 			"PROJECTS_6_TITLE": "Mobile App for Technicians",
 			"PROJECTS_6_DESCRIPTION": "Guiding the technicians through their days with schedules, equipment inventories, meetings managed via a mobile app.",
 
+			"PROJECTS_7_TITLE": "On-Going Contract",
+			"PROJECTS_7_DESCRIPTION": "Collaboration with a major French luxury brand.",
+
 			"SCHEDULE_TITLE": "Schedule a Meeting",
 			"SCHEDULE_HERO_TEXT": "Ready for the next steps of your projects?",
 			"SCHEDULE_HERO_CTA": "SCHEDULE A MEETING",
@@ -84,7 +88,9 @@
 			"FOOTER_COLUMN_1_TITLE": "Links",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Meeting",
-			"TECH_STACK_TITLE": "My Tech Stack"
+			"TECH_STACK_TITLE": "My Tech Stack",
+			"SOCIAL_PROFILES_TITLE": "Find me on",
+			"SOCIAL_PROFILES_DESCRIPTION": "Connect with me across professional platforms"
 		}
 	},
 	"fr": {
@@ -103,6 +109,7 @@
 
 			"HEADER_HERO_TITLE": "Solutions Cloud & IA pour Entreprises",
 			"HEADER_HERO_SUBTITLE": "Aidez votre entreprise à évoluer avec les technologies Microsoft",
+			"HEADER_HERO_SUBTITLE_BASE": "FAITES GRANDIR VOTRE ENTREPRISE AVEC",
 			"HEADER_HERO_PROOFS": [
 				"Solutions Cloud pour 2000+ Business Units",
 				"Traitement Automatisé pour 90 000+ Utilisateurs",
@@ -140,7 +147,7 @@
 
 			"ABOUT_ME_TITLE": "Expertise",
 			"ABOUT_ME_PART_1_TITLE": "Ingénieur logiciel & Architecte",
-			"ABOUT_ME_PART_1_CONTENT": "Je me spécialise dans les technologies Microsoft, solutions cloud, l'optimisation des performances et le développement full-stack. Mon parcours professionnel m'a conduit de la création de petits projets pour des amis et des communautés en ligne à l'architecture de systèmes pour de grandes entreprises.",
+			"ABOUT_ME_PART_1_CONTENT": "Je me spécialise dans les technologies Microsoft, solutions cloud, l'optimisation des performances et le développement full-stack. Mon parcours professionnel m'a conduit de la cration de petits projets pour des amis et des communautés en ligne à l'architecture de systèmes pour de grandes entreprises.",
 			"ABOUT_ME_PART_2_TITLE": "Fondations techniques",
 			"ABOUT_ME_PART_2_CONTENT": "J'ai commencé à apprendre la programmation à 15 ans à travers les jeux et le modding, notamment en <0>Lua</0>, <1> C++</1> et <2> C</2>. Cette expérience précoce a jeté les bases de mon expertise en <3>.NET </3>(<4>C#</4>), que j'ai ensuite développée en créant des logiciels pour les 90 000 employés de <5>VINCI</5> dans la division <6>Energies</6>.",
 			"ABOUT_ME_PART_3_TITLE": "Expérience en startup & Succès en entreprise",
@@ -163,6 +170,9 @@
 			"PROJECTS_6_TITLE": "Application mobile pour techniciens",
 			"PROJECTS_6_DESCRIPTION": "Guider les techniciens tout au long de leurs journées avec des horaires, des inventaires d'équipements et des réunions gérées via une application mobile.",
 
+			"PROJECTS_7_TITLE": "Contrat en cours",
+			"PROJECTS_7_DESCRIPTION": "Collaboration avec une grande marque de luxe française.",
+
 			"SCHEDULE_TITLE": "Prendre rendez-vous",
 			"SCHEDULE_HERO_TEXT": "Prêt à avancer dans vos projets?",
 			"SCHEDULE_HERO_CTA": "DISCUTONS DE VOS BESOINS",
@@ -171,7 +181,9 @@
 			"FOOTER_COLUMN_1_TITLE": "Liens",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Rendez-vous",
-			"TECH_STACK_TITLE": "Mon Tech Stack"
+			"TECH_STACK_TITLE": "Mon Tech Stack",
+			"SOCIAL_PROFILES_TITLE": "Retrouvez-moi sur",
+			"SOCIAL_PROFILES_DESCRIPTION": "Contactez-moi sur les plateformes professionnelles"
 		}
 	}
 }

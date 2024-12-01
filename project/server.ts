@@ -42,6 +42,8 @@ function injectPrivacyVariables(lang: string, html: string): string {
 	const privacyName = process.env.PORTFOLIO_PRIVACY_NAME ?? "John";
 	const privacyFamilyName = process.env.PORTFOLIO_PRIVACY_FAMILY_NAME ?? "DOE";
 	const privacyLinkedinUrl = process.env.PORTFOLIO_PRIVACY_LINKEDIN_URL ?? "https://www.linkedin.com/in/johndoe";
+	const privacyUpworkUrl = process.env.PORTFOLIO_PRIVACY_UPWORK_URL ?? "";
+	const privacyMaltUrl = process.env.PORTFOLIO_PRIVACY_MALT_URL ?? "";
 	const privacyGhUrl = process.env.PORTFOLIO_PRIVACY_GITHUB_URL ?? "https://github.com/John/Doe";
 	const privacyMail = process.env.PORTFOLIO_PRIVACY_MAIL ?? "john.doe@gmail.com";
 	const meetingUrl = process.env.PORTFOLIO_PRIVACY_MEETING_URL ?? "";
@@ -49,17 +51,21 @@ function injectPrivacyVariables(lang: string, html: string): string {
 	const hotjarSiteId = process.env.HOTJAR_SITE_ID ?? "";
 	const gaSiteId = process.env.GA_SITE_ID ?? "";
 	const langResources = lang === "fr" ? resources.fr.translation : resources.en.translation;
+	const websiteUrl = process.env.WEBSITE_URL ?? "https://your-domain.com";
 
 	return html
 		.replace("[[LANG]]", lang)
 		.replace("[[TITLE]]", langResources.HTML_TITLE)
 		.replace("[[META]]", langResources.HTML_META)
-		.replaceAll("[[PRIVACY_NAME]]", privacyName)
+		.replace("[[WEBSITE_URL]]", websiteUrl)
+		.replace("[[PRIVACY_NAME]]", privacyName)
 		.replace("[[PRIVACY_VARIABLES]]",
 			`<script>var PORTFOLIO = {
 				NAME: '${privacyName}',
 				FAMILY_NAME: '${privacyFamilyName}',
 				LINKEDIN_URL: '${privacyLinkedinUrl}',
+				UPWORK_URL: '${privacyUpworkUrl}',
+				MALT_URL: '${privacyMaltUrl}',
 				GITHUB_URL: '${privacyGhUrl}',
 				MAIL: '${privacyMail}',
 				MEETING_URL: '${meetingUrl}',
