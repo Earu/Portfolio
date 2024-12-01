@@ -57,6 +57,9 @@ function injectPrivacyVariables(lang: string, html: string): string {
 		.replaceAll("[[LANG]]", lang)
 		.replaceAll("[[TITLE]]", langResources.HTML_TITLE)
 		.replaceAll("[[META]]", langResources.HTML_META)
+		.replaceAll("[[PRIVACY_LINKEDIN_URL]]", privacyLinkedinUrl)
+		.replaceAll("[[PRIVACY_UPWORK_URL]]", privacyUpworkUrl)
+		.replaceAll("[[PRIVACY_MALT_URL]]", privacyMaltUrl)
 		.replaceAll("[[WEBSITE_URL]]", websiteUrl)
 		.replaceAll("[[PRIVACY_NAME]]", privacyName)
 		.replaceAll("[[PRIVACY_VARIABLES]]",
