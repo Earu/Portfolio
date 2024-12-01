@@ -97,5 +97,6 @@
     .profile-card {
         width: 80%;
         max-width: 300px;
+        flex: none;
     }
 }
