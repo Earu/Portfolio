@@ -54,12 +54,12 @@ function injectPrivacyVariables(lang: string, html: string): string {
 	const websiteUrl = process.env.WEBSITE_URL ?? "https://your-domain.com";
 
 	return html
-		.replace("[[LANG]]", lang)
-		.replace("[[TITLE]]", langResources.HTML_TITLE)
-		.replace("[[META]]", langResources.HTML_META)
-		.replace("[[WEBSITE_URL]]", websiteUrl)
-		.replace("[[PRIVACY_NAME]]", privacyName)
-		.replace("[[PRIVACY_VARIABLES]]",
+		.replaceAll("[[LANG]]", lang)
+		.replaceAll("[[TITLE]]", langResources.HTML_TITLE)
+		.replaceAll("[[META]]", langResources.HTML_META)
+		.replaceAll("[[WEBSITE_URL]]", websiteUrl)
+		.replaceAll("[[PRIVACY_NAME]]", privacyName)
+		.replaceAll("[[PRIVACY_VARIABLES]]",
 			`<script>var PORTFOLIO = {
 				NAME: '${privacyName}',
 				FAMILY_NAME: '${privacyFamilyName}',
