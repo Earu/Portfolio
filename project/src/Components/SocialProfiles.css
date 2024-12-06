@@ -1,7 +1,101 @@
 .social-profiles {
-    padding: 40px 0;
-    padding-bottom: 100px;
+    padding-top: calc(40px + 12vh);
+    padding-bottom: calc(100px + 12vh);
+    margin-top: -8vh;
+    margin-bottom: -8vh;
     text-align: center;
+    position: relative;
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Gradient fades */
+.social-profiles::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(76, 175, 80, 0.15) 0%,
+            rgba(76, 175, 80, 0.1) 25%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.6) 75%,
+            rgba(0, 0, 0, 0.8) 85%
+        );
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Grid with animation */
+.social-profiles::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        /* Horizontal lines */
+        repeating-linear-gradient(
+            to right,
+            rgba(76, 175, 80, 0.1) 0px,
+            rgba(76, 175, 80, 0.1) 1px,
+            transparent 1px,
+            transparent 30px
+        ),
+        /* Vertical lines */
+        repeating-linear-gradient(
+            to bottom,
+            rgba(76, 175, 80, 0.1) 0px,
+            rgba(76, 175, 80, 0.1) 1px,
+            transparent 1px,
+            transparent 30px
+        );
+    /* Perspective effect */
+    transform: perspective(500px) rotateX(45deg);
+    transform-origin: center center;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: convergeGrid 15s linear infinite;
+}
+
+/* Static mask overlay */
+.social-profiles > .mask {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0) 80%,
+        rgba(0, 0, 0, 1) 100%
+    ),
+    linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0) 80%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes convergeGrid {
+    0% {
+        transform: perspective(500px) rotateX(45deg) translateY(-100px);
+    }
+    100% {
+        transform: perspective(500px) rotateX(45deg) translateY(100px);
+    }
+}
+
+/* Update existing styles to work with new background */
+.social-profiles h3,
+.social-profiles .description,
+.profile-cards {
+    position: relative;
+    z-index: 1;
 }
 
 .social-profiles h3 {

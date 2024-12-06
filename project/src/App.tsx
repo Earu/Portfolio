@@ -22,7 +22,7 @@ const AnimatedSubtitle: React.FC = () => {
 	const [isDeleting, setIsDeleting] = useState(false);
 	const [loopNum, setLoopNum] = useState(0);
 	const [isAnimating, setIsAnimating] = useState(false);
-	
+
 	const technologies = [
 		"MICROSOFT TECHNOLOGIES",
 		"MICROSOFT AZURE",
@@ -32,7 +32,7 @@ const AnimatedSubtitle: React.FC = () => {
 		"CLOUD COMPUTING & SCALING",
 		"AZURE DEVOPS & CI/CD",
 	];
-	
+
 	const baseText = t("HEADER_HERO_SUBTITLE_BASE");
 	const period = 3000;
 	const deletingSpeed = 75;
@@ -325,18 +325,20 @@ export default function App() {
 					}
 				]} />
 			</Section>
-			<Section id='schedule' title={t("SCHEDULE_TITLE")}>
+			<section id='schedule' className='schedule'>
 				<div>
 					<div className='tagline'>{t("SCHEDULE_HERO_TEXT")}</div>
 					<button onClick={onSchedule} className='schedule-cta'>{t("SCHEDULE_HERO_CTA")}</button>
 
 					<Clock />
 				</div>
-			</Section>
+			</section>
 			<footer>
 				<FooterColumn title={t("FOOTER_COLUMN_1_TITLE")} list={[
 					["GitHub", getPrivacyVariable("GITHUB_URL")],
-					["Linkedin", getPrivacyVariable("LINKEDIN_URL")]
+					["Linkedin", getPrivacyVariable("LINKEDIN_URL")],
+					["Malt", getPrivacyVariable("MALT_URL")],
+					["Upwork", getPrivacyVariable("UPWORK_URL")]
 				]} />
 				<FooterColumn title={t("FOOTER_COLUMN_2_TITLE")} list={[
 					["Mail", `mailto:${getPrivacyVariable("MAIL")}`],

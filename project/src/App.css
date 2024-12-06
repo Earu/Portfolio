@@ -55,14 +55,16 @@ body {
     left: -50%;
     width: 200vw;
     height: 200vh;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 30px 30px;
-    animation: moveGrid 15s linear infinite;
+    background-size: 30px 30px, 30px 30px, 150px 150px;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.15;
+    animation: moveGrid 15s linear infinite;
 }
 
 @keyframes moveGrid {
@@ -89,7 +91,15 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%),
+        linear-gradient(to top, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%),
+        radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.3) 0%,
+            transparent 35%,
+            rgba(0, 0, 0, 0.4) 75%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
 }
 
 .hero-content {
@@ -160,10 +170,9 @@ body {
     gap: 20px;
     margin-top: 40px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
 }
 
 .social-proof::before {
@@ -186,9 +195,8 @@ body {
     padding: 20px;
     text-align: left;
     transition: all 0.3s ease;
-    border-radius: 12px;
-    background: rgba(76, 175, 80, 0.05);
-    border: 1px solid rgba(76, 175, 80, 0.1);
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
 }
 
@@ -196,7 +204,6 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 12px;
     padding: 1px;
     background: linear-gradient(145deg, rgba(76, 175, 80, 0.3), transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -206,9 +213,9 @@ body {
 }
 
 .social-proof span:hover {
-    background: rgba(76, 175, 80, 0.1);
+    border-color: rgba(76, 175, 80, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cta-btns {
@@ -223,7 +230,6 @@ body {
     font-size: 1em;
     text-decoration: none;
     padding: 18px 36px;
-    border-radius: 8px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -233,9 +239,10 @@ body {
 
 .primary-cta {
     color: white;
-    background: linear-gradient(145deg, #4CAF50 0%, #45a049 100%);
-    border: none;
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(145deg, rgba(76, 175, 80, 0.8) 0%, rgba(69, 160, 73, 0.8) 100%);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
 }
 
 .primary-cta::before {
@@ -254,7 +261,9 @@ body {
 
 .primary-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(145deg, rgba(76, 175, 80, 0.9) 0%, rgba(69, 160, 73, 0.9) 100%);
+    border-color: rgba(76, 175, 80, 0.5);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
 }
 
 .primary-cta:hover::before {
@@ -262,16 +271,17 @@ body {
 }
 
 .secondary-cta {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
 }
 
 .secondary-cta:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.55) 0%, rgba(28, 28, 28, 0.55) 100%);
+    border-color: rgba(76, 175, 80, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (max-width: 768px) {
@@ -474,22 +484,10 @@ body {
 .schedule {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
+    background: none;
     backdrop-filter: blur(10px);
     width: 100vw;
     max-width: none;
-}
-
-/* Modern grid pattern background */
-.schedule::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
 }
 
 .schedule > div {
@@ -583,9 +581,6 @@ body {
 }
 
 footer {
-    background: linear-gradient(145deg, rgba(18, 18, 18, 0.95) 0%, rgba(28, 28, 28, 0.95) 100%);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: row;
     gap: 80px;
@@ -593,19 +588,30 @@ footer {
     padding: 60px 20px;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Add subtle grid pattern */
-footer::before {
+/* Add hover effect to footer links */
+footer a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+footer a::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
-    pointer-events: none;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
 }
 
 /* Add responsive adjustments */

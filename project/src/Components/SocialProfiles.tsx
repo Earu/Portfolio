@@ -5,7 +5,7 @@ import './SocialProfiles.css';
 
 const SocialProfiles: React.FC = () => {
     const { t } = useTranslation();
-    
+
     const profiles = [
         {
             name: "LinkedIn",
@@ -26,15 +26,16 @@ const SocialProfiles: React.FC = () => {
 
     return (
         <div className="social-profiles">
+            <div className="mask"></div>
             <h3>{t('SOCIAL_PROFILES_TITLE')}</h3>
             <p className="description">{t('SOCIAL_PROFILES_DESCRIPTION')}</p>
             <div className="profile-cards">
                 {profiles.map((profile, index) => (
-                    <a 
-                        key={index} 
-                        href={profile.url} 
-                        className="profile-card" 
-                        target="_blank" 
+                    <a
+                        key={index}
+                        href={profile.url}
+                        className="profile-card"
+                        target="_blank"
                         rel="noopener noreferrer"
                     >
                         <img src={profile.image} alt={profile.name} />
