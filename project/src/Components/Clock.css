@@ -9,7 +9,6 @@
 	justify-content: center;
 	gap: 12px;
 	width: auto;
-	border-radius: 8px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	margin-top: 40px;
 	transition: all 0.3s ease;
