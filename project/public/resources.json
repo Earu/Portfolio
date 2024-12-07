@@ -90,7 +90,10 @@
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Meeting",
 			"TECH_STACK_TITLE": "My Tech Stack",
 			"SOCIAL_PROFILES_TITLE": "Find me on",
-			"SOCIAL_PROFILES_DESCRIPTION": "Connect with me across professional platforms"
+			"SOCIAL_PROFILES_DESCRIPTION": "Connect with me across professional platforms",
+
+			"CHAT_INPUT_PLACEHOLDER": "Type your message...",
+			"CHAT_SEND_BUTTON": "Send"
 		}
 	},
 	"fr": {
@@ -183,7 +186,10 @@
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Rendez-vous",
 			"TECH_STACK_TITLE": "Mon Tech Stack",
 			"SOCIAL_PROFILES_TITLE": "Retrouvez-moi sur",
-			"SOCIAL_PROFILES_DESCRIPTION": "Contactez-moi sur les plateformes professionnelles"
+			"SOCIAL_PROFILES_DESCRIPTION": "Contactez-moi sur les plateformes professionnelles",
+
+			"CHAT_INPUT_PLACEHOLDER": "Écrivez votre message...",
+			"CHAT_SEND_BUTTON": "Envoyer"
 		}
 	}
 }

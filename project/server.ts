@@ -8,6 +8,8 @@ import serveStatic from "serve-static";
 import { createServer as createViteServer } from "vite";
 import { fileURLToPath } from "url";
 import crypto from "crypto";
+import { getLlama, LlamaChatSession, LlamaContext, LlamaModel } from "node-llama-cpp";
+import { v4 as uuidv4 } from 'uuid';
 
 // slight polyfills
 (global as any).window = {};
@@ -22,6 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const resolve = (p: string) => path.resolve(__dirname, p);
 const assetpath = resolve("public");
+const modelsPath = resolve("models");
 const resources = JSON.parse(readFileSync(path.join(assetpath, "resources.json")).toString());
 const getStyleSheets = async () => {
 	try {
@@ -38,20 +41,21 @@ const getStyleSheets = async () => {
 	}
 };
 
+const privacyName = process.env.PORTFOLIO_PRIVACY_NAME ?? "John";
+const privacyFamilyName = process.env.PORTFOLIO_PRIVACY_FAMILY_NAME ?? "DOE";
+const privacyLinkedinUrl = process.env.PORTFOLIO_PRIVACY_LINKEDIN_URL ?? "https://www.linkedin.com/in/johndoe";
+const privacyUpworkUrl = process.env.PORTFOLIO_PRIVACY_UPWORK_URL ?? "";
+const privacyMaltUrl = process.env.PORTFOLIO_PRIVACY_MALT_URL ?? "";
+const privacyGhUrl = process.env.PORTFOLIO_PRIVACY_GITHUB_URL ?? "https://github.com/John/Doe";
+const privacyMail = process.env.PORTFOLIO_PRIVACY_MAIL ?? "john.doe@gmail.com";
+const meetingUrl = process.env.PORTFOLIO_PRIVACY_MEETING_URL ?? "";
+const meetingUrlFr = process.env.PORTFOLIO_PRIVACY_MEETING_URL_FR ?? "";
+const hotjarSiteId = process.env.HOTJAR_SITE_ID ?? "";
+const gaSiteId = process.env.GA_SITE_ID ?? "";
+const websiteUrl = process.env.WEBSITE_URL ?? "https://your-domain.com";
+
 function injectPrivacyVariables(lang: string, html: string): string {
-	const privacyName = process.env.PORTFOLIO_PRIVACY_NAME ?? "John";
-	const privacyFamilyName = process.env.PORTFOLIO_PRIVACY_FAMILY_NAME ?? "DOE";
-	const privacyLinkedinUrl = process.env.PORTFOLIO_PRIVACY_LINKEDIN_URL ?? "https://www.linkedin.com/in/johndoe";
-	const privacyUpworkUrl = process.env.PORTFOLIO_PRIVACY_UPWORK_URL ?? "";
-	const privacyMaltUrl = process.env.PORTFOLIO_PRIVACY_MALT_URL ?? "";
-	const privacyGhUrl = process.env.PORTFOLIO_PRIVACY_GITHUB_URL ?? "https://github.com/John/Doe";
-	const privacyMail = process.env.PORTFOLIO_PRIVACY_MAIL ?? "john.doe@gmail.com";
-	const meetingUrl = process.env.PORTFOLIO_PRIVACY_MEETING_URL ?? "";
-	const meetingUrlFr = process.env.PORTFOLIO_PRIVACY_MEETING_URL_FR ?? "";
-	const hotjarSiteId = process.env.HOTJAR_SITE_ID ?? "";
-	const gaSiteId = process.env.GA_SITE_ID ?? "";
 	const langResources = lang === "fr" ? resources.fr.translation : resources.en.translation;
-	const websiteUrl = process.env.WEBSITE_URL ?? "https://your-domain.com";
 
 	return html
 		.replaceAll("[[LANG]]", lang)
@@ -76,6 +80,94 @@ function injectPrivacyVariables(lang: string, html: string): string {
 				HOTJAR_SITE_ID: '${hotjarSiteId}',
 				GA_SITE_ID: '${gaSiteId}'
 			}</script>`);
+}
+
+const llama = await getLlama();
+const model = await llama.loadModel({
+    modelPath: path.join(modelsPath, "meta-llama-3.1-8b-instruct-q4_k_m.gguf"),
+    gpuLayers: 0  // Force CPU-only mode
+});
+
+// Generate base prompt from resources
+const basePrompt = `You are an AI assistant for ${privacyName}, a Software Engineer & Cloud Architect. Be helpful, direct, and professional. Keep responses under 3 sentences unless asked for more detail.
+
+Core Knowledge:
+- Azure Cloud Architecture & AI Integration
+- Full-Stack Development (.NET, React, Python)
+- Enterprise Solutions (15+ Projects, 2000+ Business Units)
+- Microsoft Stack (SharePoint, Power Platform, Azure AD)
+
+Response Style:
+- Be clear and concise
+- Provide practical solutions
+- Use "${privacyName} can help with..." or "${privacyName} specializes in..."
+- For complex queries, suggest booking a consultation
+
+Important Rules:
+- Never invent or assume facts about ${privacyName}'s experience
+- If unsure about specific details, recommend contacting ${privacyName} directly
+- Stick to the information provided above
+
+Remember: Keep responses brief and focused. For project specifics or pricing, recommend scheduling a meeting.`;
+
+// Add chat endpoint
+const chatSessions = new Map<string, LlamaChatSession>();
+
+// Cleanup old sessions periodically (optional)
+setInterval(() => {
+	const now = Date.now();
+	for (const [sessionId, session] of chatSessions.entries()) {
+		if (now - (session as any).lastAccessed > 30 * 60 * 1000) { // 30 minutes
+			chatSessions.delete(sessionId);
+		}
+	}
+}, 5 * 60 * 1000); // Check every 5 minutes
+
+function createChatEndpoint(app: express.Application) {
+	app.post('/api/chat', express.json(), async (req, res) => {
+		try {
+			const { message, sessionId } = req.body;
+
+			// Set headers for streaming
+			res.setHeader('Content-Type', 'text/event-stream');
+			res.setHeader('Cache-Control', 'no-cache');
+			res.setHeader('Connection', 'keep-alive');
+
+			let session: LlamaChatSession;
+			if (sessionId && chatSessions.has(sessionId)) {
+				session = chatSessions.get(sessionId)!;
+			} else {
+				const context = await model.createContext();
+				session = new LlamaChatSession({
+					contextSequence: context.getSequence(),
+					systemPrompt: basePrompt
+				});
+				const newSessionId = uuidv4();
+				chatSessions.set(newSessionId, session);
+				res.setHeader('X-Session-Id', newSessionId);
+			}
+
+			// Update last accessed time
+			(session as any).lastAccessed = Date.now();
+
+			// Stream response from Llama
+			const stream = await session.prompt(message, {
+				temperature: 0.7,
+				maxTokens: 800,
+				onToken: (chunk) => {
+					const text = model.detokenize(chunk);
+					res.write(`data: ${JSON.stringify({ chunk: text })}\n\n`);
+					// Force flush the response
+					if (res.flush) res.flush();
+				}
+			});
+
+			res.end();
+		} catch (error) {
+			console.error('Chat error:', error);
+			res.status(500).json({ error: 'Failed to process chat message' });
+		}
+	});
 }
 
 async function createServer(isProd = process.env.NODE_ENV === "production") {
@@ -130,8 +222,10 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 		}
 	}
 
+	createChatEndpoint(app);
 	app.get("/", async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
 	app.get("/fr", async (req: Request, res: Response, next: NextFunction) => processRequest("fr", req, res, next));
+	app.get("/en", async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
 	app.use(async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
 
 	const port = 8080;

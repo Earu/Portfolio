@@ -14,6 +14,7 @@ import ProjectTimeline from './Components/ProjectTimeline';
 import i18n from './i18n';
 import Techs from './Components/Techs';
 import SocialProfiles from './Components/SocialProfiles';
+import ChatWidget from './Components/ChatWidget';
 
 const AnimatedSubtitle: React.FC = () => {
 	const { t } = useTranslation();
@@ -345,6 +346,7 @@ export default function App() {
 					[t("FOOTER_COLUMN_2_MEETING_LABEL"), meetingUrl]
 				]} />
 			</footer>
+			<ChatWidget />
 		</div>
 	);
 }
