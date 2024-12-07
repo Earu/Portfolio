@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './ChatWidget.css';
 import { getPrivacyVariable } from '../privacy';
+import i18n from '../i18n';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -13,6 +14,7 @@ interface ChatState {
     messages: Message[];
     sessionId?: string;
     isLoading: boolean;
+    isInitializing?: boolean;
 }
 
 export default function ChatWidget(): JSX.Element {
@@ -20,9 +22,10 @@ export default function ChatWidget(): JSX.Element {
     const [state, setState] = useState<ChatState>({
         messages: [{
             role: 'assistant',
-            content: `Hi! I'm ${getPrivacyVariable("NAME")}'s AI assistant. Feel free to ask me anything about cloud architecture, AI integration, or my professional services.`
+            content: t('CHAT_INITIAL_MESSAGE', { name: getPrivacyVariable("NAME") })
         }],
-        isLoading: false
+        isLoading: false,
+        isInitializing: false
     });
     const [input, setInput] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -81,12 +84,15 @@ export default function ChatWidget(): JSX.Element {
 
         const userMessage = input.trim();
         setInput('');
+
+        // Set initializing state for first message
         setState(prev => ({
             ...prev,
             isLoading: true,
+            isInitializing: !prev.sessionId,
             messages: [...prev.messages,
                 { role: 'user', content: userMessage },
-                { role: 'assistant', content: '' } // Add empty assistant message immediately
+                { role: 'assistant', content: '' }
             ]
         }));
 
@@ -96,7 +102,8 @@ export default function ChatWidget(): JSX.Element {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: userMessage,
-                    sessionId: state.sessionId
+                    sessionId: state.sessionId,
+                    lang: i18n.language
                 }),
             });
 
@@ -143,11 +150,19 @@ export default function ChatWidget(): JSX.Element {
             }
 
             currentMessageRef.current = '';
-            setState(prev => ({ ...prev, isLoading: false }));
+            setState(prev => ({
+                ...prev,
+                isLoading: false,
+                isInitializing: false
+            }));
 
         } catch (error) {
             console.error('Chat error:', error);
-            setState(prev => ({ ...prev, isLoading: false }));
+            setState(prev => ({
+                ...prev,
+                isLoading: false,
+                isInitializing: false
+            }));
         }
     };
 
@@ -180,7 +195,14 @@ export default function ChatWidget(): JSX.Element {
                                     </React.Fragment>
                                 ))}
                                 {state.isLoading && i === state.messages.length - 1 && (
-                                    <span className="dot-typing"></span>
+                                    <>
+                                        <span className="dot-typing"></span>
+                                        {state.isInitializing && (
+                                            <div className="initializing-warning">
+                                                {t('CHAT_INITIALIZING_MESSAGE')}
+                                            </div>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         ))}

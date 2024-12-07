@@ -93,7 +93,9 @@
 			"SOCIAL_PROFILES_DESCRIPTION": "Connect with me across professional platforms",
 
 			"CHAT_INPUT_PLACEHOLDER": "Type your message...",
-			"CHAT_SEND_BUTTON": "Send"
+			"CHAT_SEND_BUTTON": "Send",
+			"CHAT_INITIAL_MESSAGE": "Hi! I'm {{name}}'s AI assistant. Feel free to ask me anything about cloud architecture, AI integration, or my professional services.",
+			"CHAT_INITIALIZING_MESSAGE": "First response may take a few moments as the AI initializes..."
 		}
 	},
 	"fr": {
@@ -189,7 +191,9 @@
 			"SOCIAL_PROFILES_DESCRIPTION": "Contactez-moi sur les plateformes professionnelles",
 
 			"CHAT_INPUT_PLACEHOLDER": "Écrivez votre message...",
-			"CHAT_SEND_BUTTON": "Envoyer"
+			"CHAT_SEND_BUTTON": "Envoyer",
+			"CHAT_INITIAL_MESSAGE": "Bonjour! Je suis l'assistant IA de {{name}}. N'hésitez pas à me poser des questions sur l'architecture cloud, l'intégration d'IA ou mes services professionnels.",
+			"CHAT_INITIALIZING_MESSAGE": "La première réponse peut prendre quelques instants pendant l'initialisation de l'IA..."
 		}
 	}
 }

@@ -85,11 +85,9 @@ function injectPrivacyVariables(lang: string, html: string): string {
 const llama = await getLlama();
 const model = await llama.loadModel({
     modelPath: path.join(modelsPath, "meta-llama-3.1-8b-instruct-q4_k_m.gguf"),
-    gpuLayers: 0  // Force CPU-only mode
 });
 
-// Generate base prompt from resources
-const basePrompt = `You are an AI assistant for ${privacyName}, a Software Engineer & Cloud Architect. Be helpful, direct, and professional. Keep responses under 3 sentences unless asked for more detail.
+const baseEnglishPrompt = `You are an AI assistant for ${privacyName}, a Software Engineer & Cloud Architect. Be helpful, direct, and professional. Keep responses under 3 sentences unless asked for more detail.
 
 Core Knowledge:
 - Azure Cloud Architecture & AI Integration
@@ -107,8 +105,31 @@ Important Rules:
 - Never invent or assume facts about ${privacyName}'s experience
 - If unsure about specific details, recommend contacting ${privacyName} directly
 - Stick to the information provided above
+- If the topics go beyond the professional sphere, answer that ${privacyName} is an expert in Cloud Architecture & AI
 
 Remember: Keep responses brief and focused. For project specifics or pricing, recommend scheduling a meeting.`;
+
+const baseFrenchPrompt = `Tu es l'assistant IA de ${privacyName}, Développeur Full-Stack & Architecte Cloud. Tu es là pour aider de manière directe et professionnelle. Tu gardes tes réponses concises sauf si on te demande plus de détails.
+
+Connaissances de base:
+- Architecture Cloud Azure & Intégration IA
+- Développement Full-Stack (.NET, React, Python)
+- Solutions Entreprise (15+ Projets, 2000+ Business Units)
+- Stack Microsoft (SharePoint, Power Platform, Azure AD)
+
+Style de réponse:
+- Être clair et concis
+- Fournir des solutions pratiques
+- Utiliser "${privacyName} peut vous aider avec..." ou "${privacyName} est spécialisé en..."
+- Pour les demandes complexes, suggérer un rendez-vous
+
+Règles importantes:
+- Ne jamais inventer ou supposer des faits sur l'expérience de ${privacyName}
+- En cas de doute, recommander de contacter ${privacyName} directement
+- S'en tenir aux informations fournies ci-dessus
+- Si les sujets sortent de la sphere professionnelle, répondre que ${privacyName} est un expert en Architecture Cloud & IA
+
+Important: Garder les réponses brèves et concentrées. Pour les détails de projet ou les tarifs, recommander de planifier une réunion.`;
 
 // Add chat endpoint
 const chatSessions = new Map<string, LlamaChatSession>();
@@ -126,7 +147,7 @@ setInterval(() => {
 function createChatEndpoint(app: express.Application) {
 	app.post('/api/chat', express.json(), async (req, res) => {
 		try {
-			const { message, sessionId } = req.body;
+			const { message, sessionId, lang = 'en' } = req.body;
 
 			// Set headers for streaming
 			res.setHeader('Content-Type', 'text/event-stream');
@@ -140,7 +161,7 @@ function createChatEndpoint(app: express.Application) {
 				const context = await model.createContext();
 				session = new LlamaChatSession({
 					contextSequence: context.getSequence(),
-					systemPrompt: basePrompt
+					systemPrompt: lang === 'en' ? baseEnglishPrompt : baseFrenchPrompt
 				});
 				const newSessionId = uuidv4();
 				chatSessions.set(newSessionId, session);

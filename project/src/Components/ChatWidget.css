@@ -240,3 +240,16 @@
         border-radius: 0;
     }
 }
+
+.initializing-warning {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+    font-style: italic;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
