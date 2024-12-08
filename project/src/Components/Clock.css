@@ -1,7 +1,6 @@
 .clock {
 	padding: 15px 25px;
 	background: rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(10px);
 	color: white;
 	font-family: "HomeVideo";
 	display: flex;

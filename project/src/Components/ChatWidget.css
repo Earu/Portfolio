@@ -8,7 +8,6 @@
     background: linear-gradient(145deg, rgba(18, 18, 18, 0.95) 0%, rgba(28, 28, 28, 0.95) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #4CAF50;
-    backdrop-filter: blur(10px);
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1000;
@@ -167,7 +166,6 @@
         left: 0;
         right: 0;
         background: rgba(18, 18, 18, 0.95);
-        backdrop-filter: blur(10px);
         padding: 10px;
     }
 

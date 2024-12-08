@@ -12,7 +12,6 @@
 	);
 	width: 100%;
 	transition: all 0.3s ease-in-out;
-	backdrop-filter: blur(10px);
 	position: relative;
 	overflow: hidden;
 }
@@ -36,7 +35,7 @@
 .service-card:hover {
 	transform: translateY(-5px);
 	border-color: rgba(76, 175, 80, 0.3);
-	box-shadow: 
+	box-shadow:
 		0 10px 20px rgba(0, 0, 0, 0.3),
 		0 0 0 1px rgba(76, 175, 80, 0.1);
 }

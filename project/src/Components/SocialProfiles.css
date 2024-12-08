@@ -5,27 +5,21 @@
     margin-bottom: -8vh;
     text-align: center;
     position: relative;
-    background: linear-gradient(145deg, rgba(18, 18, 18, 0.45) 0%, rgba(28, 28, 28, 0.45) 100%);
-    backdrop-filter: blur(10px);
+    background: rgba(18, 18, 18, 0.95);
     overflow: hidden;
 }
 
-/* Gradient fades */
+/* Simplified gradient fade */
 .social-profiles::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(76, 175, 80, 0.15) 0%,
-            rgba(76, 175, 80, 0.1) 25%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(0, 0, 0, 0.6) 75%,
-            rgba(0, 0, 0, 0.8) 85%
-        );
+    background: radial-gradient(
+        circle at center,
+        rgba(76, 175, 80, 0.15) 0%,
+        rgba(0, 0, 0, 0.8) 85%
+    );
     pointer-events: none;
-    opacity: 1;
 }
 
 /* Grid with animation */
@@ -37,25 +31,22 @@
         /* Horizontal lines */
         repeating-linear-gradient(
             to right,
-            rgba(76, 175, 80, 0.1) 0px,
-            rgba(76, 175, 80, 0.1) 1px,
+            rgba(76, 175, 80, 0.25) 0px,
+            rgba(76, 175, 80, 0.25) 1px,
             transparent 1px,
             transparent 30px
         ),
         /* Vertical lines */
         repeating-linear-gradient(
             to bottom,
-            rgba(76, 175, 80, 0.1) 0px,
-            rgba(76, 175, 80, 0.1) 1px,
+            rgba(76, 175, 80, 0.25) 0px,
+            rgba(76, 175, 80, 0.25) 1px,
             transparent 1px,
             transparent 30px
         );
-    /* Perspective effect */
+    background-size: 30px 30px;
     transform: perspective(500px) rotateX(45deg);
-    transform-origin: center center;
-    pointer-events: none;
-    opacity: 0.3;
-    animation: convergeGrid 15s linear infinite;
+    opacity: 0.2;
 }
 
 /* Static mask overlay */
@@ -79,15 +70,6 @@
     );
     pointer-events: none;
     z-index: 1;
-}
-
-@keyframes convergeGrid {
-    0% {
-        transform: perspective(500px) rotateX(45deg) translateY(-100px);
-    }
-    100% {
-        transform: perspective(500px) rotateX(45deg) translateY(100px);
-    }
 }
 
 /* Update existing styles to work with new background */
@@ -126,11 +108,11 @@
 .profile-card {
     flex: 0 1 200px;
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 30px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
     text-decoration: none;
@@ -193,4 +175,9 @@
         max-width: 300px;
         flex: none;
     }
+}
+
+.social-profiles::after,
+.profile-card {
+    will-change: transform;
 }
