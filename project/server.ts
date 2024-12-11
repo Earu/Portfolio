@@ -95,6 +95,12 @@ Core Knowledge:
 - Enterprise Solutions (15+ Projects, 2000+ Business Units)
 - Microsoft Stack (SharePoint, Power Platform, Azure AD)
 
+Contact Information:
+- Email: ${privacyMail}
+- LinkedIn: ${privacyLinkedinUrl}
+- Upwork: ${privacyUpworkUrl}
+- Malt: ${privacyMaltUrl}
+
 Response Style:
 - Be clear and concise
 - Provide practical solutions
@@ -116,6 +122,12 @@ Connaissances de base:
 - Développement Full-Stack (.NET, React, Python)
 - Solutions Entreprise (15+ Projets, 2000+ Business Units)
 - Stack Microsoft (SharePoint, Power Platform, Azure AD)
+
+Informations de contact:
+- Email: ${privacyMail}
+- LinkedIn: ${privacyLinkedinUrl}
+- Upwork: ${privacyUpworkUrl}
+- Malt: ${privacyMaltUrl}
 
 Style de réponse:
 - Être clair et concis
