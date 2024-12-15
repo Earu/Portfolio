@@ -50,13 +50,14 @@
 	gap: 20px;
 	align-items: center;
 	padding: 25px;
-	min-height: 15vh;
+	min-height: 120px;
 	background: linear-gradient(
 		to bottom,
 		rgba(0, 0, 0, 0.8) 0%,
 		rgba(0, 0, 0, 0.4) 100%
 	);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	flex-wrap: wrap;
 }
 
 .card-header > img {
@@ -67,6 +68,7 @@
 	background: rgba(255, 255, 255, 0.05);
 	padding: 10px;
 	transition: transform 0.3s ease;
+	flex-shrink: 0;
 }
 
 .service-card:hover .card-header > img {
@@ -85,6 +87,7 @@
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	flex: 1;
 }
 
 .service-card > p {
@@ -123,4 +126,53 @@
 .technologies span:hover {
 	background: rgba(76, 175, 80, 0.2);
 	transform: translateY(-2px);
+}
+
+@media screen and (max-width: 480px) {
+	.card-header {
+		padding: 15px;
+		gap: 12px;
+		min-height: auto !important;
+		text-align: unset !important;
+	}
+
+	.card-header > img {
+		min-width: 50px;
+		width: 12%;
+		padding: 6px;
+	}
+
+	.card-header > h3 {
+		font-size: 100%;
+	}
+
+	.service-card > p {
+		padding: 20px;
+		font-size: 1em;
+	}
+
+	.technologies {
+		padding: 15px;
+		gap: 8px;
+	}
+
+	.technologies span {
+		padding: 4px 10px;
+		font-size: 0.8em;
+	}
+}
+
+@media screen and (max-width: 810px) {
+	.card-header {
+		gap: 15px;
+		min-height: 250px;
+		text-align: center;
+		align-items: center;
+	}
+
+	.card-header > img {
+		width: 60px;
+		min-width: auto;
+		margin: 0 auto;
+	}
 }
