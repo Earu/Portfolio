@@ -42,29 +42,42 @@ export default function ChatWidget(): JSX.Element {
     useEffect(() => {
         if (!isOpen) return;
 
-        // Prevent body scroll
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
+        // Check if it's a mobile device using window width
+        const isMobile = window.innerWidth <= 768; // Matches the CSS media query
 
-        const chatMessages = document.querySelector('.chat-messages');
-        if (!chatMessages) return;
+        if (isMobile) {
+            // Store the current scroll position
+            const scrollY = window.scrollY;
 
-        const handleTouchMove = (e: TouchEvent) => {
-            const target = e.target as HTMLElement;
-            if (!chatMessages.contains(target)) {
-                e.preventDefault();
-            }
-        };
+            // Apply fixed positioning while maintaining scroll position
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.overflow = 'hidden';
 
-        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+            const chatMessages = document.querySelector('.chat-messages');
+            if (!chatMessages) return;
 
-        return () => {
-            document.removeEventListener('touchmove', handleTouchMove);
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-        };
+            const handleTouchMove = (e: TouchEvent) => {
+                const target = e.target as HTMLElement;
+                if (!chatMessages.contains(target)) {
+                    e.preventDefault();
+                }
+            };
+
+            document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+            return () => {
+                document.removeEventListener('touchmove', handleTouchMove);
+
+                // Restore the scroll position when closing
+                document.body.style.position = '';
+                document.body.style.width = '';
+                document.body.style.top = '';
+                document.body.style.overflow = '';
+                window.scrollTo(0, scrollY);
+            };
+        }
     }, [isOpen]);
 
     useEffect(() => {
