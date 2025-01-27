@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { getPrivacyVariable } from "../privacy";
 import "./Navbar.css";
-import SlantedBox from "./SlantedBox";
 
 export default function Navbar(): JSX.Element {
 	const { t } = useTranslation();
@@ -17,9 +16,9 @@ export default function Navbar(): JSX.Element {
 
 	return <nav onClick={onBurger}>
 		<img src="/img/burger_menu.webp" alt="menu"/>
-		<SlantedBox href="/">
+		<a href="/" className="brand">
 			{getPrivacyVariable("NAME")} {getPrivacyVariable("FAMILY_NAME")[0].toUpperCase()}.
-		</SlantedBox>
+		</a>
 
 		<a href="#services">{t("NAV_SERVICES_LABEL")}</a>
 		<a href="#about-me">{t("NAV_ABOUT_ME_LABEL")}</a>

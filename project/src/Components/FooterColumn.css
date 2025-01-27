@@ -1,16 +1,31 @@
 .footer-column {
 	display: flex;
 	flex-direction: column;
+	gap: 15px;
 	background: transparent;
 }
 
 .footer-column>h3 {
-	font-family: "HomeVideo";
-	color: white;
+	font-family: "Rajdhani", sans-serif;
+	color: var(--arasaka-text-light);
 	margin: 0;
 	padding: 0;
-	margin-bottom: 20px;
-	display: block;
+	font-size: 1.3em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	position: relative;
+	padding-bottom: 15px;
+}
+
+.footer-column>h3::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 2px;
+	background: var(--arasaka-red);
 }
 
 .footer-column>h4 {
@@ -20,8 +35,61 @@
 
 .footer-column>h4>a {
 	text-decoration: none;
-	color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
-	font-weight: 500;
+	color: var(--arasaka-text-light);
+	font-family: "Inter", sans-serif;
+	font-size: 0.95em;
+	font-weight: 400;
+	transition: all 0.3s ease;
+	opacity: 0.7;
+	position: relative;
+}
+
+.footer-column>h4>a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: var(--arasaka-red);
+	transition: width 0.3s ease;
+}
+
+.footer-column>h4>a:hover {
+	opacity: 1;
+	color: var(--arasaka-red);
+}
+
+.footer-column>h4>a:hover::after {
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	.footer-column {
+		gap: 12px;
+	}
+
+	.footer-column>h3 {
+		font-size: 1.2em;
+		padding-bottom: 12px;
+	}
+
+	.footer-column>h4>a {
+		font-size: 0.9em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.footer-column {
+		gap: 10px;
+	}
+
+	.footer-column>h3 {
+		font-size: 1.1em;
+		padding-bottom: 10px;
+	}
+
+	.footer-column>h4>a {
+		font-size: 0.85em;
+	}
 }

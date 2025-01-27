@@ -10,7 +10,7 @@ import { getPrivacyVariable } from './privacy';
 import { Trans, useTranslation } from 'react-i18next';
 import MobileScrollDown from './Components/MobileScrollDown';
 import FooterColumn from './Components/FooterColumn';
-import ProjectTimeline from './Components/ProjectTimeline';
+import ProjectDrawer from './Components/ProjectDrawer';
 import i18n from './i18n';
 import Techs from './Components/Techs';
 import SocialProfiles from './Components/SocialProfiles';
@@ -202,7 +202,7 @@ export default function App() {
 				</div>
 			</Section>
 			<Section id='projects' title={t("PROJECTS_TITLE")}>
-				<ProjectTimeline projects={[
+				<ProjectDrawer projects={[
 					{
 						title: t("PROJECTS_1_TITLE"),
 						company: "VINCI Energies",

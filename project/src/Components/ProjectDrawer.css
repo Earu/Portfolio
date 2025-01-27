@@ -1,0 +1,482 @@
+.project-book {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    min-height: 700px;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+.book-pages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.book-spine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--arasaka-red);
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.project-page {
+    position: absolute;
+    width: calc(50% - 2px);
+    min-height: 600px;
+    padding: 40px;
+    background: var(--arasaka-text-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backface-visibility: hidden;
+}
+
+.prev-page {
+    left: 0;
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.current-page {
+    left: 50%;
+    transform: rotateY(0deg) translateZ(2px);
+}
+
+.next-page {
+    left: 50%;
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.book-pages.left .prev-page {
+    transform: rotateY(-180deg) translateZ(1px);
+}
+
+.book-pages.left .current-page {
+    transform: rotateY(-180deg) translateZ(2px);
+}
+
+.book-pages.right .current-page {
+    transform: rotateY(180deg) translateZ(2px);
+}
+
+.book-pages.right .next-page {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-header img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    padding: 15px;
+    filter: brightness(0) invert(1);
+}
+
+.project-title {
+    flex: 1;
+}
+
+.project-title h3 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8em;
+    color: var(--arasaka-text-light);
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.project-title a {
+    color: var(--arasaka-red);
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.project-title a:hover {
+    opacity: 0.8;
+}
+
+.project-description {
+    margin-bottom: 30px;
+}
+
+.project-description p {
+    font-family: "Inter", sans-serif;
+    color: var(--arasaka-text-light);
+    line-height: 1.7;
+    font-size: 1em;
+    margin: 0;
+}
+
+.project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--arasaka-text-light);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--arasaka-red);
+    transform: translateY(-2px);
+}
+
+.tech-tag img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    font-family: "Rajdhani", sans-serif;
+    color: var(--arasaka-text-dark);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-counter {
+    font-family: "Rajdhani", sans-serif;
+    color: var(--arasaka-red);
+    font-size: 1em;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+    .project-book {
+        padding: 30px;
+        min-height: 600px;
+    }
+
+    .project-page {
+        padding: 30px;
+        min-height: 500px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .project-book {
+        padding: 20px;
+        perspective: none;
+    }
+
+    .book-spine {
+        display: none;
+    }
+
+    .project-page {
+        position: relative;
+        width: 100%;
+        left: 0;
+        padding: 20px;
+        min-height: 400px;
+        transform: none !important;
+    }
+
+    .prev-page, .next-page {
+        display: none;
+    }
+
+    .project-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .project-title h3 {
+        font-size: 1.6em;
+    }
+
+    .tech-tag {
+        padding: 4px 10px;
+        font-size: 0.85em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .project-book {
+        padding: 15px;
+    }
+
+    .project-page {
+        padding: 15px;
+    }
+
+    .project-title h3 {
+        font-size: 1.4em;
+    }
+
+    .project-description p {
+        font-size: 0.95em;
+    }
+
+    .tech-tag {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+
+    .scroll-text {
+        font-size: 0.8em;
+    }
+
+    .page-counter {
+        font-size: 0.9em;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.project-card {
+    background: var(--arasaka-text-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 140px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card.expanded {
+    max-height: 800px;
+}
+
+.project-card-header {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.project-card-header img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    padding: 15px;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+}
+
+.project-card-header .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.project-card-header h3 {
+    font-family: "Rajdhani", sans-serif;
+    color: var(--arasaka-text-light);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    font-size: 140%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.project-card-header a {
+    color: var(--arasaka-red);
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.project-card-header a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.project-card-content,
+.project-card-techs {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.project-card.expanded .project-card-content,
+.project-card.expanded .project-card-techs {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.project-card-content {
+    padding: 35px;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--arasaka-text-light);
+}
+
+.project-card-techs {
+    display: grid;
+    padding: 30px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.project-tech-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.9em;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--arasaka-text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-tech-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--arasaka-red);
+    color: var(--arasaka-red);
+}
+
+.project-tech-tag img {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 768px) {
+    .project-card-header {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .project-card-header img {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+    }
+
+    .project-card-header h3 {
+        font-size: 110%;
+    }
+
+    .project-card-content {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .project-card-techs {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .project-tech-tag {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-card-header {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .project-card-header img {
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+    }
+
+    .project-card-header h3 {
+        font-size: 100%;
+    }
+
+    .project-card-content {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+
+    .project-tech-tag {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+}

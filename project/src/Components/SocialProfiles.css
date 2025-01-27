@@ -1,99 +1,70 @@
 .social-profiles {
-    padding-top: calc(40px + 12vh);
-    padding-bottom: calc(100px + 12vh);
-    margin-top: -8vh;
-    margin-bottom: -8vh;
+    padding: 80px 0;
+    margin: 0;
     text-align: center;
     position: relative;
-    background: rgba(18, 18, 18, 0.95);
+    background: var(--arasaka-text-dark);
     overflow: hidden;
 }
 
-/* Simplified gradient fade */
+/* Clean, subtle grid background */
 .social-profiles::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(
+    background-image: radial-gradient(
         circle at center,
-        rgba(35, 228, 42, 0.078) 0%,
-        rgba(0, 0, 0, 0.8) 85%
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
     );
-    pointer-events: none;
-}
-
-/* Grid with animation */
-.social-profiles::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        /* Horizontal lines */
-        repeating-linear-gradient(
-            to right,
-            rgba(76, 175, 80, 0.4) 0px,
-            rgba(76, 175, 80, 0.4) 1px,
-            transparent 1px,
-            transparent 30px
-        ),
-        /* Vertical lines */
-        repeating-linear-gradient(
-            to bottom,
-            rgba(76, 175, 80, 0.4) 0px,
-            rgba(76, 175, 80, 0.4) 1px,
-            transparent 1px,
-            transparent 30px
-        );
     background-size: 30px 30px;
-    transform: perspective(500px) rotateX(45deg) scale(2) translateY(-200px);
-    opacity: 0.2;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-/* Static mask overlay */
+/* Remove the animated grid */
+.social-profiles::after {
+    display: none;
+}
+
+/* Clean mask overlay */
 .social-profiles > .mask {
+    display: none;
+}
+
+/* Typography updates */
+.social-profiles h3 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--arasaka-text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.social-profiles h3::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 20%,
-        rgba(0, 0, 0, 0) 80%,
-        rgba(0, 0, 0, 1) 100%
-    ),
-    linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 20%,
-        rgba(0, 0, 0, 0) 80%,
-        rgba(0, 0, 0, 1) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Update existing styles to work with new background */
-.social-profiles h3,
-.social-profiles .description,
-.profile-cards {
-    position: relative;
-    z-index: 1;
-}
-
-.social-profiles h3 {
-    font-family: "HomeVideoReverted";
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #fff, #4CAF50);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--arasaka-red);
 }
 
 .social-profiles .description {
-    font-family: "HomeVideo";
-    color: rgba(255, 255, 255, 0.8);
+    font-family: "Inter", sans-serif;
+    color: var(--arasaka-text-light);
+    opacity: 0.8;
     margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-size: 1.1em;
 }
 
 .profile-cards {
@@ -107,61 +78,47 @@
 
 .profile-card {
     flex: 0 1 200px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
     padding: 30px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     text-decoration: none;
 }
 
-.profile-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    transition: left 0.7s ease;
-}
-
 .profile-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(76, 175, 80, 0.3);
-}
-
-.profile-card:hover::before {
-    left: 100%;
+    transform: translateY(-5px);
+    border-color: var(--arasaka-red);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .profile-card img {
     width: 48px;
     height: 48px;
     margin-bottom: 15px;
-    transition: transform 0.3s ease;
-    filter: invert(1) grayscale(1) brightness(1.5);
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
 }
 
 .profile-card:hover img {
     transform: scale(1.1);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--arasaka-red));
 }
 
 .profile-card h4 {
-    font-family: "HomeVideo";
+    font-family: "Rajdhani", sans-serif;
     font-size: 1.2em;
+    font-weight: 600;
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--arasaka-text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.profile-card:hover h4 {
+    color: var(--arasaka-red);
 }
 
 @media only screen and (max-width: 768px) {
@@ -174,6 +131,15 @@
         width: 80%;
         max-width: 300px;
         flex: none;
+    }
+
+    .social-profiles h3 {
+        font-size: 1.8em;
+    }
+
+    .social-profiles .description {
+        font-size: 1em;
+        padding: 0 20px;
     }
 }
 

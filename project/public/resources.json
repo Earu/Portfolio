@@ -15,7 +15,7 @@
 
 			"HEADER_HERO_TITLE": "Enterprise Cloud & AI Solutions",
 			"HEADER_HERO_SUBTITLE": "Helping companies scale with Microsoft technologies",
-			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES SCALE WITH",
+			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES WITH",
 			"HEADER_HERO_PROOFS": [
 				"Cloud Solutions for 2000+ Business Units",
 				"Automated Processing for 90,000+ Users",
@@ -25,7 +25,7 @@
 			"HEADER_HERO_CTA": "START A PROJECT",
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
 
-			"SERVICES_TITLE": "My Services",
+			"SERVICES_TITLE": "Services",
 			"SERVICES_1_TAGLINE": "Enterprise Azure & AI Solutions",
 			"SERVICES_1_DESCRIPTION": "Transform your business with enterprise-grade cloud architecture and AI integration. Leverage Azure's full potential with solutions that scale from startup to enterprise while maintaining peak performance.",
 			"SERVICES_1_TECH": [
@@ -48,8 +48,7 @@
 				".NET 8",
 				"React",
 				"Python",
-				"TypeScript",
-				"Azure DevOps"
+				"TypeScript"
 			],
 
 			"ABOUT_ME_TITLE": "Who am I?",
@@ -88,7 +87,7 @@
 			"FOOTER_COLUMN_1_TITLE": "Links",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Meeting",
-			"TECH_STACK_TITLE": "My Tech Stack",
+			"TECH_STACK_TITLE": "Tech Stack",
 			"SOCIAL_PROFILES_TITLE": "Find me on",
 			"SOCIAL_PROFILES_DESCRIPTION": "Connect with me across professional platforms",
 
@@ -146,8 +145,8 @@
 			"SERVICES_3_TECH": [
 				".NET 8",
 				"React",
-				"TypeScript",
-				"Azure DevOps"
+				"Python",
+				"TypeScript"
 			],
 
 			"ABOUT_ME_TITLE": "Expertise",
