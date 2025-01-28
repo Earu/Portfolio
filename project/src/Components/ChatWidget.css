@@ -7,7 +7,7 @@
     width: 60px;
     height: 60px;
     background: var(--arasaka-text-dark);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--arasaka-text-light);
     cursor: pointer;
     transition: all 0.3s ease;

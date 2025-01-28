@@ -316,7 +316,7 @@ body {
     }
 
     .social-proof {
-        padding: 10px;
+        padding: 0px;
     }
 
     .social-proof span {
@@ -369,6 +369,7 @@ body {
     letter-spacing: 1.5px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .primary-cta {
@@ -397,6 +398,21 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 768px) {
+    .cta-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: calc(100% - 60px);
+        margin: 0 30px;
+    }
+
+    .cta-btns a {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 @media screen and (max-height: 800px) {
     .hero-main {
         padding: min(60px, 8vh) 0;
@@ -414,7 +430,7 @@ body {
 
     .social-proof {
         gap: 10px;
-        padding: 10px;
+        padding: 0px;
     }
 
     .social-proof span {
