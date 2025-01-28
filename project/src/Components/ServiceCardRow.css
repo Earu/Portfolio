@@ -2,14 +2,12 @@
 	display: flex;
 	flex-direction: row;
 	gap: 30px;
-	padding: 30px;
-	background: rgba(0, 0, 0, 0.3);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
 	.service-card-row {
 		flex-direction: column;
-		padding: 20px;
+		padding: 0px;
 	}
 }
