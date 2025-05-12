@@ -1,8 +1,8 @@
 {
 	"en": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | Azure Cloud Architect & AI Integration Expert",
-			"HTML_META": "Expert Azure Cloud Architect and AI Integration Specialist with proven experience in enterprise-scale solutions. Specializing in .NET development, machine learning integration, and cloud optimization for businesses. Transform your company's digital infrastructure with scalable Microsoft Azure solutions and AI integration.",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | AI Consultant & Technical Advisor",
+			"HTML_META": "AI Consultant & Technical Advisor helping businesses apply real AI to solve complex problems. Specializing in machine learning, computer vision, cloud engineering, and bespoke AI development for enterprise-scale transformations.",
 
 			"CONSOLE_FUN_HEADER": "Hold up!",
 			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
@@ -13,53 +13,53 @@
 			"NAV_PROJECTS_LABEL": "Projects",
 			"NAV_SCHEDULE_LABEL": "Schedule a Meeting",
 
-			"HEADER_HERO_TITLE": "Enterprise Cloud & AI Solutions",
-			"HEADER_HERO_SUBTITLE": "Helping companies scale with Microsoft technologies",
+			"HEADER_HERO_TITLE": "AI Solutions & Technical Advisory",
+			"HEADER_HERO_SUBTITLE": "Helping businesses apply real AI to solve complex problems",
 			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES WITH",
 			"HEADER_HERO_PROOFS": [
-				"Cloud Solutions for 2000+ Business Units",
-				"Automated Processing for 90,000+ Users",
-				"Azure, .NET & AI Integration Expert",
-				"15+ Enterprise Projects Delivered"
+				"Real Solutions tailored to your needs",
+				"Fractional Head of AI for Growth Companies",
+				"Enterprise Implementations for 2000+ Business Units",
+				"Machine Learning & Cloud Expert"
 			],
 			"HEADER_HERO_CTA": "START A PROJECT",
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
 
 			"SERVICES_TITLE": "Services",
-			"SERVICES_1_TAGLINE": "Enterprise Azure & AI Solutions",
-			"SERVICES_1_DESCRIPTION": "Transform your business with enterprise-grade cloud architecture and AI integration. Leverage Azure's full potential with solutions that scale from startup to enterprise while maintaining peak performance.",
+			"SERVICES_1_TAGLINE": "AI Strategy & Implementation",
+			"SERVICES_1_DESCRIPTION": "From fractional Head of AI roles to hands-on technical consulting, I help businesses identify high-impact AI opportunities and translate them into deployable solutions. My focus is on practical applications that deliver measurable results.",
 			"SERVICES_1_TECH": [
-				"Azure Cloud",
-				"AI/ML",
-				".NET Core",
-				"Microservices"
+				"Machine Learning",
+				"Computer Vision",
+				"Anomaly Detection",
+				"GenAI Applications"
 			],
-			"SERVICES_2_TAGLINE": "Microsoft Stack Integration",
-			"SERVICES_2_DESCRIPTION": "Seamlessly connect your Microsoft ecosystem. From SharePoint and Azure AD to Power Platform and Teams, create integrated workflows that boost productivity and streamline operations.",
+			"SERVICES_2_TAGLINE": "Enterprise AI Integration",
+			"SERVICES_2_DESCRIPTION": "Seamlessly integrate AI into your existing systems and workflows. I specialize in designing and implementing end-to-end ML pipelines that connect with your operational tech stack and business processes.",
 			"SERVICES_2_TECH": [
-				"SharePoint",
-				"Power Platform",
-				"Azure AD",
-				"Microsoft 365"
+				"Cloud Architecture",
+				"ML Pipeline Design",
+				"Model Deployment",
+				"System Integration"
 			],
-			"SERVICES_3_TAGLINE": "Full-Stack Development at Scale",
-			"SERVICES_3_DESCRIPTION": "Build robust, scalable applications that grow with your business. Using modern .NET, React, and cloud-native architecture to deliver high-performance solutions that handle enterprise workloads.",
+			"SERVICES_3_TAGLINE": "Connect: GenAI Platform",
+			"SERVICES_3_DESCRIPTION": "Access my proprietary GenAI platform designed to accelerate your time-to-value. Connect helps companies go from concept to production faster with structured, accessible AI tools that scale with your business needs.",
 			"SERVICES_3_TECH": [
-				".NET 8",
-				"React",
-				"Python",
-				"TypeScript"
+				"Custom AI Tools",
+				"Rapid Deployment",
+				"Scalable Architecture",
+				"Time-to-Value Focus"
 			],
 
 			"ABOUT_ME_TITLE": "Who am I?",
-			"ABOUT_ME_PART_1_TITLE": "Software Engineer & Architect",
-			"ABOUT_ME_PART_1_CONTENT": "I specialize in Microsoft technologies, cloud solutions, performance optimization, and full-stack development. My professional journey has taken me from building small-scale projects for friends and online communities to architecting systems for large enterprises.",
-			"ABOUT_ME_PART_2_TITLE": "Technical Foundations",
-			"ABOUT_ME_PART_2_CONTENT": "I began learning programming at 15 through games and modding, particularly in <0>Lua</0>, <1> C++</1> & <2> C</2>. This early experience laid the groundwork for my expertise in <3>.NET </3>(<4>C#</4>), which I later developed while creating software for <5>VINCI</5>'s 90,000 employees in the <6>Energies</6> division.",
-			"ABOUT_ME_PART_3_TITLE": "Startup Experience & Corporate Success",
-			"ABOUT_ME_PART_3_CONTENT": "After earning a technical degree and a bachelor's in computer science, I launched my own <0>SaaS</0> startup — a marketplace of sorts. Though life led me to new challenges, I eventually joined VINCI, where I tackled everything from scaling and infrastructure to security and cloud platforms. These experiences honed my ability to deliver robust, scalable solutions.",
-			"ABOUT_ME_PART_4_TITLE": "Ready to Help You Succeed",
-			"ABOUT_ME_PART_4_CONTENT": "With years of experience across various technical domains, I'm now focused on leveraging my skills to help others achieve their goals. Whether it's cloud migration, performance optimization, or full-stack development, I bring a wealth of knowledge and a passion for solving complex problems.",
+			"ABOUT_ME_PART_1_TITLE": "AI Consultant & Technical Advisor",
+			"ABOUT_ME_PART_1_CONTENT": "I help businesses apply real AI to solve complex problems, focusing on machine learning, computer vision, cloud engineering, and bespoke AI development. I operate independently through my consultancy, Ryan R., working with clients across France and beyond on enterprise-scale transformations.",
+			"ABOUT_ME_PART_2_TITLE": "Practical AI Focus",
+			"ABOUT_ME_PART_2_CONTENT": "My approach is tailored, technically sound, and—above all—practical. I'm not here to sell AI dreams. I'm here to deliver tools that work. I've had the privilege of working on long-term projects with major players such as <5>CHANEL</5> and <6>VINCI</6>, contributing to enterprise-scale transformations through machine learning, cloud engineering, and bespoke AI development.",
+			"ABOUT_ME_PART_3_TITLE": "Experience & Current Work",
+			"ABOUT_ME_PART_3_CONTENT": "My work spans from fractional Head of AI roles to hands-on technical consulting. More recently, I've been focused on building <0>Connect</0>: a GenAI platform designed to accelerate time-to-value for companies by making high-impact AI tools accessible without lengthy build cycles. It's early, but I believe productising part of what I do is the next logical step toward scalable, repeatable outcomes.",
+			"ABOUT_ME_PART_4_TITLE": "Personal Approach",
+			"ABOUT_ME_PART_4_CONTENT": "Outside of work, I enjoy strength training, keeping up with developments in physics, and exploring the occasional rabbit hole on YouTube or GitHub. I'm an introvert by nature—so when I speak, it's usually because there's something worth saying. I value precision, clarity, and long-term thinking in all my professional engagements.",
 			"ABOUT_ME_PART_5_TITLE": "Tech-stack",
 
 			"PROJECTS_TITLE": "Projects",
@@ -76,8 +76,8 @@
 			"PROJECTS_6_TITLE": "Mobile App for Technicians",
 			"PROJECTS_6_DESCRIPTION": "Guiding the technicians through their days with schedules, equipment inventories, meetings managed via a mobile app.",
 
-			"PROJECTS_7_TITLE": "On-Going Contract",
-			"PROJECTS_7_DESCRIPTION": "Collaboration with a major French luxury brand.",
+			"PROJECTS_7_TITLE": "AI Engineering",
+			"PROJECTS_7_DESCRIPTION": "Supporting the integration of machine learning, artificial intelligence, and statistical modelling into internal software systems across a major luxury brand. Helping shape the newly established data science function, defining what AI can realistically deliver within the organization's operations.",
 
 			"SCHEDULE_TITLE": "Schedule a Meeting",
 			"SCHEDULE_HERO_TEXT": "Ready for the next steps of your projects?",
@@ -99,8 +99,8 @@
 	},
 	"fr": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]], Développeur Fullstack",
-			"HTML_META": "Bonjour, moi c'est [[PRIVACY_NAME]], Développeur Full-stack et Architecte Logiciel, et je peux aider votre entreprise à atteindre de nouveaux horizons! Je me spécialise dans les technologies Microsoft (.NET, Typescript), solutions cloud (Azure), l'optimisation des performances et le développement full-stack. (React, Python, IA)",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Consultant en IA & Conseiller Technique",
+			"HTML_META": "Consultant en IA & conseiller technique qui aide les entreprises à mettre en œuvre de véritables solutions IA pour résoudre des problèmes complexes. Spécialiste en machine learning, computer vision, cloud engineering, et développement IA sur mesure pour des transformations d'entreprise.",
 
 			"CONSOLE_FUN_HEADER": "Attendez!",
 			"CONSOLE_FUN_TEXT": "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
@@ -111,53 +111,53 @@
 			"NAV_PROJECTS_LABEL": "Projets",
 			"NAV_SCHEDULE_LABEL": "Prendre rendez-vous",
 
-			"HEADER_HERO_TITLE": "Solutions Cloud & IA pour Entreprises",
-			"HEADER_HERO_SUBTITLE": "Aidez votre entreprise à évoluer avec les technologies Microsoft",
-			"HEADER_HERO_SUBTITLE_BASE": "FAITES GRANDIR VOTRE ENTREPRISE AVEC",
+			"HEADER_HERO_TITLE": "Solutions IA & Conseil Technique",
+			"HEADER_HERO_SUBTITLE": "Des solutions IA concrètes pour résoudre vos défis métier",
+			"HEADER_HERO_SUBTITLE_BASE": "DES SOLUTIONS POUR VOTRE ENTREPRISE EN",
 			"HEADER_HERO_PROOFS": [
-				"Solutions Cloud pour 2000+ Business Units",
-				"Traitement Automatisé pour 90 000+ Utilisateurs",
-				"Expert Azure, .NET & Intégration IA",
-				"15+ Projets d'Entreprise Livrés"
+				"Solutions sur mesure à fort impact",
+				"Direction IA fractionnée pour entreprises en croissance",
+				"Solutions déployées pour plus de 2000 unités d'affaires",
+				"Expert en machine learning et technologies cloud"
 			],
 			"HEADER_HERO_CTA": "DÉMARRER UN PROJET",
 			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",
 
 			"SERVICES_TITLE": "Mes Services",
-			"SERVICES_1_TAGLINE": "Migration et optimisation cloud Azure",
-			"SERVICES_1_DESCRIPTION": "Transformez votre entreprise avec des solutions cloud Azure sur mesure. Des migrations fluides aux audits complets en passant par le support technique continu, j'assure que votre environnement Azure est optimisé pour la performance et l'efficacité des coûts.",
+			"SERVICES_1_TAGLINE": "Stratégie & Mise en œuvre IA",
+			"SERVICES_1_DESCRIPTION": "De la direction IA fractionnée au conseil technique opérationnel, j'aide les entreprises à identifier les opportunités IA à fort impact et à les concrétiser. Je me concentre sur des applications pratiques qui produisent des résultats mesurables.",
 			"SERVICES_1_TECH": [
-				"Azure Cloud",
-				"AI/ML",
-				".NET Core",
-				"Microservices"
+				"Machine Learning",
+				"Vision par Ordinateur",
+				"Détection d'Anomalies",
+				"Applications GenAI"
 			],
-			"SERVICES_2_TAGLINE": "Intégration avec les technologies Microsoft",
-			"SERVICES_2_DESCRIPTION": "Élevez votre entreprise grâce à des intégrations Microsoft expertes. Je connecte SharePoint, Office 365 et Power Automate pour créer des solutions personnalisées qui rationalisent les processus et améliorent la collaboration.",
+			"SERVICES_2_TAGLINE": "Intégration IA en Entreprise",
+			"SERVICES_2_DESCRIPTION": "Intégrez l'IA harmonieusement dans vos systèmes et processus existants. Je conçois et implémente des pipelines ML complets qui se connectent à votre stack technique et à vos processus métier.",
 			"SERVICES_2_TECH": [
-				"SharePoint",
-				"Power Platform",
-				"Azure AD",
-				"Microsoft 365"
+				"Architecture Cloud",
+				"Conception Pipeline ML",
+				"Déploiement de Modèles",
+				"Intégration de Systèmes"
 			],
-			"SERVICES_3_TAGLINE": "Développement Fullstack pour des solutions robustes et innovantes",
-			"SERVICES_3_DESCRIPTION": "Du concept au déploiement, je propose des services de développement fullstack complets. Que vous ayez besoin d'un backend sophistiqué, d'un frontend dynamique ou d'une solution de bout en bout, je construis des applications innovantes adaptées à vos besoins.",
+			"SERVICES_3_TAGLINE": "Connect: Plateforme GenAI",
+			"SERVICES_3_DESCRIPTION": "Accédez à ma plateforme GenAI propriétaire conçue pour accélérer votre time-to-market. Connect permet aux entreprises de passer rapidement du concept à la production avec des outils IA structurés et accessibles qui évoluent avec vos besoins.",
 			"SERVICES_3_TECH": [
-				".NET 8",
-				"React",
-				"Python",
-				"TypeScript"
+				"Outils IA Personnalisés",
+				"Déploiement Rapide",
+				"Architecture Évolutive",
+				"Focus sur la Valeur"
 			],
 
 			"ABOUT_ME_TITLE": "Expertise",
-			"ABOUT_ME_PART_1_TITLE": "Ingénieur logiciel & Architecte",
-			"ABOUT_ME_PART_1_CONTENT": "Je me spécialise dans les technologies Microsoft, solutions cloud, l'optimisation des performances et le développement full-stack. Mon parcours professionnel m'a conduit de la cration de petits projets pour des amis et des communautés en ligne à l'architecture de systèmes pour de grandes entreprises.",
-			"ABOUT_ME_PART_2_TITLE": "Fondations techniques",
-			"ABOUT_ME_PART_2_CONTENT": "J'ai commencé à apprendre la programmation à 15 ans à travers les jeux et le modding, notamment en <0>Lua</0>, <1> C++</1> et <2> C</2>. Cette expérience précoce a jeté les bases de mon expertise en <3>.NET </3>(<4>C#</4>), que j'ai ensuite développée en créant des logiciels pour les 90 000 employés de <5>VINCI</5> dans la division <6>Energies</6>.",
-			"ABOUT_ME_PART_3_TITLE": "Expérience en startup & Succès en entreprise",
-			"ABOUT_ME_PART_3_CONTENT": "Après avoir obtenu un BTS et une licence en informatique, j'ai lancé ma propre startup <0>SaaS</0> — une sorte de marketplace. Bien que la vie m'ait conduit à de nouveaux défis, j'ai finalement rejoint VINCI, où j'ai relevé des défis allant de la mise à l'échelle et l'infrastructure à la sécurité et aux plateformes cloud. Ces expériences ont affiné ma capacité à fournir des solutions robustes et innovantes.",
-			"ABOUT_ME_PART_4_TITLE": "Prêt à vous aider à réussir",
-			"ABOUT_ME_PART_4_CONTENT": "Avec des années d'expérience dans divers domaines techniques, je me concentre désormais sur l'utilisation de mes compétences pour aider les autres à atteindre leurs objectifs. Qu'il s'agisse de migration cloud, d'optimisation des performances ou de développement full-stack, j'apporte une richesse de connaissances et une passion pour résoudre des problèmes complexes.",
+			"ABOUT_ME_PART_1_TITLE": "Consultant en IA & Conseiller Technique",
+			"ABOUT_ME_PART_1_CONTENT": "J'aide les entreprises à mettre en œuvre des solutions IA concrètes pour résoudre des problèmes complexes, en me spécialisant dans le machine learning, la computer vision, le cloud engineering et le développement IA sur mesure. J'interviens en indépendant via ma structure de conseil, Ryan R., auprès de clients en France et à l'international sur des projets de transformation d'entreprise.",
+			"ABOUT_ME_PART_2_TITLE": "Une approche pragmatique de l'IA",
+			"ABOUT_ME_PART_2_CONTENT": "Mon approche est sur mesure, techniquement rigoureuse et avant tout pragmatique. Je ne vends pas des rêves, mais des outils qui fonctionnent. J'ai eu l'opportunité de travailler sur des projets à long terme avec des acteurs majeurs tels que <5>CHANEL</5> et <6>VINCI</6>, contribuant à des transformations d'envergure grâce au machine learning, au cloud engineering et au développement IA personnalisée.",
+			"ABOUT_ME_PART_3_TITLE": "Expérience & Travail Actuel",
+			"ABOUT_ME_PART_3_CONTENT": "Mon travail va de la direction IA fractionnée au conseil technique opérationnel. Récemment, je me suis concentré sur le développement de <0>Connect</0> : une plateforme GenAI conçue pour accélérer la création de valeur en rendant les outils IA à fort impact accessibles sans cycles de développement prolongés. Ce projet, bien que récent, représente pour moi la prochaine étape logique vers des solutions évolutives et réplicables.",
+			"ABOUT_ME_PART_4_TITLE": "Approche Personnelle",
+			"ABOUT_ME_PART_4_CONTENT": "En dehors du travail, je pratique la musculation, m'intéresse aux avancées en physique et explore occasionnellement des sujets variés sur YouTube ou GitHub. Étant plutôt introverti, quand je prends la parole, c'est généralement parce que j'ai quelque chose de pertinent à dire. Je valorise la précision, la clarté et la vision à long terme dans tous mes engagements professionnels.",
 			"ABOUT_ME_PART_5_TITLE": "Tech-stack",
 
 			"PROJECTS_TITLE": "Projets",
@@ -168,14 +168,14 @@
 			"PROJECTS_3_TITLE": "Détection de Machines",
 			"PROJECTS_3_DESCRIPTION": "Logiciel pour détecter, stocker et cataloguer les détails d'un utilisateur en fonction de diverses techniques de matching.",
 			"PROJECTS_4_TITLE": "IA de suggestion de documents",
-			"PROJECTS_4_DESCRIPTION": "Entraînement de modèles d'IA pour faire des suggestions sur l'endroit où un document devrait être stocké.",
+			"PROJECTS_4_DESCRIPTION": "Entraînement de modèles IA pour faire des suggestions sur l'endroit où un document devrait être stocké.",
 			"PROJECTS_5_TITLE": "Plugin Mail",
 			"PROJECTS_5_DESCRIPTION": "Plugin Outlook pour intégrer Sharepoint et règles métiers dans les mails pour les chefs de projet.",
 			"PROJECTS_6_TITLE": "Application mobile pour techniciens",
 			"PROJECTS_6_DESCRIPTION": "Guider les techniciens tout au long de leurs journées avec des horaires, des inventaires d'équipements et des réunions gérées via une application mobile.",
 
-			"PROJECTS_7_TITLE": "Contrat en cours",
-			"PROJECTS_7_DESCRIPTION": "Collaboration avec une grande marque de luxe française.",
+			"PROJECTS_7_TITLE": "Ingénierie IA",
+			"PROJECTS_7_DESCRIPTION": "Intégration du machine learning, de l'intelligence artificielle et de la modélisation statistique dans les systèmes internes d'une grande marque de luxe. Contribution au développement de la fonction data science, en définissant les applications concrètes de l'IA dans les opérations de l'entreprise.",
 
 			"SCHEDULE_TITLE": "Prendre rendez-vous",
 			"SCHEDULE_HERO_TEXT": "Prêt à avancer dans vos projets?",
@@ -187,11 +187,11 @@
 			"FOOTER_COLUMN_2_MEETING_LABEL": "Rendez-vous",
 			"TECH_STACK_TITLE": "Mon Tech Stack",
 			"SOCIAL_PROFILES_TITLE": "Retrouvez-moi sur",
-			"SOCIAL_PROFILES_DESCRIPTION": "Contactez-moi sur les plateformes professionnelles",
+			"SOCIAL_PROFILES_DESCRIPTION": "Retrouvez-moi sur les plateformes professionnelles",
 
 			"CHAT_INPUT_PLACEHOLDER": "Écrivez votre message...",
 			"CHAT_SEND_BUTTON": "Envoyer",
-			"CHAT_INITIAL_MESSAGE": "Bonjour! Je suis l'assistant IA de {{name}}. N'hésitez pas à me poser des questions sur l'architecture cloud, l'intégration d'IA ou mes services professionnels.",
+			"CHAT_INITIAL_MESSAGE": "Bonjour! Je suis l'assistant IA de {{name}}. N'hésitez pas à me poser des questions sur l'architecture cloud, l'intégration IA ou mes services professionnels.",
 			"CHAT_INITIALIZING_MESSAGE": "La première réponse peut prendre quelques instants pendant l'initialisation de l'IA..."
 		}
 	}
