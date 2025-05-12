@@ -127,14 +127,14 @@ export default function App() {
 					<ServiceCard
 							tagline={t("SERVICES_1_TAGLINE")}
 							description={t("SERVICES_1_DESCRIPTION")}
-							image="/img/tensorflow_logo.svg"
+							image="/img/logo_jira.svg"
 							alt="AI Strategy & Implementation"
 							technologies={t("SERVICES_1_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
 							tagline={t("SERVICES_2_TAGLINE")}
 							description={t("SERVICES_2_DESCRIPTION")}
-							image="/img/azure.webp"
+							image="/img/logo_microsoft.svg"
 							alt="Enterprise AI Integration"
 							technologies={t("SERVICES_2_TECH", { returnObjects: true })}
 					/>
