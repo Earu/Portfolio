@@ -174,13 +174,8 @@ export default function App() {
 								<Trans
 									i18nKey="ABOUT_ME_PART_2_CONTENT"
 									components={[
-										<a href="https://www.lua.org/"/>,
-										<a href="https://en.wikipedia.org/wiki/C%2B%2B"/>,
-										<a href="https://en.wikipedia.org/wiki/C_(programming_language)"/>,
-										<a href="https://en.wikipedia.org/wiki/.NET"/>,
-										<a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"/>,
+										<a href="https://chanel.com/"/>,
 										<a href="https://www.vinci.com"/>,
-										<a href="https://www.vinci-energies.com/"/>
 									]}
 								/>
 							</p>
@@ -190,7 +185,7 @@ export default function App() {
 								<Trans
 									i18nKey="ABOUT_ME_PART_3_CONTENT"
 									components={[
-										<a href="https://en.wikipedia.org/wiki/Software_as_a_service"/>
+										<a href="https://connect.3kv.in"/>
 									]}
 								/>
 							</p>
@@ -339,7 +334,6 @@ export default function App() {
 					["GitHub", getPrivacyVariable("GITHUB_URL")],
 					["Linkedin", getPrivacyVariable("LINKEDIN_URL")],
 					["Malt", getPrivacyVariable("MALT_URL")],
-					["Upwork", getPrivacyVariable("UPWORK_URL")]
 				]} />
 				<FooterColumn title={t("FOOTER_COLUMN_2_TITLE")} list={[
 					["Mail", `mailto:${getPrivacyVariable("MAIL")}`],
