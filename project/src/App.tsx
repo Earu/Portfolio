@@ -25,13 +25,13 @@ const AnimatedSubtitle: React.FC = () => {
 	const [isAnimating, setIsAnimating] = useState(false);
 
 	const technologies = [
-		"MICROSOFT TECHNOLOGIES",
-		"MICROSOFT AZURE",
-		"OFFICE 365",
-		"MACHINE LEARNING & AI",
+		"MACHINE LEARNING",
 		"ARTIFICIAL INTELLIGENCE",
-		"CLOUD COMPUTING & SCALING",
-		"AZURE DEVOPS & CI/CD",
+		"COMPUTER VISION",
+		"GENAI APPLICATIONS",
+		"DATA SCIENCE",
+		"AI STRATEGY",
+		"CLOUD ARCHITECTURE",
 	];
 
 	const baseText = t("HEADER_HERO_SUBTITLE_BASE");
@@ -127,22 +127,22 @@ export default function App() {
 					<ServiceCard
 							tagline={t("SERVICES_1_TAGLINE")}
 							description={t("SERVICES_1_DESCRIPTION")}
-							image="/img/logo_jira.svg"
-							alt="Jira logo"
+							image="/img/tensorflow_logo.svg"
+							alt="AI Strategy & Implementation"
 							technologies={t("SERVICES_1_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
 							tagline={t("SERVICES_2_TAGLINE")}
 							description={t("SERVICES_2_DESCRIPTION")}
-							image="/img/logo_microsoft.svg"
-							alt="Microsoft logo"
+							image="/img/azure.webp"
+							alt="Enterprise AI Integration"
 							technologies={t("SERVICES_2_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
 							tagline={t("SERVICES_3_TAGLINE")}
 							description={t("SERVICES_3_DESCRIPTION")}
 							image="/img/logo_openai.svg"
-							alt="OpenAI logo"
+							alt="Connect: GenAI Platform"
 							technologies={t("SERVICES_3_TECH", { returnObjects: true })}
 					/>
 				</ServiceCardRow>
