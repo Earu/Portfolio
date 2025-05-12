@@ -13,11 +13,6 @@ const SocialProfiles: React.FC = () => {
             image: "/img/linkedin_logo.svg"
         },
         {
-            name: "Upwork",
-            url: getPrivacyVariable('UPWORK_URL'),
-            image: "/img/upwork_logo.svg"
-        },
-        {
             name: "Malt",
             url: getPrivacyVariable('MALT_URL'),
             image: "/img/malt_logo.svg"

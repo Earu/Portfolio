@@ -1,9 +1,7 @@
 import i18n from "./i18n";
-import "./consoleFun";
 import React from 'react';
 import './index.css';
 import App from './App';
-import ConsoleLoading from './Components/ConsoleLoading';
 import { createRoot } from 'react-dom/client';
 import Hotjar from '@hotjar/browser';
 import ReactGA from 'react-ga';
@@ -22,10 +20,11 @@ if (pathChunks[0] && pathChunks[0].toLowerCase() === "fr") {
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
-root.render(<React.StrictMode>
-	<App />
-	<ConsoleLoading />
-</React.StrictMode>);
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
 
 const hotjarSiteId = parseInt(getPrivacyVariable("HOTJAR_SITE_ID"));
 if (hotjarSiteId != null && !isNaN(hotjarSiteId)) {

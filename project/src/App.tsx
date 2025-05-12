@@ -25,13 +25,13 @@ const AnimatedSubtitle: React.FC = () => {
 	const [isAnimating, setIsAnimating] = useState(false);
 
 	const technologies = [
-		"MICROSOFT TECHNOLOGIES",
-		"MICROSOFT AZURE",
-		"OFFICE 365",
-		"MACHINE LEARNING & AI",
+		"MACHINE LEARNING",
 		"ARTIFICIAL INTELLIGENCE",
-		"CLOUD COMPUTING & SCALING",
-		"AZURE DEVOPS & CI/CD",
+		"COMPUTER VISION",
+		"GENAI APPLICATIONS",
+		"DATA SCIENCE",
+		"AI STRATEGY",
+		"CLOUD ARCHITECTURE",
 	];
 
 	const baseText = t("HEADER_HERO_SUBTITLE_BASE");
@@ -127,22 +127,22 @@ export default function App() {
 					<ServiceCard
 							tagline={t("SERVICES_1_TAGLINE")}
 							description={t("SERVICES_1_DESCRIPTION")}
-							image="/img/azure.webp"
-							alt="Azure & AI Solutions"
+							image="/img/logo_jira.svg"
+							alt="AI Strategy & Implementation"
 							technologies={t("SERVICES_1_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
 							tagline={t("SERVICES_2_TAGLINE")}
 							description={t("SERVICES_2_DESCRIPTION")}
 							image="/img/logo_microsoft.svg"
-							alt="Microsoft Integration"
+							alt="Enterprise AI Integration"
 							technologies={t("SERVICES_2_TECH", { returnObjects: true })}
 					/>
 					<ServiceCard
 							tagline={t("SERVICES_3_TAGLINE")}
 							description={t("SERVICES_3_DESCRIPTION")}
-							image="/img/vsc.webp"
-							alt="Full-Stack Development"
+							image="/img/logo_openai.svg"
+							alt="Connect: GenAI Platform"
 							technologies={t("SERVICES_3_TECH", { returnObjects: true })}
 					/>
 				</ServiceCardRow>
@@ -174,13 +174,8 @@ export default function App() {
 								<Trans
 									i18nKey="ABOUT_ME_PART_2_CONTENT"
 									components={[
-										<a href="https://www.lua.org/"/>,
-										<a href="https://en.wikipedia.org/wiki/C%2B%2B"/>,
-										<a href="https://en.wikipedia.org/wiki/C_(programming_language)"/>,
-										<a href="https://en.wikipedia.org/wiki/.NET"/>,
-										<a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"/>,
+										<a href="https://chanel.com/"/>,
 										<a href="https://www.vinci.com"/>,
-										<a href="https://www.vinci-energies.com/"/>
 									]}
 								/>
 							</p>
@@ -190,7 +185,7 @@ export default function App() {
 								<Trans
 									i18nKey="ABOUT_ME_PART_3_CONTENT"
 									components={[
-										<a href="https://en.wikipedia.org/wiki/Software_as_a_service"/>
+										<a href="https://connect.3kv.in"/>
 									]}
 								/>
 							</p>
@@ -339,7 +334,6 @@ export default function App() {
 					["GitHub", getPrivacyVariable("GITHUB_URL")],
 					["Linkedin", getPrivacyVariable("LINKEDIN_URL")],
 					["Malt", getPrivacyVariable("MALT_URL")],
-					["Upwork", getPrivacyVariable("UPWORK_URL")]
 				]} />
 				<FooterColumn title={t("FOOTER_COLUMN_2_TITLE")} list={[
 					["Mail", `mailto:${getPrivacyVariable("MAIL")}`],

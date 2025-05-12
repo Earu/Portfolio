@@ -3,8 +3,6 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "./App";
 import "./index.css";
-import ConsoleLoading from "./Components/ConsoleLoading";
-
 export function render(path: string) {
 	// for SEO purposes, we want to render the site page in french at /fr
 	const pathChunks = path.substring(1).split('/');
@@ -17,7 +15,6 @@ export function render(path: string) {
 	return ReactDOMServer.renderToString(
 		<React.StrictMode>
 			<App />
-			<ConsoleLoading />
 		</React.StrictMode>
 	);
 }
