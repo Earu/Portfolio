@@ -20,11 +20,7 @@ if (pathChunks[0] && pathChunks[0].toLowerCase() === "fr") {
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
-root.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
-);
+root.render(<App />);
 
 const hotjarSiteId = parseInt(getPrivacyVariable("HOTJAR_SITE_ID"));
 if (hotjarSiteId != null && !isNaN(hotjarSiteId)) {

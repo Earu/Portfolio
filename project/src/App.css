@@ -30,19 +30,8 @@ body {
 
 .App {
     display: block;
-    animation: fadeIn 1s;
     overflow-x: hidden;
     width: 100%;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 .App-header {

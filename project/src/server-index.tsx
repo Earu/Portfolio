@@ -1,5 +1,4 @@
 import i18n from "./i18n";
-import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "./App";
 import "./index.css";
@@ -12,9 +11,5 @@ export function render(path: string) {
 		i18n.changeLanguage("en");
 	}
 
-	return ReactDOMServer.renderToString(
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>
-	);
+	return ReactDOMServer.renderToString(<App />);
 }

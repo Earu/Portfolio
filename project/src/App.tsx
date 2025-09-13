@@ -313,12 +313,63 @@ export default function App() {
 						endDate: new Date(2025, 1, 31),
 						techs: [
 							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
-							{ name: "AI", image: "/img/tensorflow_logo.svg", url: "https://www.tensorflow.org/" },
+							{ name: "AI", image: "/img/pytorch_logo.png", url: "https://pytorch.org/" },
 							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
 							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
 							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
 						]
-					}
+					},
+					{
+						title: t("PROJECTS_8_TITLE"),
+						company: "CHANEL",
+						relevantUrl: "https://chanel.com/",
+						description: t("PROJECTS_8_DESCRIPTION"),
+						image: '/img/logo_chanel.svg',
+						alt: 'CHANEL',
+						startDate: new Date(2024, 10, 27),
+						endDate: new Date(2025, 1, 31),
+						techs: [
+							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+							{ name: "AI", image: "/img/pytorch_logo.png", url: "https://pytorch.org/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+						]
+					},
+					{
+						title: t("PROJECTS_9_TITLE"),
+						company: "CHANEL",
+						relevantUrl: "https://chanel.com/",
+						description: t("PROJECTS_9_DESCRIPTION"),
+						image: '/img/logo_chanel.svg',
+						alt: 'CHANEL',
+						startDate: new Date(2024, 10, 27),
+						endDate: new Date(2025, 1, 31),
+						techs: [
+							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+							{ name: "AI", image: "/img/pytorch_logo.png", url: "https://pytorch.org/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+						]
+					},
+					{
+						title: t("PROJECTS_10_TITLE"),
+						company: "CHANEL",
+						relevantUrl: "https://chanel.com/",
+						description: t("PROJECTS_10_DESCRIPTION"),
+						image: '/img/logo_chanel.svg',
+						alt: 'CHANEL',
+						startDate: new Date(2024, 10, 27),
+						endDate: new Date(2025, 1, 31),
+						techs: [
+							{ name: "Python", image: "/img/python_logo.svg", url: "https://www.python.org/" },
+							{ name: "AI", image: "/img/pytorch_logo.png", url: "https://pytorch.org/" },
+							{ name: "Azure", image: "/img/azure.webp", url: "https://azure.microsoft.com/en-us" },
+							{ name: "React.js", image: "/img/reactjs_logo.svg", url: "https://react.dev/" },
+							{ name: "Javascript", image: "/img/javascript_logo.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+						]
+					},
 				]} />
 			</Section>
 			<section id='schedule' className='schedule'>
