@@ -22,8 +22,8 @@
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "[[PRIVACY_NAME]]",
-		"jobTitle": "AI Consultant & Technical Advisor",
-		"description": "AI Consultant & Technical Advisor helping businesses apply real AI to solve complex problems",
+		"jobTitle": "AI Consultant — Readiness, Pilot & Deployment",
+		"description": "Readiness assessments, pilot sprints and production deployments with EU AI Act guidance. Notebook/model → API with monitoring and handover.",
 		"knowsAbout": [
 			"Artificial Intelligence",
 			"Machine Learning",
@@ -31,18 +31,30 @@
 			"GenAI Applications",
 			"Data Science",
 			"AI Strategy",
-			"Cloud Architecture",
 			"Enterprise AI Integration",
+			"AI Readiness Assessment",
+			"AI Pilot Sprint",
+			"Deployment Sprint",
+			"EU AI Act compliance",
+			"Notebook to API",
+			"FastAPI",
+			"Docker",
+			"MLOps / LLMOps",
+			"Monitoring & Logging",
+			"Human-in-the-loop",
 			"Microsoft Azure",
-			"Python"
+			"Python",
+			"Cloud Architecture"
 		],
 		"skills": [
-			"AI Strategy & Implementation",
-			"Enterprise AI Integration",
-			"Machine Learning",
 			"Computer Vision",
-			"Anomaly Detection",
-			"GenAI Platform Development",
+			"Machine Learning",
+			"GenAI Applications",
+			"Opportunity mapping & feasibility",
+			"Data audits & rapid prototyping",
+			"API deployment & observability",
+			"EU AI Act documentation & oversight",
+			"CI/CD for ML services",
 			"Cloud Architecture"
 		],
 		"sameAs": [
@@ -56,6 +68,124 @@
 			"email": "[[PRIVACY_MAIL]]",
 			"contactType": "professional"
 		}]
+	}
+	</script>
+	<!-- Offer catalog for AI services -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "OfferCatalog",
+		"name": "AI Offers: Readiness, Pilot, Deployment",
+		"url": "[[WEBSITE_URL]]/#pricing",
+		"itemListElement": [
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Readiness Assessment",
+					"description": "Map AI/ML opportunities by ROI and feasibility. Includes AI Act risk flags."
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"priceCurrency": "EUR",
+					"minPrice": 3000,
+					"maxPrice": 9000
+				},
+				"areaServed": ["FR", "EU"],
+				"url": "[[WEBSITE_URL]]/#pricing"
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "AI Pilot Sprint",
+					"description": "Validate a high‑value use case on your data with a working prototype and go/no‑go."
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"priceCurrency": "EUR",
+					"minPrice": 6000,
+					"maxPrice": 15000
+				},
+				"areaServed": ["FR", "EU"],
+				"url": "[[WEBSITE_URL]]/#pricing"
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Deployment Sprint",
+					"description": "Turn a notebook/model into a production API with logging, monitoring and handover."
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"priceCurrency": "EUR",
+					"minPrice": 12000,
+					"maxPrice": 18000
+				},
+				"areaServed": ["FR", "EU"],
+				"url": "[[WEBSITE_URL]]/#pricing"
+			}
+		]
+	}
+	</script>
+	<!-- FAQ for common intents (improves AEO) -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "Is my use case high‑risk under the EU AI Act?",
+				"acceptedAnswer": {"@type": "Answer", "text": "We classify your use case against Annex III and outline required documentation, logging and human oversight."}
+			},
+			{
+				"@type": "Question",
+				"name": "How do I turn a notebook into a production API?",
+				"acceptedAnswer": {"@type": "Answer", "text": "We package your notebook with FastAPI/Docker, add auth, observability and CI/CD, and deploy to your cloud."}
+			},
+			{
+				"@type": "Question",
+				"name": "What does a 3–5 week AI pilot include?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Data audit, working prototype on your data, success metrics and go/no‑go recommendations with compliance notes."}
+			},
+			{
+				"@type": "Question",
+				"name": "What documentation is required for EU AI Act compliance?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Depending on risk level: system description, data governance, risk management, testing results, monitoring/logging, human oversight and incident handling. We provide a pragmatic checklist and templates."}
+			},
+			{
+				"@type": "Question",
+				"name": "What data access do you need for a pilot?",
+				"acceptedAnswer": {"@type": "Answer", "text": "A sample of representative data (or anonymised subset), data dictionary, and success criteria. We can work in your environment with least‑privilege credentials."}
+			},
+			{
+				"@type": "Question",
+				"name": "Can you deploy on our cloud or on‑prem?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Yes. Preferred stack: Azure + FastAPI/Docker + managed Postgres/Redis + Application Insights/Prometheus. AWS/GCP/on‑prem supported as well."}
+			},
+			{
+				"@type": "Question",
+				"name": "How is monitoring and logging set up in production?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Structured request/response logs, model/feature metrics, latency/error SLOs, drift checks and alerting dashboards. Hand‑over includes runbooks."}
+			},
+			{
+				"@type": "Question",
+				"name": "How do you define success metrics for a pilot?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Jointly defined business outcomes and model metrics (e.g. precision/recall, time saved). The pilot includes a baseline and target thresholds for go/no‑go."}
+			},
+			{
+				"@type": "Question",
+				"name": "Do you support human‑in‑the‑loop workflows?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Yes—review/override interfaces, feedback capture, sampling for QA and audit trails. Required for many AI Act use cases."}
+			},
+			{
+				"@type": "Question",
+				"name": "Can you deliver in French and English?",
+				"acceptedAnswer": {"@type": "Answer", "text": "Yes. Engagements and documentation are available in FR/EN. We work with French SMEs and international teams."}
+			}
+		]
 	}
 	</script>
 	<!-- Professional Profile Links -->

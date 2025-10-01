@@ -2,7 +2,7 @@
 	"en": {
 		"translation": {
 			"HTML_TITLE": "[[PRIVACY_NAME]] | AI Consultant & Technical Advisor",
-			"HTML_META": "AI Consultant & Technical Advisor helping businesses apply real AI to solve complex problems. Specializing in machine learning, computer vision, cloud engineering, and bespoke AI development for enterprise-scale transformations.",
+			"HTML_META": "AI readiness assessments, pilot sprints and production deployments. EU AI Act guidance included. Notebook/model → API with monitoring and handover.",
 
 			"CONSOLE_FUN_HEADER": "Hold up!",
 			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
@@ -135,8 +135,8 @@
 	},
 	"fr": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | Consultant en IA & Conseiller Technique",
-			"HTML_META": "Consultant en IA & conseiller technique qui aide les entreprises à mettre en œuvre de véritables solutions IA pour résoudre des problèmes complexes. Spécialiste en machine learning, computer vision, cloud engineering, et développement IA sur mesure pour des transformations d'entreprise.",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Offres IA: Diagnostic, Pilote, Déploiement",
+			"HTML_META": "Diagnostics IA, sprints pilote et déploiements en production. Prise en compte de l’AI Act. Notebook/modèle → API avec monitoring et transfert.",
 
 			"CONSOLE_FUN_HEADER": "Attendez!",
 			"CONSOLE_FUN_TEXT": "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
