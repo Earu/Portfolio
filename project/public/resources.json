@@ -8,19 +8,19 @@
 			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
 			"CONSOLE_FUN_INFO": "By the way, you can find the code for this website here: {{GITHUB_URL}}/Portfolio",
 
-			"NAV_SERVICES_LABEL": "Services",
-			"NAV_ABOUT_ME_LABEL": "Who am I?",
+			"NAV_SERVICES_LABEL": "Packages & Pricing",
+			"NAV_ABOUT_ME_LABEL": "Expertise",
 			"NAV_PROJECTS_LABEL": "Projects",
-			"NAV_SCHEDULE_LABEL": "Schedule a Meeting",
+			"NAV_SCHEDULE_LABEL": "Book a Call",
 
 			"HEADER_HERO_TITLE": "AI Solutions & Technical Advisory",
 			"HEADER_HERO_SUBTITLE": "Helping businesses apply real AI to solve complex problems",
 			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES WITH",
 			"HEADER_HERO_PROOFS": [
-				"Real solutions tailored to your needs",
-				"Fractional Head of AI for Growth Companies",
-				"Enterprise Implementations for 2000+ Business Units",
-				"Machine Learning & Cloud Expert"
+				"Readiness assessments focused on ROI and feasibility",
+				"Pilots on your data in 3–5 weeks",
+				"Production deployments with monitoring & handover",
+				"AI Act considerations included from day one"
 			],
 			"HEADER_HERO_CTA": "START A PROJECT",
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
@@ -51,7 +51,7 @@
 				"Compliance checklist"
 			],
 
-			"ABOUT_ME_TITLE": "Who am I?",
+			"ABOUT_ME_TITLE": "Expertise",
 			"ABOUT_ME_PART_1_TITLE": "AI Consultant & Technical Advisor",
 			"ABOUT_ME_PART_1_CONTENT": "I help businesses apply real AI to solve complex problems, focusing on machine learning, computer vision, cloud engineering, and bespoke AI development. I operate independently through my consultancy, Ryan R., working with clients across France and beyond on enterprise-scale transformations.",
 			"ABOUT_ME_PART_2_TITLE": "Practical AI Focus",
@@ -84,10 +84,10 @@
 			"PROJECTS_10_TITLE": "Retail AI Agent",
 			"PROJECTS_10_DESCRIPTION": "AI Agent (LLMs) used in retail context to help upselling and construct knowledge.",
 
-			"SCHEDULE_TITLE": "Schedule a Meeting",
+			"SCHEDULE_TITLE": "Book a Call",
 			"SCHEDULE_HERO_TEXT": "Ready for the next steps of your projects?",
-			"SCHEDULE_HERO_CTA": "SCHEDULE A MEETING",
-			"SCHEDULE_WINDOW_TITLE": "Schedule a Meeting",
+			"SCHEDULE_HERO_CTA": "BOOK A CALL",
+			"SCHEDULE_WINDOW_TITLE": "Book a Call",
 
 			"FOOTER_COLUMN_1_TITLE": "Links",
 			"FOOTER_COLUMN_2_TITLE": "Contact",
@@ -102,7 +102,7 @@
 			"CHAT_INITIALIZING_MESSAGE": "First response may take a few moments as the AI initializes...",
 			"PRICING": {
 				"TITLE": "Packages & Pricing",
-				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Typical Budget", "DESCRIPTION": "Description", "TIMEFRAME": "Timeframe" },
+				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Typical Budget", "DESCRIPTION": "What you get", "TIMEFRAME": "Timeframe" },
 				"DISCLAIMER": "Fixed-price quotes on request. Prices exclude VAT and third-party costs.",
 				"CTA_LABEL": "Let's talk",
 				"CTA_PACKAGE": {
@@ -142,19 +142,19 @@
 			"CONSOLE_FUN_TEXT": "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
 			"CONSOLE_FUN_INFO": "Au fait, vous pouvez trouver le code de ce site web ici : {{GITHUB_URL}}/Portfolio",
 
-			"NAV_SERVICES_LABEL": "Services",
+			"NAV_SERVICES_LABEL": "Offres & Tarifs",
 			"NAV_ABOUT_ME_LABEL": "Expertise",
 			"NAV_PROJECTS_LABEL": "Projets",
-			"NAV_SCHEDULE_LABEL": "Prendre rendez-vous",
+			"NAV_SCHEDULE_LABEL": "Prendre rendez‑vous",
 
 			"HEADER_HERO_TITLE": "Solutions IA & Conseil Technique",
 			"HEADER_HERO_SUBTITLE": "Des solutions IA concrètes pour résoudre vos défis métier",
 			"HEADER_HERO_SUBTITLE_BASE": "DES SOLUTIONS POUR VOTRE ENTREPRISE EN",
 			"HEADER_HERO_PROOFS": [
-				"Solutions sur mesure à fort impact",
-				"Direction IA fractionnée pour entreprises en croissance",
-				"Solutions déployées pour plus de 2000 unités d'affaires",
-				"Expert en machine learning et technologies cloud"
+				"Diagnostics IA orientés ROI et faisabilité",
+				"Pilotes sur vos données en 3–5 semaines",
+				"Déploiements en production avec monitoring et transfert",
+				"Prise en compte de l’AI Act dès le départ"
 			],
 			"HEADER_HERO_CTA": "DÉMARRER UN PROJET",
 			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",

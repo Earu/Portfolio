@@ -31,9 +31,9 @@ export default function Navbar(): JSX.Element {
 					{getPrivacyVariable("NAME")} {getPrivacyVariable("FAMILY_NAME")[0].toUpperCase()}.
 				</a>
 				<div className="nav-links">
-					<a href="#services" onClick={toggleMenu}>{t("NAV_SERVICES_LABEL")}</a>
-					<a href="#about-me" onClick={toggleMenu}>{t("NAV_ABOUT_ME_LABEL")}</a>
+					<a href="#pricing" onClick={toggleMenu}>{t("NAV_SERVICES_LABEL")}</a>
 					<a href="#projects" onClick={toggleMenu}>{t("NAV_PROJECTS_LABEL")}</a>
+					<a href="#about-me" onClick={toggleMenu}>{t("NAV_ABOUT_ME_LABEL")}</a>
 					<a href="#schedule" onClick={toggleMenu}>{t("NAV_SCHEDULE_LABEL")}</a>
 				</div>
 				<button 
