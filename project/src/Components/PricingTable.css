@@ -1,0 +1,143 @@
+.pricing-table {
+	color: var(--arasaka-text-light);
+	background: var(--arasaka-text-dark);
+	padding: 10px 0;
+	width: 100%;
+	box-sizing: border-box;
+	overflow-x: auto;
+}
+
+.pricing-table-header {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 16px;
+	padding: 0 10px;
+}
+
+.pricing-table-title {
+	font-family: "Rajdhani", sans-serif;
+	font-size: 140%;
+	font-weight: 600;
+}
+
+.pricing-table-disclaimer {
+	font-size: 90%;
+	opacity: 0.8;
+}
+
+.pricing-table-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0;
+	align-items: stretch;
+	max-width: 100%;
+}
+
+/* Hide card layout by default (desktop) */
+.pricing-cards { display: none; }
+
+.pricing-table-col.header {
+	padding: 24px 16px 32px 16px;
+	text-align: center;
+	font-family: "Rajdhani", sans-serif;
+	font-weight: 600;
+	position: relative;
+}
+
+.pricing-table-col.header .pkg-name { text-transform: uppercase; letter-spacing: 1.2px; }
+
+.pricing-table-col.header::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	width: 60px;
+	height: 2px;
+	background: var(--arasaka-red);
+}
+
+/* No underline on the first (label) column */
+.pricing-table-col.header.label-col::after { display: none; }
+
+.pkg-name { text-transform: uppercase; letter-spacing: 1px; }
+
+.pricing-table-row-label { display: none; }
+
+.pricing-table-cell {
+	padding: 16px;
+}
+
+.pricing-table-cell .cell-inner { display: flex; flex-direction: column; gap: 6px; }
+.pricing-table-cell .cell-label { font-family: "Rajdhani", sans-serif; font-weight: 600; opacity: 0.8; }
+.pricing-table-cell .cell-value { line-height: 1.6; }
+
+/* Row separators (optional)
+   Uncomment to re-enable: apply a subtle line between rows
+   .pricing-table-row-label, .pricing-table-cell { border-top: 1px solid rgba(255,255,255,0.12); }
+*/
+
+.pricing-table-cell.price { font-weight: 600; }
+.pricing-table-cell.timeframe { opacity: 0.9; }
+.pricing-table-cell.description { line-height: 1.6; }
+
+.pricing-table-cell.cta-cell { text-align: center; }
+.pricing-cta {
+	display: inline-block;
+	padding: 12px 18px;
+	border: 2px solid white;
+	background: white;
+	color: #000;
+	text-decoration: none;
+	font-family: "Rajdhani", sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+}
+.pricing-cta:hover { background: transparent; color: var(--arasaka-text-light); }
+
+/* Vertical borders between columns */
+.col { border-right: 1px solid rgba(255,255,255,0.12); }
+.col-1 { border-left: 1px solid rgba(255,255,255,0.12); }
+
+/* Responsive: stack packages vertically (mobile + tablets) */
+@media screen and (max-width: 1200px) {
+	/* hide desktop grid, show cards */
+	.pricing-table-grid { display: none; }
+	.pricing-cards { display: grid; grid-template-columns: 1fr; gap: 25px; padding: 8px 15px; padding-top: 10px; }
+
+	.pricing-card {
+		border: 1px solid rgba(255,255,255,0.12);
+		background: rgba(255,255,255,0.02);
+		border-radius: 0px;
+	}
+	.pricing-card-header {
+		padding: 20px 16px 26px 16px;
+		text-align: left;
+		font-family: "Rajdhani", sans-serif;
+		font-weight: 600;
+		position: relative;
+	}
+	.pricing-card-header .pkg-name { text-transform: uppercase; letter-spacing: 1.2px; }
+	.pricing-card-header::after {
+		content: '';
+		position: absolute;
+		left: 16px;
+		bottom: 16px;
+		width: 60px;
+		height: 2px;
+		background: var(--arasaka-red);
+	}
+	.pricing-card-row { padding: 14px 16px; }
+	.pricing-card-row + .pricing-card-row { border-top: 1px solid rgba(255,255,255,0.12); }
+	.pricing-card-row .cell-label { font-family: "Rajdhani", sans-serif; font-weight: 600; opacity: 0.8; margin-bottom: 6px; }
+	.pricing-card-row .cell-value { line-height: 1.6; }
+	.pricing-card-row.price .cell-value { font-weight: 700; }
+	.pricing-card-row.cta-cell { text-align: center; }
+}
+
+/* Desktop-only refinements can go here */
+
+

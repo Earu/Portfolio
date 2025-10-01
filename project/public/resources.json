@@ -26,29 +26,29 @@
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
 
 			"SERVICES_TITLE": "Services",
-			"SERVICES_1_TAGLINE": "AI Strategy & Implementation",
-			"SERVICES_1_DESCRIPTION": "From fractional Head of AI roles to hands-on technical consulting, I help businesses identify high-impact AI opportunities and translate them into deployable solutions. My focus is on practical applications that deliver measurable results.",
+			"SERVICES_1_TAGLINE": "Readiness Assessment",
+			"SERVICES_1_DESCRIPTION": "Map which processes can be optimized with AI/ML based on business value and feasibility. Deliverable: a clear opportunity map. AI Act: flag potential high‑risk areas so you know what's legally sensitive before you invest.",
 			"SERVICES_1_TECH": [
-				"Machine Learning",
-				"Computer Vision",
-				"Anomaly Detection",
-				"GenAI Applications"
+				"€3K–€9K",
+				"1–2 weeks",
+				"Opportunity map",
+				"AI Act risk flags"
 			],
-			"SERVICES_2_TAGLINE": "Enterprise AI Integration",
-			"SERVICES_2_DESCRIPTION": "Seamlessly integrate AI into your existing systems and workflows. I specialize in designing and implementing end-to-end ML pipelines that connect with your operational tech stack and business processes.",
+			"SERVICES_2_TAGLINE": "AI Pilot Sprint",
+			"SERVICES_2_DESCRIPTION": "Validate one high‑value use case with your data. Deliverables: data audit, working prototype, and go/no‑go recommendations. AI Act: prototype report includes compliance notes (bias risks, human oversight needs) so you know requirements if you scale.",
 			"SERVICES_2_TECH": [
-				"Cloud Architecture",
-				"ML Pipeline Design",
-				"Model Deployment",
-				"System Integration"
+				"€6K–€15K",
+				"3–5 weeks",
+				"Prototype + audit",
+				"Compliance notes"
 			],
-			"SERVICES_3_TAGLINE": "Connect: GenAI Platform",
-			"SERVICES_3_DESCRIPTION": "Access my proprietary GenAI platform designed to accelerate your time-to-value. Connect helps companies go from concept to production faster with structured, accessible AI tools that scale with your business needs.",
+			"SERVICES_3_TAGLINE": "Deployment Sprint",
+			"SERVICES_3_DESCRIPTION": "Turn an existing model or notebook into a robust API/service ready for integration. Deliverable: production‑ready deployment with logging, monitoring, and hand‑over. AI Act: hand‑over includes a compliance checklist (documentation, logging, human‑in‑the‑loop options) to de‑risk audits.",
 			"SERVICES_3_TECH": [
-				"Custom AI Tools",
-				"Rapid Deployment",
-				"Scalable Architecture",
-				"Time-to-Value Focus"
+				"€12K–€18K core",
+				"4–8 weeks",
+				"API + monitoring",
+				"Compliance checklist"
 			],
 
 			"ABOUT_ME_TITLE": "Who am I?",
@@ -99,7 +99,38 @@
 			"CHAT_INPUT_PLACEHOLDER": "Type your message...",
 			"CHAT_SEND_BUTTON": "Send",
 			"CHAT_INITIAL_MESSAGE": "Hi! I'm {{name}}'s AI assistant. Feel free to ask me anything about cloud architecture, AI integration, or my professional services.",
-			"CHAT_INITIALIZING_MESSAGE": "First response may take a few moments as the AI initializes..."
+			"CHAT_INITIALIZING_MESSAGE": "First response may take a few moments as the AI initializes...",
+			"PRICING": {
+				"TITLE": "Packages & Pricing",
+				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Typical Budget", "DESCRIPTION": "Description", "TIMEFRAME": "Timeframe" },
+				"DISCLAIMER": "Fixed-price quotes on request. Prices exclude VAT and third-party costs.",
+				"CTA_LABEL": "Let's talk",
+				"CTA_PACKAGE": {
+					"READINESS": "Start assessment",
+					"PILOT": "Run a pilot",
+					"DEPLOYMENT": "Deploy to production"
+				},
+				"PACKAGES": {
+					"READINESS": {
+						"NAME": "Readiness Assessment",
+						"PRICE": "€3K – €9K",
+						"TIMEFRAME": "1–2 weeks",
+						"DESCRIPTION": "Map out which processes can be optimized with AI/ML based on business value and feasibility. Deliverable: a clear opportunity map. AI Act: flag processes that may fall under high‑risk categories so you know what’s legally sensitive before you invest."
+					},
+					"PILOT": {
+						"NAME": "AI Pilot Sprint",
+						"PRICE": "€6K – €15K",
+						"TIMEFRAME": "3–5 weeks",
+						"DESCRIPTION": "Validate one high‑value use case with your own data. Deliverables: data audit, working prototype, and go/no‑go recommendations. AI Act: prototype report includes compliance notes (bias risks, human oversight needs) so you know what’s required if you scale."
+					},
+					"DEPLOYMENT": {
+						"NAME": "Deployment Sprint",
+						"PRICE": "€12K – €18K (core) · €20K+ with integrations/support",
+						"TIMEFRAME": "4–8 weeks",
+						"DESCRIPTION": "Turn an existing model or notebook into a robust API/service ready for integration. Deliverable: production‑ready deployment with logging, monitoring and hand‑over."
+					}
+				}
+			}
 		}
 	},
 	"fr": {
@@ -129,29 +160,29 @@
 			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",
 
 			"SERVICES_TITLE": "Mes Services",
-			"SERVICES_1_TAGLINE": "Stratégie & Mise en œuvre IA",
-			"SERVICES_1_DESCRIPTION": "De la direction IA fractionnée au conseil technique opérationnel, j'aide les entreprises à identifier les opportunités IA à fort impact et à les concrétiser. Je me concentre sur des applications pratiques qui produisent des résultats mesurables.",
+			"SERVICES_1_TAGLINE": "Readiness Assessment",
+			"SERVICES_1_DESCRIPTION": "Cartographier les processus optimisables par l’IA/ML selon la valeur métier et la faisabilité. Livrable : une cartographie claire des opportunités. AI Act : signalement des zones potentiellement à haut risque pour identifier les sujets sensibles avant d’investir.",
 			"SERVICES_1_TECH": [
-				"Machine Learning",
-				"Vision par Ordinateur",
-				"Détection d'Anomalies",
-				"Applications GenAI"
+				"3–9 K€",
+				"1–2 semaines",
+				"Carto d’opportunités",
+				"Risques AI Act"
 			],
-			"SERVICES_2_TAGLINE": "Intégration IA en Entreprise",
-			"SERVICES_2_DESCRIPTION": "Intégrez l'IA harmonieusement dans vos systèmes et processus existants. Je conçois et implémente des pipelines ML complets qui se connectent à votre stack technique et à vos processus métier.",
+			"SERVICES_2_TAGLINE": "AI Pilot Sprint",
+			"SERVICES_2_DESCRIPTION": "Valider un cas d’usage à forte valeur sur vos données. Livrables : audit des données, prototype fonctionnel et recommandations go/no‑go. AI Act : le rapport de prototype inclut des notes de conformité (risques de biais, supervision humaine) en vue d’un passage à l’échelle.",
 			"SERVICES_2_TECH": [
-				"Architecture Cloud",
-				"Conception Pipeline ML",
-				"Déploiement de Modèles",
-				"Intégration de Systèmes"
+				"6–15 K€",
+				"3–5 semaines",
+				"Prototype + audit",
+				"Notes de conformité"
 			],
-			"SERVICES_3_TAGLINE": "Connect: Plateforme GenAI",
-			"SERVICES_3_DESCRIPTION": "Accédez à ma plateforme GenAI propriétaire conçue pour accélérer votre time-to-market. Connect permet aux entreprises de passer rapidement du concept à la production avec des outils IA structurés et accessibles qui évoluent avec vos besoins.",
+			"SERVICES_3_TAGLINE": "Deployment Sprint",
+			"SERVICES_3_DESCRIPTION": "Transformer un modèle ou un notebook en une API/service robuste prêt à l’intégration. Livrable : déploiement production avec journalisation, monitoring et hand‑over. AI Act : le hand‑over inclut une checklist de conformité (documentation, logs, options human‑in‑the‑loop) pour sécuriser les audits.",
 			"SERVICES_3_TECH": [
-				"Outils IA Personnalisés",
-				"Déploiement Rapide",
-				"Architecture Évolutive",
-				"Focus sur la Valeur"
+				"12–18 K€ cœur",
+				"4–8 semaines",
+				"API + monitoring",
+				"Checklist conformité"
 			],
 
 			"ABOUT_ME_TITLE": "Expertise",
@@ -202,7 +233,38 @@
 			"CHAT_INPUT_PLACEHOLDER": "Écrivez votre message...",
 			"CHAT_SEND_BUTTON": "Envoyer",
 			"CHAT_INITIAL_MESSAGE": "Bonjour! Je suis l'assistant IA de {{name}}. N'hésitez pas à me poser des questions sur l'architecture cloud, l'intégration IA ou mes services professionnels.",
-			"CHAT_INITIALIZING_MESSAGE": "La première réponse peut prendre quelques instants pendant l'initialisation de l'IA..."
+			"CHAT_INITIALIZING_MESSAGE": "La première réponse peut prendre quelques instants pendant l'initialisation de l'IA...",
+			"PRICING": {
+				"TITLE": "Offres & Tarifs",
+				"ROW_LABELS": { "PACKAGE": "Offre", "PRICE": "Budget indicatif", "DESCRIPTION": "Ce que vous obtenez", "TIMEFRAME": "Délais" },
+				"DISCLAIMER": "Devis au forfait sur demande. Tarifs hors TVA et coûts externes.",
+				"CTA_LABEL": "Discutons",
+				"CTA_PACKAGE": {
+					"READINESS": "Lancer le diagnostic",
+					"PILOT": "Lancer le pilote",
+					"DEPLOYMENT": "Passer en production"
+				},
+				"PACKAGES": {
+					"READINESS": {
+						"NAME": "Diagnostic d’opportunités",
+						"PRICE": "3–9 K€",
+						"TIMEFRAME": "1–2 semaines",
+						"DESCRIPTION": "Identifiez où l’IA/ML peut créer le plus de valeur et ce qui est faisable rapidement. Livrable : cartographie claire des opportunités. AI Act : repérage des usages potentiellement à haut risque pour orienter l’investissement."
+					},
+					"PILOT": {
+						"NAME": "Sprint Pilote IA",
+						"PRICE": "6–15 K€",
+						"TIMEFRAME": "3–5 semaines",
+						"DESCRIPTION": "Test d'un cas d’usage prioritaire avec vos données. Livrables : audit des données, prototype exploitable et recommandations go/no‑go. AI Act : notes de conformité (biais, supervision humaine) pour préparer l’industrialisation."
+					},
+					"DEPLOYMENT": {
+						"NAME": "Sprint de Déploiement",
+						"PRICE": "12–18 K€",
+						"TIMEFRAME": "4–8 semaines",
+						"DESCRIPTION": "Passer d’un modèle/notebook à un service/API fiable, prêt à intégrer. Livrable : déploiement production avec logs, monitoring et transfert."
+					}
+				}
+			}
 		}
 	}
 }

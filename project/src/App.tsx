@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import ServiceCard from './Components/ServiceCard';
 import ServiceCardRow from './Components/ServiceCardRow';
+import PricingTable from './Components/PricingTable';
 import Navbar from './Components/Navbar';
 import Section from './Components/Section';
 import Clock from './Components/Clock';
@@ -122,30 +123,8 @@ export default function App() {
 				</div>
 			</header>
 			<MobileScrollDown />
-			<Section id='services' title={t("SERVICES_TITLE")}>
-				<ServiceCardRow>
-					<ServiceCard
-							tagline={t("SERVICES_1_TAGLINE")}
-							description={t("SERVICES_1_DESCRIPTION")}
-							image="/img/logo_jira.svg"
-							alt="AI Strategy & Implementation"
-							technologies={t("SERVICES_1_TECH", { returnObjects: true })}
-					/>
-					<ServiceCard
-							tagline={t("SERVICES_2_TAGLINE")}
-							description={t("SERVICES_2_DESCRIPTION")}
-							image="/img/logo_microsoft.svg"
-							alt="Enterprise AI Integration"
-							technologies={t("SERVICES_2_TECH", { returnObjects: true })}
-					/>
-					<ServiceCard
-							tagline={t("SERVICES_3_TAGLINE")}
-							description={t("SERVICES_3_DESCRIPTION")}
-							image="/img/logo_openai.svg"
-							alt="Connect: GenAI Platform"
-							technologies={t("SERVICES_3_TECH", { returnObjects: true })}
-					/>
-				</ServiceCardRow>
+			<Section id='pricing' title={t("PRICING.TITLE")}>
+				<PricingTable />
 			</Section>
 			<Section id='tech-stack' title={t("TECH_STACK_TITLE")}>
 				<Techs techs={[
