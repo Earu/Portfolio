@@ -1,8 +1,8 @@
 {
 	"en": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | AI Readiness, Pilot & Deployment",
-			"HTML_META": "AI readiness assessments, pilot sprints and production deployments. EU AI Act guidance included. Notebook/model → API with monitoring and handover.",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Preparation Diagnostic, Prototype/POC & Deployment",
+			"HTML_META": "Preparation diagnostics, prototype/POC sprints and production deployments. EU AI Act guidance included. Notebook/model → API with monitoring and handover.",
 
 			"CONSOLE_FUN_HEADER": "Hold up!",
 			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
@@ -18,38 +18,12 @@
 			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES WITH",
 			"HEADER_HERO_PROOFS": [
 				"Readiness assessments focused on ROI and feasibility",
-				"Pilots on your data in 3–5 weeks",
+				"Pilots on your data in 3–6 weeks",
 				"Production deployments with monitoring & handover",
 				"AI Act considerations included from day one"
 			],
 			"HEADER_HERO_CTA": "START A PROJECT",
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
-
-			"SERVICES_TITLE": "Services",
-			"SERVICES_1_TAGLINE": "Readiness Assessment",
-			"SERVICES_1_DESCRIPTION": "Map which processes can be optimized with AI/ML based on business value and feasibility. Deliverable: a clear opportunity map. AI Act: flag potential high‑risk areas so you know what's legally sensitive before you invest.",
-			"SERVICES_1_TECH": [
-				"€3K–€9K",
-				"1–2 weeks",
-				"Opportunity map",
-				"AI Act risk flags"
-			],
-			"SERVICES_2_TAGLINE": "AI Pilot Sprint",
-			"SERVICES_2_DESCRIPTION": "Validate one high‑value use case with your data. Deliverables: data audit, working prototype, and go/no‑go recommendations. AI Act: prototype report includes compliance notes (bias risks, human oversight needs) so you know requirements if you scale.",
-			"SERVICES_2_TECH": [
-				"€6K–€15K",
-				"3–5 weeks",
-				"Prototype + audit",
-				"Compliance notes"
-			],
-			"SERVICES_3_TAGLINE": "Deployment Sprint",
-			"SERVICES_3_DESCRIPTION": "Turn an existing model or notebook into a robust API/service ready for integration. Deliverable: production‑ready deployment with logging, monitoring, and hand‑over. AI Act: hand‑over includes a compliance checklist (documentation, logging, human‑in‑the‑loop options) to de‑risk audits.",
-			"SERVICES_3_TECH": [
-				"€12K–€18K core",
-				"4–8 weeks",
-				"API + monitoring",
-				"Compliance checklist"
-			],
 
 			"ABOUT_ME_TITLE": "Expertise",
 			"ABOUT_ME_PART_1_TITLE": "AI Consultant & Technical Advisor",
@@ -102,7 +76,7 @@
 			"CHAT_INITIALIZING_MESSAGE": "First response may take a few moments as the AI initializes...",
 			"PRICING": {
 				"TITLE": "Packages & Pricing",
-				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Typical Budget", "DESCRIPTION": "What you get", "TIMEFRAME": "Timeframe" },
+				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Starting from (indicative)", "TIMEFRAME": "Timeframe", "OBJECTIVE": "Objective", "DESCRIPTION": "What you get" },
 				"DISCLAIMER": "Fixed-price quotes on request. Prices exclude VAT and third-party costs.",
 				"CTA_LABEL": "Let's talk",
 				"CTA_PACKAGE": {
@@ -112,22 +86,25 @@
 				},
 				"PACKAGES": {
 					"READINESS": {
-						"NAME": "Readiness Assessment",
-						"PRICE": "€3K – €9K",
-						"TIMEFRAME": "1–2 weeks",
-						"DESCRIPTION": "Map out which processes can be optimized with AI/ML based on business value and feasibility. Deliverable: a clear opportunity map. AI Act: flag processes that may fall under high‑risk categories so you know what’s legally sensitive before you invest."
+						"NAME": "Preparation Diagnostic",
+						"PRICE": "€1,500",
+						"TIMEFRAME": "1–2 weeks (fast-track available)",
+						"OBJECTIVE": "Identify where data/technology will truly drive impact and where it won’t. Decide whether to proceed.",
+						"DESCRIPTION": "Process and data analysis; impact/feasibility opportunity map; debrief workshop."
 					},
 					"PILOT": {
-						"NAME": "AI Pilot Sprint",
-						"PRICE": "€6K – €15K",
-						"TIMEFRAME": "3–5 weeks",
-						"DESCRIPTION": "Validate one high‑value use case with your own data. Deliverables: data audit, working prototype, and go/no‑go recommendations. AI Act: prototype report includes compliance notes (bias risks, human oversight needs) so you know what’s required if you scale."
+						"NAME": "Prototype / POC Sprint",
+						"PRICE": "€5,000",
+						"TIMEFRAME": "3–6 weeks",
+						"OBJECTIVE": "Test technical and business feasibility on a real use case with your data. Decide Go/No‑Go.",
+						"DESCRIPTION": "Functional prototype (API, notebook or mini‑app); performance metrics and ROI estimate; Go/No‑Go recommendations."
 					},
 					"DEPLOYMENT": {
 						"NAME": "Deployment Sprint",
-						"PRICE": "€12K – €18K (core) · €20K+ with integrations/support",
+						"PRICE": "€7,500",
 						"TIMEFRAME": "4–8 weeks",
-						"DESCRIPTION": "Turn an existing model or notebook into a robust API/service ready for integration. Deliverable: production‑ready deployment with logging, monitoring and hand‑over."
+						"OBJECTIVE": "Turn a validated prototype into a stable, maintainable service ready for integration.",
+						"DESCRIPTION": "Containerized API or microservice; documentation and deployment guide; monitoring and handover session."
 					}
 				}
 			}
@@ -135,8 +112,8 @@
 	},
 	"fr": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | Offres IA: Diagnostic, Pilote, Déploiement",
-			"HTML_META": "Diagnostics IA, sprints pilote et déploiements en production. Prise en compte de l’AI Act. Notebook/modèle → API avec monitoring et transfert.",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Offres IA: Diagnostic de préparation, Prototype/POC, Déploiement",
+			"HTML_META": "Diagnostic de préparation, sprints prototype/POC et déploiements en production. Prise en compte de l’AI Act. Notebook/modèle → API avec monitoring et transfert.",
 
 			"CONSOLE_FUN_HEADER": "Attendez!",
 			"CONSOLE_FUN_TEXT": "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
@@ -152,38 +129,12 @@
 			"HEADER_HERO_SUBTITLE_BASE": "DES SOLUTIONS POUR VOTRE ENTREPRISE EN",
 			"HEADER_HERO_PROOFS": [
 				"Diagnostics IA orientés ROI et faisabilité",
-				"Pilotes sur vos données en 3–5 semaines",
+				"Pilotes sur vos données en 3–6 semaines",
 				"Déploiements en production avec monitoring et transfert",
 				"Prise en compte de l’AI Act dès le départ"
 			],
 			"HEADER_HERO_CTA": "DÉMARRER UN PROJET",
 			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",
-
-			"SERVICES_TITLE": "Mes Services",
-			"SERVICES_1_TAGLINE": "Readiness Assessment",
-			"SERVICES_1_DESCRIPTION": "Cartographier les processus optimisables par l’IA/ML selon la valeur métier et la faisabilité. Livrable : une cartographie claire des opportunités. AI Act : signalement des zones potentiellement à haut risque pour identifier les sujets sensibles avant d’investir.",
-			"SERVICES_1_TECH": [
-				"3–9 K€",
-				"1–2 semaines",
-				"Carto d’opportunités",
-				"Risques AI Act"
-			],
-			"SERVICES_2_TAGLINE": "AI Pilot Sprint",
-			"SERVICES_2_DESCRIPTION": "Valider un cas d’usage à forte valeur sur vos données. Livrables : audit des données, prototype fonctionnel et recommandations go/no‑go. AI Act : le rapport de prototype inclut des notes de conformité (risques de biais, supervision humaine) en vue d’un passage à l’échelle.",
-			"SERVICES_2_TECH": [
-				"6–15 K€",
-				"3–5 semaines",
-				"Prototype + audit",
-				"Notes de conformité"
-			],
-			"SERVICES_3_TAGLINE": "Deployment Sprint",
-			"SERVICES_3_DESCRIPTION": "Transformer un modèle ou un notebook en une API/service robuste prêt à l’intégration. Livrable : déploiement production avec journalisation, monitoring et hand‑over. AI Act : le hand‑over inclut une checklist de conformité (documentation, logs, options human‑in‑the‑loop) pour sécuriser les audits.",
-			"SERVICES_3_TECH": [
-				"12–18 K€ cœur",
-				"4–8 semaines",
-				"API + monitoring",
-				"Checklist conformité"
-			],
 
 			"ABOUT_ME_TITLE": "Expertise",
 			"ABOUT_ME_PART_1_TITLE": "Consultant en IA & Conseiller Technique",
@@ -236,7 +187,7 @@
 			"CHAT_INITIALIZING_MESSAGE": "La première réponse peut prendre quelques instants pendant l'initialisation de l'IA...",
 			"PRICING": {
 				"TITLE": "Offres & Tarifs",
-				"ROW_LABELS": { "PACKAGE": "Offre", "PRICE": "Budget indicatif", "DESCRIPTION": "Ce que vous obtenez", "TIMEFRAME": "Délais" },
+				"ROW_LABELS": { "PACKAGE": "Offre", "PRICE": "À partir de (tarif indicatif)", "TIMEFRAME": "Délais", "OBJECTIVE": "Objectif", "DESCRIPTION": "Ce que vous obtenez" },
 				"DISCLAIMER": "Devis au forfait sur demande. Tarifs hors TVA et coûts externes.",
 				"CTA_LABEL": "Discutons",
 				"CTA_PACKAGE": {
@@ -246,22 +197,25 @@
 				},
 				"PACKAGES": {
 					"READINESS": {
-						"NAME": "Diagnostic d’opportunités",
-						"PRICE": "3–9 K€",
-						"TIMEFRAME": "1–2 semaines",
-						"DESCRIPTION": "Identifiez où l’IA/ML peut créer le plus de valeur et ce qui est faisable rapidement. Livrable : cartographie claire des opportunités. AI Act : repérage des usages potentiellement à haut risque pour orienter l’investissement."
+						"NAME": "Diagnostic de préparation",
+						"PRICE": "1500 €",
+						"TIMEFRAME": "1 à 2 semaines (Fast-track 1-2 jours possible)",
+						"OBJECTIVE": "Identifier où la donnée ou la technologie peuvent vraiment avoir un impact, et où elles n’en ont pas. Décider s’il faut aller plus loin.",
+						"DESCRIPTION": "Analyse des processus et des données ; Carte d’opportunités (impact / faisabilité) ; Atelier de restitution."
 					},
 					"PILOT": {
-						"NAME": "Sprint Pilote IA",
-						"PRICE": "6–15 K€",
-						"TIMEFRAME": "3–5 semaines",
-						"DESCRIPTION": "Test d'un cas d’usage prioritaire avec vos données. Livrables : audit des données, prototype exploitable et recommandations go/no‑go. AI Act : notes de conformité (biais, supervision humaine) pour préparer l’industrialisation."
+						"NAME": "Sprint Prototype / POC",
+						"PRICE": "5000 €",
+						"TIMEFRAME": "3 à 6 semaines",
+						"OBJECTIVE": "Tester la faisabilité technique et business d’un cas d’usage réel à partir de vos données. Décider objectivement du Go / No‑Go.",
+						"DESCRIPTION": "Prototype fonctionnel (API, notebook ou mini‑app) ; Métriques de performance et estimation de ROI ; Recommandations Go / No‑Go."
 					},
 					"DEPLOYMENT": {
-						"NAME": "Sprint de Déploiement",
-						"PRICE": "12–18 K€",
-						"TIMEFRAME": "4–8 semaines",
-						"DESCRIPTION": "Passer d’un modèle/notebook à un service/API fiable, prêt à intégrer. Livrable : déploiement production avec logs, monitoring et transfert."
+						"NAME": "Sprint de déploiement",
+						"PRICE": "7500 €",
+						"TIMEFRAME": "4 à 8 semaines",
+						"OBJECTIVE": "Transformer un prototype validé en un service stable et maintenable, prêt à être intégré à votre environnement.",
+						"DESCRIPTION": "API ou microservice conteneurisé ; Documentation et guide de déploiement ; Monitoring et session de transfert."
 					}
 				}
 			}

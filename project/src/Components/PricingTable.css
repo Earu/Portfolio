@@ -72,6 +72,7 @@
 .pricing-table-cell .cell-inner { display: flex; flex-direction: column; gap: 6px; }
 .pricing-table-cell .cell-label { font-family: "Rajdhani", sans-serif; font-weight: 600; opacity: 0.8; }
 .pricing-table-cell .cell-value { line-height: 1.6; }
+.small-note { font-size: 75%; opacity: 0.8; }
 
 /* Row separators (optional)
    Uncomment to re-enable: apply a subtle line between rows
@@ -81,6 +82,8 @@
 .pricing-table-cell.price { font-weight: 600; }
 .pricing-table-cell.timeframe { opacity: 0.9; }
 .pricing-table-cell.description { line-height: 1.6; }
+.deliverables-list { margin: 6px 0 0 18px; padding: 0; }
+.deliverables-list li { margin: 2px 0; }
 
 .pricing-table-cell.cta-cell { text-align: center; }
 .pricing-cta {
@@ -134,6 +137,7 @@
 	.pricing-card-row + .pricing-card-row { border-top: 1px solid rgba(255,255,255,0.12); }
 	.pricing-card-row .cell-label { font-family: "Rajdhani", sans-serif; font-weight: 600; opacity: 0.8; margin-bottom: 6px; }
 	.pricing-card-row .cell-value { line-height: 1.6; }
+	.pricing-card-row .deliverables-list { margin-left: 18px; }
 	.pricing-card-row.price .cell-value { font-weight: 700; }
 	.pricing-card-row.cta-cell { text-align: center; }
 }
