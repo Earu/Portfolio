@@ -87,21 +87,21 @@
 				"PACKAGES": {
 					"READINESS": {
 						"NAME": "Preparation Diagnostic",
-						"PRICE": "€1,500",
+						"PRICE": "€2,900",
 						"TIMEFRAME": "1–2 weeks (fast-track available)",
 						"OBJECTIVE": "Identify where data/technology will truly drive impact and where it won’t. Decide whether to proceed.",
 						"DESCRIPTION": "Process and data analysis; impact/feasibility opportunity map; debrief workshop."
 					},
 					"PILOT": {
 						"NAME": "Prototype / POC Sprint",
-						"PRICE": "€5,000",
+						"PRICE": "€8,500",
 						"TIMEFRAME": "3–6 weeks",
 						"OBJECTIVE": "Test technical and business feasibility on a real use case with your data. Decide Go/No‑Go.",
 						"DESCRIPTION": "Functional prototype (API, notebook or mini‑app); performance metrics and ROI estimate; Go/No‑Go recommendations."
 					},
 					"DEPLOYMENT": {
 						"NAME": "Deployment Sprint",
-						"PRICE": "€7,500",
+						"PRICE": "€10,250",
 						"TIMEFRAME": "4–8 weeks",
 						"OBJECTIVE": "Turn a validated prototype into a stable, maintainable service ready for integration.",
 						"DESCRIPTION": "Containerized API or microservice; documentation and deployment guide; monitoring and handover session."
@@ -198,21 +198,21 @@
 				"PACKAGES": {
 					"READINESS": {
 						"NAME": "Diagnostic de préparation",
-						"PRICE": "1500 €",
-						"TIMEFRAME": "1 à 2 semaines (Fast-track 1-2 jours possible)",
+						"PRICE": "2,900 €",
+						"TIMEFRAME": "1 à 2 semaines (Fast-track possible)",
 						"OBJECTIVE": "Identifier où la donnée ou la technologie peuvent vraiment avoir un impact, et où elles n’en ont pas. Décider s’il faut aller plus loin.",
 						"DESCRIPTION": "Analyse des processus et des données ; Carte d’opportunités (impact / faisabilité) ; Atelier de restitution."
 					},
 					"PILOT": {
 						"NAME": "Sprint Prototype / POC",
-						"PRICE": "5000 €",
+						"PRICE": "8,500 €",
 						"TIMEFRAME": "3 à 6 semaines",
 						"OBJECTIVE": "Tester la faisabilité technique et business d’un cas d’usage réel à partir de vos données. Décider objectivement du Go / No‑Go.",
 						"DESCRIPTION": "Prototype fonctionnel (API, notebook ou mini‑app) ; Métriques de performance et estimation de ROI ; Recommandations Go / No‑Go."
 					},
 					"DEPLOYMENT": {
 						"NAME": "Sprint de déploiement",
-						"PRICE": "7500 €",
+						"PRICE": "10,250 €",
 						"TIMEFRAME": "4 à 8 semaines",
 						"OBJECTIVE": "Transformer un prototype validé en un service stable et maintenable, prêt à être intégré à votre environnement.",
 						"DESCRIPTION": "API ou microservice conteneurisé ; Documentation et guide de déploiement ; Monitoring et session de transfert."
