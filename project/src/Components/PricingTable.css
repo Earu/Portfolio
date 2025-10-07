@@ -100,6 +100,19 @@
 	transition: all 0.2s ease;
 }
 .pricing-cta:hover { background: transparent; color: var(--arasaka-text-light); }
+.pricing-cta.inline {
+	padding: 0px !important;
+	padding-top: 4px !important;
+	font-size: 18px;
+	background: none;
+	border: none;
+	text-decoration: underline;
+	color: var(--arasaka-red);
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 1000;
+}
+.pricing-cta.inline:hover { background: none; color: var(--arasaka-red); }
 
 /* Vertical borders between columns */
 .col { border-right: 1px solid rgba(255,255,255,0.12); }
@@ -140,8 +153,25 @@
 	.pricing-card-row .deliverables-list { margin-left: 18px; }
 	.pricing-card-row.price .cell-value { font-weight: 700; }
 	.pricing-card-row.cta-cell { text-align: center; }
+
+	.pricing-table-footer {
+		flex-direction: column;
+		gap: 0px !important;
+		margin-top: 20px !important;
+	}
 }
 
 /* Desktop-only refinements can go here */
+
+.pricing-table-footer {
+	margin-top: 80px;
+	padding: 0px;
+	display: flex;
+	gap: 2px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.pricing-table-footer .footer-note { opacity: 0.9; }
 
 

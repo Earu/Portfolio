@@ -8,8 +8,6 @@ import serveStatic from "serve-static";
 import { createServer as createViteServer } from "vite";
 import { fileURLToPath } from "url";
 import crypto from "crypto";
-import { getLlama, LlamaChatSession, LlamaContext, LlamaModel } from "node-llama-cpp";
-import { v4 as uuidv4 } from 'uuid';
 
 // slight polyfills
 (global as any).window = {};
@@ -81,125 +79,6 @@ function injectPrivacyVariables(lang: string, html: string): string {
 			}</script>`);
 }
 
-const llama = await getLlama();
-const model = await llama.loadModel({
-    modelPath: path.join(modelsPath, "meta-llama-3.1-8b-instruct-q4_k_m.gguf"),
-});
-
-const baseEnglishPrompt = `You are an AI assistant for ${privacyName}, an AI Consultant & Technical Advisor. Be helpful, direct, and professional. Keep responses under 3 sentences unless asked for more detail.
-
-Core Knowledge:
-- AI Strategy & Implementation (Machine Learning, Computer Vision, GenAI)
-- Enterprise AI Integration & Model Deployment
-- Data Science & Fractional Head of AI roles
-- Cloud Architecture & AI Development
-
-Contact Information:
-- Email: ${privacyMail}
-- LinkedIn: ${privacyLinkedinUrl}
-- Malt: ${privacyMaltUrl}
-
-Response Style:
-- Be clear and concise
-- Focus on practical, real-world AI applications
-- Use "${privacyName} can help with..." or "${privacyName} specializes in..."
-- For complex queries, suggest booking a consultation
-
-Important Rules:
-- Never invent or assume facts about ${privacyName}'s experience
-- If unsure about specific details, recommend contacting ${privacyName} directly
-- Stick to the information provided above
-- If the topics go beyond the professional sphere, answer that ${privacyName} is an expert in AI Consulting & Technical Advisory
-
-Remember: Keep responses brief and focused. For project specifics or pricing, recommend scheduling a meeting.`;
-
-const baseFrenchPrompt = `Tu es l'assistant IA de ${privacyName}, Consultant en IA & Conseiller Technique. Tu es là pour aider de manière directe et professionnelle. Tu gardes tes réponses concises sauf si on te demande plus de détails.
-
-Connaissances de base:
-- Stratégie & Mise en œuvre d'IA (Machine Learning, Computer Vision, GenAI)
-- Intégration d'IA en Entreprise & Déploiement de Modèles
-- Data Science & Rôles de Direction IA Fractionnée
-- Architecture Cloud & Développement d'IA
-
-Informations de contact:
-- Email: ${privacyMail}
-- LinkedIn: ${privacyLinkedinUrl}
-- Malt: ${privacyMaltUrl}
-
-Style de réponse:
-- Être clair et concis
-- Privilégier les applications d'IA pratiques et concrètes
-- Utiliser "${privacyName} peut vous aider avec..." ou "${privacyName} est spécialisé en..."
-- Pour les demandes complexes, suggérer un rendez-vous
-
-Règles importantes:
-- Ne jamais inventer ou supposer des faits sur l'expérience de ${privacyName}
-- En cas de doute, recommander de contacter ${privacyName} directement
-- S'en tenir aux informations fournies ci-dessus
-- Si les sujets sortent de la sphère professionnelle, répondre que ${privacyName} est un expert en Conseil IA & Conseil Technique
-
-Important: Garder les réponses brèves et concentrées. Pour les détails de projet ou les tarifs, recommander de planifier une réunion.`;
-
-// Add chat endpoint
-const chatSessions = new Map<string, LlamaChatSession>();
-
-// Cleanup old sessions periodically (optional)
-setInterval(() => {
-	const now = Date.now();
-	for (const [sessionId, session] of chatSessions.entries()) {
-		if (now - (session as any).lastAccessed > 30 * 60 * 1000) { // 30 minutes
-			chatSessions.delete(sessionId);
-		}
-	}
-}, 5 * 60 * 1000); // Check every 5 minutes
-
-function createChatEndpoint(app: express.Application) {
-	app.post('/api/chat', express.json(), async (req, res) => {
-		try {
-			const { message, sessionId, lang = 'en' } = req.body;
-
-			// Set headers for streaming
-			res.setHeader('Content-Type', 'text/event-stream');
-			res.setHeader('Cache-Control', 'no-cache');
-			res.setHeader('Connection', 'keep-alive');
-
-			let session: LlamaChatSession;
-			if (sessionId && chatSessions.has(sessionId)) {
-				session = chatSessions.get(sessionId)!;
-			} else {
-				const context = await model.createContext();
-				session = new LlamaChatSession({
-					contextSequence: context.getSequence(),
-					systemPrompt: lang === 'en' ? baseEnglishPrompt : baseFrenchPrompt
-				});
-				const newSessionId = uuidv4();
-				chatSessions.set(newSessionId, session);
-				res.setHeader('X-Session-Id', newSessionId);
-			}
-
-			// Update last accessed time
-			(session as any).lastAccessed = Date.now();
-
-			// Stream response from Llama
-			const stream = await session.prompt(message, {
-				temperature: 0.7,
-				maxTokens: 800,
-				onToken: (chunk) => {
-					const text = model.detokenize(chunk);
-					res.write(`data: ${JSON.stringify({ chunk: text })}\n\n`);
-					// Force flush the response
-					if (res.flush) res.flush();
-				}
-			});
-
-			res.end();
-		} catch (error) {
-			console.error('Chat error:', error);
-			res.status(500).json({ error: 'Failed to process chat message' });
-		}
-	});
-}
-
 async function createServer(isProd = process.env.NODE_ENV === "production") {
 	const app = express();
 	const vite = await createViteServer({
@@ -252,7 +131,6 @@ async function createServer(isProd = process.env.NODE_ENV === "production") {
 		}
 	}
 
-	createChatEndpoint(app);
 	app.get("/", async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));
 	app.get("/fr", async (req: Request, res: Response, next: NextFunction) => processRequest("fr", req, res, next));
 	app.get("/en", async (req: Request, res: Response, next: NextFunction) => processRequest("en", req, res, next));

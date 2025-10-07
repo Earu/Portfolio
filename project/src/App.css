@@ -844,6 +844,11 @@ footer a:hover::after {
         align-items: center;
         text-align: center;
     }
+
+    .hero-main h1::before,
+    .hero-main h1::after {
+        display: none;
+    }
 }
 
 /* Animations */

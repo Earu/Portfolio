@@ -3,7 +3,7 @@ import "./PricingTable.css";
 
 type PackageKey = "READINESS" | "PILOT" | "DEPLOYMENT";
 
-export default function PricingTable(): JSX.Element {
+export default function PricingTable({ meetingUrl }: { meetingUrl: string }): JSX.Element {
   const { t } = useTranslation();
 
   const packages: PackageKey[] = ["READINESS", "PILOT", "DEPLOYMENT"];
@@ -91,7 +91,7 @@ export default function PricingTable(): JSX.Element {
 
         {packages.map((key, idx) => (
           <div key={`${key}-cta`} className={`pricing-table-cell cta-cell col col-${idx + 1}`}>
-            <a href="#schedule" className="pricing-cta">{t(`PRICING.CTA_PACKAGE.${key}`, { defaultValue: t("PRICING.CTA_LABEL") as string })}</a>
+            <a href={meetingUrl} target="_blank" className="pricing-cta">{t(`PRICING.CTA_PACKAGE.${key}`, { defaultValue: t("PRICING.CTA_LABEL") as string })}</a>
           </div>
         ))}
       </div>
@@ -120,10 +120,16 @@ export default function PricingTable(): JSX.Element {
               <div className="cell-value">{renderDeliverables(t(`PRICING.PACKAGES.${key}.DESCRIPTION`) as string)}</div>
             </div>
             <div className="pricing-card-row cta-cell">
-              <a href="#schedule" className="pricing-cta">{t(`PRICING.CTA_PACKAGE.${key}`, { defaultValue: t("PRICING.CTA_LABEL") as string })}</a>
+              <a href={meetingUrl} target="_blank" className="pricing-cta">{t(`PRICING.CTA_PACKAGE.${key}`, { defaultValue: t("PRICING.CTA_LABEL") as string })}</a>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="pricing-table-footer">
+        <span className="footer-note"><b>{t("PRICING.FOOTER_NOTE")}</b></span>
+        &nbsp;
+        <a href={meetingUrl} target="_blank" className="pricing-cta inline">{t("PRICING.CTA_LABEL")}</a>
       </div>
     </div>
   );

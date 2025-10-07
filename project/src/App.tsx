@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import ServiceCard from './Components/ServiceCard';
-import ServiceCardRow from './Components/ServiceCardRow';
 import PricingTable from './Components/PricingTable';
 import Navbar from './Components/Navbar';
 import Section from './Components/Section';
@@ -15,7 +13,6 @@ import ProjectDrawer from './Components/ProjectDrawer';
 import i18n from './i18n';
 import Techs from './Components/Techs';
 import SocialProfiles from './Components/SocialProfiles';
-import ChatWidget from './Components/ChatWidget';
 
 const AnimatedSubtitle: React.FC = () => {
 	const { t } = useTranslation();
@@ -28,10 +25,10 @@ const AnimatedSubtitle: React.FC = () => {
 	const technologies = [
 		"MACHINE LEARNING",
 		"ARTIFICIAL INTELLIGENCE",
+		"SOFTWARE ENGINEERING",
 		"COMPUTER VISION",
 		"GENAI APPLICATIONS",
 		"DATA SCIENCE",
-		"AI STRATEGY",
 		"CLOUD ARCHITECTURE",
 	];
 
@@ -124,7 +121,7 @@ export default function App() {
 			</header>
 			<MobileScrollDown />
 			<Section id='pricing' title={t("PRICING.TITLE")}>
-				<PricingTable />
+				<PricingTable meetingUrl={meetingUrl} />
 			</Section>
 			<Section id='tech-stack' title={t("TECH_STACK_TITLE")}>
 				<Techs techs={[
@@ -370,7 +367,6 @@ export default function App() {
 					[t("FOOTER_COLUMN_2_MEETING_LABEL"), meetingUrl]
 				]} />
 			</footer>
-			<ChatWidget />
 		</div>
 	);
 }

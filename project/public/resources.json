@@ -18,11 +18,11 @@
 			"HEADER_HERO_SUBTITLE_BASE": "HELPING COMPANIES WITH",
 			"HEADER_HERO_PROOFS": [
 				"Readiness assessments focused on ROI and feasibility",
-				"Pilots on your data in 3–6 weeks",
-				"Production deployments with monitoring & handover",
+				"Projects tailored to your needs",
+				"Zero bullshit, concrete solutions at your fingertips",
 				"AI Act considerations included from day one"
 			],
-			"HEADER_HERO_CTA": "START A PROJECT",
+			"HEADER_HERO_CTA": "CONTACT ME",
 			"HEADER_HERO_SECONDARY_CTA": "VIEW PORTFOLIO",
 
 			"ABOUT_ME_TITLE": "Expertise",
@@ -79,6 +79,7 @@
 				"ROW_LABELS": { "PACKAGE": "Package", "PRICE": "Starting from (indicative)", "TIMEFRAME": "Timeframe", "OBJECTIVE": "Objective", "DESCRIPTION": "What you get" },
 				"DISCLAIMER": "Fixed-price quotes on request. Prices exclude VAT and third-party costs.",
 				"CTA_LABEL": "Let's talk",
+				"FOOTER_NOTE": "Not sure what fits best for you?",
 				"CTA_PACKAGE": {
 					"READINESS": "Start assessment",
 					"PILOT": "Run a pilot",
@@ -128,12 +129,12 @@
 			"HEADER_HERO_SUBTITLE": "Des solutions IA concrètes pour résoudre vos défis métier",
 			"HEADER_HERO_SUBTITLE_BASE": "DES SOLUTIONS POUR VOTRE ENTREPRISE EN",
 			"HEADER_HERO_PROOFS": [
-				"Diagnostics IA orientés ROI et faisabilité",
-				"Pilotes sur vos données en 3–6 semaines",
-				"Déploiements en production avec monitoring et transfert",
+				"Diagnostics orientés ROI et faisabilité",
+				"Projets adaptés à vos besoins",
+				"Zero bullshit, des solutions concrètes à la clé",
 				"Prise en compte de l’AI Act dès le départ"
 			],
-			"HEADER_HERO_CTA": "DÉMARRER UN PROJET",
+			"HEADER_HERO_CTA": "CONTACTEZ-MOI",
 			"HEADER_HERO_SECONDARY_CTA": "VOIR LE PORTFOLIO",
 
 			"ABOUT_ME_TITLE": "Expertise",
@@ -189,7 +190,8 @@
 				"TITLE": "Offres & Tarifs",
 				"ROW_LABELS": { "PACKAGE": "Offre", "PRICE": "À partir de (tarif indicatif)", "TIMEFRAME": "Délais", "OBJECTIVE": "Objectif", "DESCRIPTION": "Ce que vous obtenez" },
 				"DISCLAIMER": "Devis au forfait sur demande. Tarifs hors TVA et coûts externes.",
-				"CTA_LABEL": "Discutons",
+				"CTA_LABEL": "Prendre rendez-vous",
+				"FOOTER_NOTE": "Pas sûr de ce qui vous convient le mieux ?",
 				"CTA_PACKAGE": {
 					"READINESS": "Lancer le diagnostic",
 					"PILOT": "Lancer le pilote",
