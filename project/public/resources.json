@@ -1,12 +1,8 @@
 {
 	"en": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | Preparation Diagnostic, Prototype/POC & Deployment",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | AI Solutions & Technical Advisory",
 			"HTML_META": "Preparation diagnostics, prototype/POC sprints and production deployments. EU AI Act guidance included. Notebook/model → API with monitoring and handover.",
-
-			"CONSOLE_FUN_HEADER": "Hold up!",
-			"CONSOLE_FUN_TEXT": "Just kidding! There's not much to see here, but we should definitely schedule a meeting to broaden these horizons!",
-			"CONSOLE_FUN_INFO": "By the way, you can find the code for this website here: {{GITHUB_URL}}/Portfolio",
 
 			"NAV_SERVICES_LABEL": "Packages & Pricing",
 			"NAV_ABOUT_ME_LABEL": "Expertise",
@@ -113,12 +109,8 @@
 	},
 	"fr": {
 		"translation": {
-			"HTML_TITLE": "[[PRIVACY_NAME]] | Offres IA: Diagnostic de préparation, Prototype/POC, Déploiement",
+			"HTML_TITLE": "[[PRIVACY_NAME]] | Solutions IA & Conseil Technique",
 			"HTML_META": "Diagnostic de préparation, sprints prototype/POC et déploiements en production. Prise en compte de l’AI Act. Notebook/modèle → API avec monitoring et transfert.",
-
-			"CONSOLE_FUN_HEADER": "Attendez!",
-			"CONSOLE_FUN_TEXT": "Je plaisante! Il n'y a pas grand-chose à voir ici, mais nous devrions certainement programmer une réunion pour élargir ces horizons!",
-			"CONSOLE_FUN_INFO": "Au fait, vous pouvez trouver le code de ce site web ici : {{GITHUB_URL}}/Portfolio",
 
 			"NAV_SERVICES_LABEL": "Offres & Tarifs",
 			"NAV_ABOUT_ME_LABEL": "Expertise",
